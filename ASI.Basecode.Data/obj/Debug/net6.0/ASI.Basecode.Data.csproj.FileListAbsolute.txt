@@ -1,0 +1,14 @@
+C:\Users\Kira\Documents\Repositories\Goof\ASI.Basecode\ASI.Basecode.Data\bin\Debug\net6.0\ASI.Basecode.Data.deps.json
+C:\Users\Kira\Documents\Repositories\Goof\ASI.Basecode\ASI.Basecode.Data\bin\Debug\net6.0\ASI.Basecode.Data.runtimeconfig.json
+C:\Users\Kira\Documents\Repositories\Goof\ASI.Basecode\ASI.Basecode.Data\bin\Debug\net6.0\ASI.Basecode.Data.dll
+C:\Users\Kira\Documents\Repositories\Goof\ASI.Basecode\ASI.Basecode.Data\bin\Debug\net6.0\ASI.Basecode.Data.pdb
+C:\Users\Kira\Documents\Repositories\Goof\ASI.Basecode\ASI.Basecode.Data\obj\Debug\net6.0\ASI.Basecode.Data.csproj.AssemblyReference.cache
+C:\Users\Kira\Documents\Repositories\Goof\ASI.Basecode\ASI.Basecode.Data\obj\Debug\net6.0\ASI.Basecode.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kira\Documents\Repositories\Goof\ASI.Basecode\ASI.Basecode.Data\obj\Debug\net6.0\ASI.Basecode.Data.AssemblyInfoInputs.cache
+C:\Users\Kira\Documents\Repositories\Goof\ASI.Basecode\ASI.Basecode.Data\obj\Debug\net6.0\ASI.Basecode.Data.AssemblyInfo.cs
+C:\Users\Kira\Documents\Repositories\Goof\ASI.Basecode\ASI.Basecode.Data\obj\Debug\net6.0\ASI.Basecode.Data.csproj.CoreCompileInputs.cache
+C:\Users\Kira\Documents\Repositories\Goof\ASI.Basecode\ASI.Basecode.Data\obj\Debug\net6.0\ASI.Basecode.Data.dll
+C:\Users\Kira\Documents\Repositories\Goof\ASI.Basecode\ASI.Basecode.Data\obj\Debug\net6.0\refint\ASI.Basecode.Data.dll
+C:\Users\Kira\Documents\Repositories\Goof\ASI.Basecode\ASI.Basecode.Data\obj\Debug\net6.0\ASI.Basecode.Data.pdb
+C:\Users\Kira\Documents\Repositories\Goof\ASI.Basecode\ASI.Basecode.Data\obj\Debug\net6.0\ASI.Basecode.Data.genruntimeconfig.cache
+C:\Users\Kira\Documents\Repositories\Goof\ASI.Basecode\ASI.Basecode.Data\obj\Debug\net6.0\ref\ASI.Basecode.Data.dll

@@ -1,0 +1,16 @@
+C:\Users\Kira\Documents\Repositories\Goof\PsBee\src\Goof.PsBee.Data\bin\Debug\net6.0\Goof.PsBee.Data.deps.json
+C:\Users\Kira\Documents\Repositories\Goof\PsBee\src\Goof.PsBee.Data\bin\Debug\net6.0\Goof.PsBee.Data.runtimeconfig.json
+C:\Users\Kira\Documents\Repositories\Goof\PsBee\src\Goof.PsBee.Data\bin\Debug\net6.0\Goof.PsBee.Data.dll
+C:\Users\Kira\Documents\Repositories\Goof\PsBee\src\Goof.PsBee.Data\bin\Debug\net6.0\Goof.PsBee.Data.pdb
+C:\Users\Kira\Documents\Repositories\Goof\PsBee\src\Goof.PsBee.Data\bin\Debug\net6.0\Goof.Infrastructure.dll
+C:\Users\Kira\Documents\Repositories\Goof\PsBee\src\Goof.PsBee.Data\obj\Debug\net6.0\Goof.PsBee.Data.csproj.AssemblyReference.cache
+C:\Users\Kira\Documents\Repositories\Goof\PsBee\src\Goof.PsBee.Data\obj\Debug\net6.0\Goof.PsBee.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kira\Documents\Repositories\Goof\PsBee\src\Goof.PsBee.Data\obj\Debug\net6.0\Goof.PsBee.Data.AssemblyInfoInputs.cache
+C:\Users\Kira\Documents\Repositories\Goof\PsBee\src\Goof.PsBee.Data\obj\Debug\net6.0\Goof.PsBee.Data.AssemblyInfo.cs
+C:\Users\Kira\Documents\Repositories\Goof\PsBee\src\Goof.PsBee.Data\obj\Debug\net6.0\Goof.PsBee.Data.csproj.CoreCompileInputs.cache
+C:\Users\Kira\Documents\Repositories\Goof\PsBee\src\Goof.PsBee.Data\obj\Debug\net6.0\Goof.PsBee.Data.csproj.CopyComplete
+C:\Users\Kira\Documents\Repositories\Goof\PsBee\src\Goof.PsBee.Data\obj\Debug\net6.0\Goof.PsBee.Data.dll
+C:\Users\Kira\Documents\Repositories\Goof\PsBee\src\Goof.PsBee.Data\obj\Debug\net6.0\refint\Goof.PsBee.Data.dll
+C:\Users\Kira\Documents\Repositories\Goof\PsBee\src\Goof.PsBee.Data\obj\Debug\net6.0\Goof.PsBee.Data.pdb
+C:\Users\Kira\Documents\Repositories\Goof\PsBee\src\Goof.PsBee.Data\obj\Debug\net6.0\Goof.PsBee.Data.genruntimeconfig.cache
+C:\Users\Kira\Documents\Repositories\Goof\PsBee\src\Goof.PsBee.Data\obj\Debug\net6.0\ref\Goof.PsBee.Data.dll
