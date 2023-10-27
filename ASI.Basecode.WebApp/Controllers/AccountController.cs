@@ -115,7 +115,7 @@ namespace ASI.Basecode.WebApp.Controllers
             try
             {
                 _userService.AddUser(model);
-                return RedirectToAction("Login", "Account");
+                return RedirectToAction("UserMaster", "UserMaster");
             }
             catch(InvalidDataException ex)
             {

@@ -1,25 +1,27 @@
-﻿using ASI.Basecode.WebApp.Models;
-using Microsoft.AspNetCore.Components;
+﻿using ASI.Basecode.Services.Interfaces;
+using ASI.Basecode.Services.ServiceModels;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
-    public interface IGetAllUsersService
-    {
-        public ValueTask<IEnumerable<UserMasterModel>> GetAllUsersAsync();
-    }
     public class UserMasterController : Controller
     {
-        [Inject]
-        public IGetAllUsersService GetAllUsersService { get; } // public property with implicit getter
+        private readonly IUserService _UserService;
 
-        public async Task<IActionResult> UserMaster()
+        //constructor to call service
+
+        public UserMasterController(IUserService userService)
         {
-            var users = await GetAllUsersService.GetAllUsersAsync();
-
+            _UserService = userService;
+        }
+        public IActionResult UserMaster()
+        {
+            var users = _UserService.GetUserss();
             return View(users);
+        }
+        public IActionResult Create()
+        {
+            return View();
         }
     }
 }

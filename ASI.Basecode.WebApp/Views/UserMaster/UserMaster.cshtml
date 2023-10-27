@@ -1,10 +1,9 @@
-﻿@using static ASI.Basecode.Resources.Views.Screen
-@model IEnumerable<ASI.Basecode.WebApp.Models.UserMasterModel>
-@inject ASI.Basecode.WebApp.Controllers.UserMasterController _userMasterController
-
+﻿@model List<ASI.Basecode.Data.Models.User>
+@using static ASI.Basecode.Resources.Views.Screen
 @section styles {
     <link rel="stylesheet" href="~/css/Index.css" />
 }
+
 @{
     ViewData["Title"] = "User Master";
 }
@@ -30,15 +29,15 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var user in await _userMasterController.GetAllUsersService.GetAllUsersAsync())
-            {
-            <tr>
-                <th scope="row">@user.UserId</th>
-                <td>@user.LastName</td>
-                <td>@user.FirstName</td>
-                <td>@user.UserName</td>
-                <td>@user.Email</td>
-                <td>@user.Image</td>
+            @foreach (var users in Model)
+                 {
+                <tr style="color:white">
+                <th scope="row">@users.UserId</th>
+                <td>@users.LastName</td>
+                    <td>@users.FirstName</td>
+                    <td>@users.Name</td>
+                    <td>@users.Email</td>
+                    <td>Image</td>
                 <td>
                     <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
                     <button type="button" class="btn btn-success"><i class="fa-solid fa-pencil"></i></button>
