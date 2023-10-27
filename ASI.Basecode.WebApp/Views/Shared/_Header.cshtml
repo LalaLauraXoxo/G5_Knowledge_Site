@@ -1,28 +1,43 @@
 ﻿@using Microsoft.AspNetCore.Http
+@section styles {
+    <link rel="stylesheet" href="~/css/site.css" />
+}
 @inject IHttpContextAccessor HttpContextAccessor
 <header class="@((ViewBag.LoginView == true) ? "hide-navbar" : "")">
     <div class="logosec hover-pointer">
-        <img src="~/img/asi-logo-invert.svg"
-             style="width: 185px;" alt="logo"
+        <img src="~/img/page-icon.png"
+             style="width: 100px; margin-top:100px;" alt="logo"
              onclick="window.location.href = '@Url.Action("Index", "Home")';">
     </div>
-    <div class="logosec">
-        @HttpContextAccessor.HttpContext.Session.GetString("UserName")
-        <div class="mr-20 hover-pointer" style="position: relative">
+      <div class="logosec">
+        <span style="color:#086788;margin-top:110px;margin-right:30px;">
+            <h3>
+                @HttpContextAccessor.HttpContext.Session.GetString("UserName")
+            </h3>
+        </span>
+        <div class="mr-20 hover-pointer" style="position: relative;">
             <div class="dp">
-                <img src="~/img/profile-logo.png"
+                <img src="~/img/profile-logo.png" style="width:60px;height:60px;"
                      class="dpicn hover-pointer"
                      alt="dp">
             </div>
-            <div class="dropdown">
+            <div class="dropdown" style="margin-top:80px;border-radius:10%;background-color:#086788;color:white;">
                 <ul>
+
                     <li>
-                        <i class="fa-solid fa-gear"></i>
-                        <a href="#">Settings</a>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                        <a asp-action="SignOutUser" asp-controller="Account">Logout</a>
+                        <i class=""></i>
+                        <div class="dp-dropdown">
+                            <img src="~/img/profile-logo.png" style="width:65px;height:60px;"
+                                 class="dpicn hover-pointer"
+                                 alt="dp">
+                        </div>
+                        <h3 style="margin-left:14px;">
+                            @HttpContextAccessor.HttpContext.Session.GetString("UserName")
+                        </h3>
+                        <p style="margin-left:33px;">Admin</p>
+                        <button class="signout-button">
+                            <a asp-action="SignOutUser" asp-controller="Account"><p style="color:white;">Byeeeee!</p></a>
+                        </button>
                     </li>
                 </ul>
             </div>

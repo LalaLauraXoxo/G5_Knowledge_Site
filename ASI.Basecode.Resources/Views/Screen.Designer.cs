@@ -61,6 +61,15 @@ namespace ASI.Basecode.Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ADMIN DASHBOARD.
+        /// </summary>
+        public static string AdminDashboard {
+            get {
+                return ResourceManager.GetString("AdminDashboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ©2023 Alliance Software Inc. All rights reserved..
         /// </summary>
         public static string Copyright {
@@ -88,11 +97,29 @@ namespace ASI.Basecode.Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Forgot password?.
         /// </summary>
         public static string ForgotPass {
             get {
                 return ResourceManager.GetString("ForgotPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Let&apos;s get you logged in, shall we?.
+        /// </summary>
+        public static string LetsLoggedIn {
+            get {
+                return ResourceManager.GetString("LetsLoggedIn", resourceCulture);
             }
         }
         
@@ -115,11 +142,20 @@ namespace ASI.Basecode.Resources.Views {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to UserId.
+        ///   Looks up a localized string similar to Remember Me.
         /// </summary>
-        public static string UserId {
+        public static string RememberMe {
             get {
-                return ResourceManager.GetString("UserId", resourceCulture);
+                return ResourceManager.GetString("RememberMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WELCOME ADMIN!.
+        /// </summary>
+        public static string WelcAdmin {
+            get {
+                return ResourceManager.GetString("WelcAdmin", resourceCulture);
             }
         }
     }

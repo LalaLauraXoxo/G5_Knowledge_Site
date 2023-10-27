@@ -1,8 +1,15 @@
-﻿@{
+﻿@using static ASI.Basecode.Resources.Views.Screen
+@section styles {
+    <link rel="stylesheet" href="~/css/Index.css" />
+}
+@{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<h3 style="color:#086788; position:relative;right:23.7%;font-weight:bold;font-size:40px">@AdminDashboard</h3>
+<div class="ellipse"></div>
+<div class="square-container">
+    <h3 style="font-weight:bold;font-size:40px;position:relative;right:100px; top:40px;">USER MASTER LIST</h3>
+    <a asp-controller="UserMaster" asp-action="UserMaster"><i class="fa fa-arrow-right" style="font-weight:bold;font-size:40px;position:absolute;left:70%;top:65px;"></i></a>
+    <h5 style="font-size:25px;position:relative;right:80px; top:40px;">View, add, edit and delete users.</h5>
+    <img src="~/img/human.png" style="width: 37%;position:fixed; left:3%; bottom:1%;" />
 </div>

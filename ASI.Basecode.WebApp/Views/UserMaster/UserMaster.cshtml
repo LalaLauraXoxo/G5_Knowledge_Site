@@ -1,0 +1,51 @@
+﻿@using static ASI.Basecode.Resources.Views.Screen
+@model IEnumerable<ASI.Basecode.WebApp.Models.UserMasterModel>
+@inject ASI.Basecode.WebApp.Controllers.UserMasterController _userMasterController
+
+@section styles {
+    <link rel="stylesheet" href="~/css/Index.css" />
+}
+@{
+    ViewData["Title"] = "User Master";
+}
+<div style="font-weight:bold;color:#086788;">
+    <h1 style="position:fixed;left:140px;bottom:87%;">@AdminDashboard</h1>
+</div>
+<div class="rectangle-container">
+    <i class="fas fa-search"></i>
+    <input type="search" placeholder="Search..">
+    <a asp-controller="Account" asp-action="Register">
+        <i class="fas fa-user-plus"></i>
+    </a>
+    <table class="table">
+        <thead>
+            <tr style="background-color:#F0C808;color:white;">
+                <th scope="col">AdminId</th>
+                <th scope="col">LastName</th>
+                <th scope="col">FirstName</th>
+                <th scope="col">UserName</th>
+                <th scope="col">Email</th>
+                <th scope="col">Image</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in await _userMasterController.GetAllUsersService.GetAllUsersAsync())
+            {
+            <tr>
+                <th scope="row">@user.UserId</th>
+                <td>@user.LastName</td>
+                <td>@user.FirstName</td>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>@user.Image</td>
+                <td>
+                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
+                    <button type="button" class="btn btn-success"><i class="fa-solid fa-pencil"></i></button>
+                     <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

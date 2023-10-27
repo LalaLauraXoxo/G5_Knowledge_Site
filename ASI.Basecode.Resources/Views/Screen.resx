@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AdminDashboard" xml:space="preserve">
+    <value>ADMIN DASHBOARD</value>
+  </data>
   <data name="Copyright" xml:space="preserve">
     <value>©2023 Alliance Software Inc. All rights reserved.</value>
   </data>
@@ -126,8 +129,14 @@
   <data name="DontHaveAcc" xml:space="preserve">
     <value>Don't have an account?</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
   <data name="ForgotPass" xml:space="preserve">
     <value>Forgot password?</value>
+  </data>
+  <data name="LetsLoggedIn" xml:space="preserve">
+    <value>Let's get you logged in, shall we?</value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>Login</value>
@@ -135,7 +144,10 @@
   <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>
-  <data name="UserId" xml:space="preserve">
-    <value>UserId</value>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember Me</value>
+  </data>
+  <data name="WelcAdmin" xml:space="preserve">
+    <value>WELCOME ADMIN!</value>
   </data>
 </root>

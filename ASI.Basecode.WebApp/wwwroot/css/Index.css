@@ -1,0 +1,68 @@
+﻿.ellipse {
+    position: absolute;
+    width: 2300px;
+    height: 2800px;
+    right: -200px;
+    top: 35%;
+    background: #086788;
+    border-radius: 50%;
+    z-index: -3;
+    overflow: hidden;
+}
+
+.square-container {
+    width: 700px;
+    height: 650px;
+    border-radius: 10%;
+    background-color: #FFF1D0;
+    padding: 20px;
+    text-align: center;
+    color: #086788; /* white color for the text */
+    font-size: 16px;
+    position: fixed;
+    top: 210px;
+    right: 60%;
+}
+
+.rectangle-container {
+    width: 1500px;
+    height: 650px;
+    border-radius: 5%;
+    background-color: #086788;
+    padding: 20px;
+    text-align: center;
+    color: #086788; /* white color for the text */
+    font-size: 16px;
+    position: fixed;
+    top: 200px;
+    right: 200px;
+}
+
+    .rectangle-container input[type=search] {
+        float: left;
+        padding: 6px;
+        border: none;
+        font-size: 17px;
+        margin-top: 50px;
+        margin-left: 5px;
+        border-radius: 40px;
+        width: 400px;
+    }
+
+    .rectangle-container .fas {
+        float: left;
+        padding: 6px;
+        color: white;
+        font-size: 30px;
+        margin-top: 50px;
+        margin-left: 50px;
+    }
+
+        .rectangle-container .fas.fa-user-plus {
+            float: right;
+            padding: 6px;
+            color: white;
+            font-size: 40px;
+            margin-top: 50px;
+            margin-right: 50px;
+        }
