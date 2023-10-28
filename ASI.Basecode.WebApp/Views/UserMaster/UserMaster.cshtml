@@ -8,7 +8,7 @@
     ViewData["Title"] = "User Master";
 }
 <div style="font-weight:bold;color:#086788;">
-    <h1 style="position:fixed;left:140px;bottom:87%;">@AdminDashboard</h1>
+    <h1 style="position:fixed;left:140px;bottom:87%;">@UserMasterList</h1>
 </div>
 <div class="rectangle-container">
     <i class="fas fa-search"></i>
@@ -20,11 +20,8 @@
         <thead>
             <tr style="background-color:#F0C808;color:white;">
                 <th scope="col">AdminId</th>
-                <th scope="col">LastName</th>
-                <th scope="col">FirstName</th>
                 <th scope="col">UserName</th>
                 <th scope="col">Email</th>
-                <th scope="col">Image</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
@@ -33,18 +30,29 @@
                  {
                 <tr style="color:white">
                 <th scope="row">@users.UserId</th>
-                <td>@users.LastName</td>
-                    <td>@users.FirstName</td>
                     <td>@users.Name</td>
                     <td>@users.Email</td>
-                    <td>Image</td>
                 <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    <button type="button" class="btn btn-success"><i class="fa-solid fa-pencil"></i></button>
-                     <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                </td>
+                  <div class="btn-group">
+                     <form asp-controller="UserMaster" asp-action="ViewUser" method="get">
+                            <input type="hidden" name="id" value="@users.Id" />
+                            <button type="submit" class="btn btn-primary"><i class="far fa-eye"></i></button>
+                     </form>
+                    <form asp-controller="UserMaster" asp-action="Edit" method="get">
+                        <input type="hidden" name="id" value="@users.Id" />
+                            <button type="submit" class="btn btn-success"><i class="fa fa-pen"></i> </button>
+                    </form>
+                    <form asp-controller="UserMaster" asp-action="Delete" method="post">
+                        <input type="hidden" name="id" value="@users.Id" />
+                           <button type="submit" class="btn btn-danger"><i class="fa fa-trash-can"></i></button>
+                    </form>
+                        </div>
+                    </td>
             </tr>
             }
         </tbody>
     </table>
 </div>
+@section scripts{
+
+}

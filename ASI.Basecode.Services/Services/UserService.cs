@@ -57,5 +57,38 @@ namespace ASI.Basecode.Services.Services
             var users = _repository.GetUserss();
             return users;
         }
+        public User GetUser(int id)
+        {
+            var user = _repository.GetUser(id);
+            return user;
+        }
+        public bool UpdateUser(UserViewModel model)
+        {
+            User user = _repository.GetUser(model.Id);
+            if (user != null)
+            {
+                user.FirstName = model.FirstName;
+                user.LastName = model.LastName;
+                user.Email = model.Email;
+                user.Name = model.Name;
+
+                user.UpdatedBy = "Username";
+                user.CreatedTime = DateTime.Now;
+
+                _repository.UpdateUser(user);
+                return true;
+            }
+            return false;
+        }
+        public bool DeleteUser(UserViewModel model) 
+        {
+            User user = _repository.GetUser(model.Id);
+            if (user != null) 
+            {
+                _repository.DeleteUser(user);
+                return true;
+            }
+            return false;
+        }
     }
 }

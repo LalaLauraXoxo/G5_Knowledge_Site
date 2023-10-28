@@ -1,0 +1,52 @@
+﻿form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-side, .right-side {
+    width: 45%;
+}
+
+input[type=text], input[type=email], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+@media (max-width: 600px) {
+    form {
+        flex-direction: column;
+    }
+
+    .left-side, .right-side {
+        width: 100%;
+    }
+}
+.dp-user {
+    height: 300px;
+    width: 300px;
+    background-color: #626262;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    left:80px;
+    top: 150px;
+}
+.rectangle-container {
+    width: 1500px;
+    height: 650px;
+    border-radius: 5%;
+    background-color: #086788;
+    padding: 20px;
+    text-align: center;
+    color: #086788; /* white color for the text */
+    font-size: 16px;
+    position: fixed;
+    top: 200px;
+    right: 200px;
+}

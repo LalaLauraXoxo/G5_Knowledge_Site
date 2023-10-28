@@ -41,3 +41,17 @@ C:\Users\ytang\OneDrive\Documents\G5_Knowledge_Site\ASI.Basecode.Data\obj\Debug\
 C:\Users\ytang\OneDrive\Documents\G5_Knowledge_Site\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.pdb
 C:\Users\ytang\OneDrive\Documents\G5_Knowledge_Site\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.genruntimeconfig.cache
 C:\Users\ytang\OneDrive\Documents\G5_Knowledge_Site\ASI.Basecode.Data\obj\Debug\net7.0\ref\ASI.Basecode.Data.dll
+C:\Users\admin28\Documents\G5_Knowledge_Site\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.deps.json
+C:\Users\admin28\Documents\G5_Knowledge_Site\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.runtimeconfig.json
+C:\Users\admin28\Documents\G5_Knowledge_Site\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.dll
+C:\Users\admin28\Documents\G5_Knowledge_Site\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.pdb
+C:\Users\admin28\Documents\G5_Knowledge_Site\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.csproj.AssemblyReference.cache
+C:\Users\admin28\Documents\G5_Knowledge_Site\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin28\Documents\G5_Knowledge_Site\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.AssemblyInfoInputs.cache
+C:\Users\admin28\Documents\G5_Knowledge_Site\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.AssemblyInfo.cs
+C:\Users\admin28\Documents\G5_Knowledge_Site\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.csproj.CoreCompileInputs.cache
+C:\Users\admin28\Documents\G5_Knowledge_Site\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.dll
+C:\Users\admin28\Documents\G5_Knowledge_Site\ASI.Basecode.Data\obj\Debug\net7.0\refint\ASI.Basecode.Data.dll
+C:\Users\admin28\Documents\G5_Knowledge_Site\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.pdb
+C:\Users\admin28\Documents\G5_Knowledge_Site\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.genruntimeconfig.cache
+C:\Users\admin28\Documents\G5_Knowledge_Site\ASI.Basecode.Data\obj\Debug\net7.0\ref\ASI.Basecode.Data.dll

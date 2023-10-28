@@ -147,6 +147,12 @@
   <data name="RememberMe" xml:space="preserve">
     <value>Remember Me</value>
   </data>
+  <data name="UserMasterList" xml:space="preserve">
+    <value>USER MASTER LIST</value>
+  </data>
+  <data name="ViewUser" xml:space="preserve">
+    <value>VIEW USER</value>
+  </data>
   <data name="WelcAdmin" xml:space="preserve">
     <value>WELCOME ADMIN!</value>
   </data>

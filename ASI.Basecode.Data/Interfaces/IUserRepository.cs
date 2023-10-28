@@ -14,5 +14,11 @@ namespace ASI.Basecode.Data.Interfaces
         void AddUser(User user);
 
         public List<User> GetUserss();
+
+        public User GetUser(int id);
+
+        public void UpdateUser(User user);
+        
+        public void DeleteUser(User user);
     }
 }

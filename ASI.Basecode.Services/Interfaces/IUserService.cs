@@ -11,5 +11,9 @@ namespace ASI.Basecode.Services.Interfaces
         void AddUser(UserViewModel model);
 
         public List<User> GetUserss();
+        public User GetUser(int id);
+        public bool UpdateUser(UserViewModel model);
+
+        public bool DeleteUser(UserViewModel model);
     }
 }

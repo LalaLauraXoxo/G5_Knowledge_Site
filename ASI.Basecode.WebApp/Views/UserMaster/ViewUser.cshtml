@@ -1,0 +1,60 @@
+﻿@model ASI.Basecode.Services.ServiceModels.UserViewModel;
+@using static ASI.Basecode.Resources.Views.Screen
+
+@section styles {
+    <link rel="stylesheet" href="~/css/ViewUser.css" />
+}
+@{
+    ViewData["Title"] = "View Master";
+}
+<div style="font-weight:bold;color:#086788;">
+    <h1 style="position:fixed;left:140px;bottom:87%;">@ViewUser</h1>
+</div>
+@* <div class="rectangle-container">
+        <div class="dp-user">
+            <img src="~/img/profile-logo.png" style="width:200px;height:200px;"
+                 class="dpicn hover-pointer"
+                 alt="dp">
+        </div>
+
+</div> *@
+
+@* <form style="background-color:#F0C808; padding:50px;border-radius:20px; position:relative; top:150px; left:240px;">
+    <div class="left-side">
+        <label for="fname" style="font-weight:bold; color:#086788; font-size:25px;">First name:</label><br>
+        <input type="text" id="fname" name="fname" style="border-radius:20px;"><br>
+        <label for="lname" style="font-weight:bold; color:#086788; font-size:25px;">Last name:</label><br>
+        <input type="text" id="lname" name="lname" style="border-radius:20px;"><br>
+        <label for="email" style="font-weight:bold; color:#086788; font-size:25px;">Email:</label><br>
+        <input type="email" id="email" name="email" style="border-radius:20px;"><br>
+    </div>
+    <div class="right-side">
+        <label for="username" style="font-weight:bold; color:#086788; font-size:25px;">Username:</label><br>
+        <input type="text" id="username" name="username" style="border-radius:20px;"><br>
+    </div>
+</form> *@
+<div class="rectangle-container">
+    <div class="dp-user">
+        <img src="~/img/profile-logo.png" style="width:300px;height:300px;"
+             class="dpicn hover-pointer"
+             alt="dp">
+    </div>
+    <form style="position:absolute;left:35%; width:60%;top:150px;" method="post" asp-action="ViewUser">
+        <div class="left-side">
+            <input type="hidden" class="form-control" asp-for="Id">
+            <label for="fname" style="font-weight:bold; color:#F0C808; font-size:25px;">First name:</label><br>
+            <input type="text" class="form-control" asp-for="FirstName"><br>
+            <label for="lname" style="font-weight:bold; color:#F0C808; font-size:25px;">Last name:</label><br>
+            <input type="text" class="form-control" asp-for="LastName"><br>
+            <label for="email" style="font-weight:bold; color:#F0C808; font-size:25px;">Email:</label><br>
+            <input type="text" class="form-control" asp-for="Email"><br>
+        </div>
+        <div class="right-side">
+            <label for="username" style="font-weight:bold; color:#F0C808; font-size:25px;">Username:</label><br>
+            <input type="text" class="form-control" asp-for="Name"><br>
+            <a asp-controller="UserMaster" asp-action="UserMaster" class="btn btn-danger" style="position:relative; top:48%; padding:3%;width:230px;border-radius:50px;font-size:25px;">BACK TO LIST</a>
+        </div>
+    </form>
+</div>
+@section scripts{
+}

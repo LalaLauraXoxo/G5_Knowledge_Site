@@ -9,6 +9,7 @@ namespace ASI.Basecode.Services.ServiceModels
 {
     public class UserViewModel
     {
+        public int Id { get; set; }
         [Required(ErrorMessage = "Admin ID is required.")]
         public string UserId { get; set; }
 

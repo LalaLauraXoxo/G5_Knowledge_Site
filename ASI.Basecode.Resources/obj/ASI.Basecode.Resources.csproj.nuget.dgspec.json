@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ytang\\OneDrive\\Documents\\G5_Knowledge_Site\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj": {}
+    "C:\\Users\\admin28\\Documents\\G5_Knowledge_Site\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ytang\\OneDrive\\Documents\\G5_Knowledge_Site\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj": {
+    "C:\\Users\\admin28\\Documents\\G5_Knowledge_Site\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ytang\\OneDrive\\Documents\\G5_Knowledge_Site\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj",
+        "projectUniqueName": "C:\\Users\\admin28\\Documents\\G5_Knowledge_Site\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj",
         "projectName": "ASI.Basecode.Resources",
-        "projectPath": "C:\\Users\\ytang\\OneDrive\\Documents\\G5_Knowledge_Site\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj",
-        "packagesPath": "C:\\Users\\ytang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ytang\\OneDrive\\Documents\\G5_Knowledge_Site\\ASI.Basecode.Resources\\obj\\",
+        "projectPath": "C:\\Users\\admin28\\Documents\\G5_Knowledge_Site\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj",
+        "packagesPath": "C:\\Users\\admin28\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\admin28\\Documents\\G5_Knowledge_Site\\ASI.Basecode.Resources\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ytang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin28\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.2.23502.2\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

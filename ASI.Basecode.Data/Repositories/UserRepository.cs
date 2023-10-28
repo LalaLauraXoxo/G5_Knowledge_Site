@@ -36,6 +36,20 @@ namespace ASI.Basecode.Data.Repositories
             var users= GetDbSet<User>().ToList();
             return users;
         }
-
+        public User GetUser(int id)
+        {
+            var user = this.GetDbSet<User>().FirstOrDefault(x => x.Id == id);
+            return user;
+        }
+        public void UpdateUser(User user)
+        {
+            this.GetDbSet<User>().Update(user);
+            UnitOfWork.SaveChanges();
+        }
+        public void DeleteUser(User user) 
+        {
+            this.GetDbSet<User>().Remove(user);
+            UnitOfWork.SaveChanges();
+        }
     }
 }

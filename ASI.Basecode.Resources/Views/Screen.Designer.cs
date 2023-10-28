@@ -151,6 +151,24 @@ namespace ASI.Basecode.Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to USER MASTER LIST.
+        /// </summary>
+        public static string UserMasterList {
+            get {
+                return ResourceManager.GetString("UserMasterList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VIEW USER.
+        /// </summary>
+        public static string ViewUser {
+            get {
+                return ResourceManager.GetString("ViewUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to WELCOME ADMIN!.
         /// </summary>
         public static string WelcAdmin {
