@@ -61,7 +61,7 @@ namespace ASI.Basecode.Resources.Views {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ©2023 Alliance Software Inc. All rights reserved..
+        ///   Looks up a localized string similar to ©2023 KnowBody. All rights reserved..
         /// </summary>
         public static string Copyright {
             get {
@@ -97,7 +97,7 @@ namespace ASI.Basecode.Resources.Views {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login.
+        ///   Looks up a localized string similar to Let&apos;s Go!.
         /// </summary>
         public static string Login {
             get {

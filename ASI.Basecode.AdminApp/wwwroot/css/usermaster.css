@@ -1,0 +1,52 @@
+﻿body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.userlist-div {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inside-userlist {
+    background-color: #086788;
+    width: 90%;
+    height: 80%;
+    margin-bottom: 100px;
+    border-radius: 50px;
+    padding: 50px;
+}
+table{
+    border: none;
+}
+th {
+    color: white;
+    border: none;
+}
+.custom-thead {
+    background-color: #F0C808;
+    border-radius: 30px;
+}
+.table th, .table td {
+    text-align: center;
+}
+.table-container {
+    overflow: auto; 
+    max-height: 100%; 
+}
+.add-icon {
+    color: white;
+    font-size: 30px;
+}
+.addIcon-div {
+    text-align: right;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+.btn-spacing {
+    margin-right: 5px;
+}
+
+

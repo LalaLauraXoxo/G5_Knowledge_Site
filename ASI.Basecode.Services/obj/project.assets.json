@@ -3801,19 +3801,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kira\\.nuget\\packages\\": {}
+    "C:\\Users\\xserna\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kira\\Documents\\ASI\\ASIBasecodeCsharp\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj",
+      "projectUniqueName": "D:\\ALLIANCE TESTING\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj",
       "projectName": "ASI.Basecode.Services",
-      "projectPath": "C:\\Users\\Kira\\Documents\\ASI\\ASIBasecodeCsharp\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj",
-      "packagesPath": "C:\\Users\\Kira\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kira\\Documents\\ASI\\ASIBasecodeCsharp\\ASI.Basecode.Services\\obj\\",
+      "projectPath": "D:\\ALLIANCE TESTING\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj",
+      "packagesPath": "C:\\Users\\xserna\\.nuget\\packages\\",
+      "outputPath": "D:\\ALLIANCE TESTING\\ASI.Basecode.Services\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Kira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\xserna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3827,11 +3832,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Kira\\Documents\\ASI\\ASIBasecodeCsharp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj": {
-              "projectPath": "C:\\Users\\Kira\\Documents\\ASI\\ASIBasecodeCsharp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj"
+            "D:\\ALLIANCE TESTING\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj": {
+              "projectPath": "D:\\ALLIANCE TESTING\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj"
             },
-            "C:\\Users\\Kira\\Documents\\ASI\\ASIBasecodeCsharp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj": {
-              "projectPath": "C:\\Users\\Kira\\Documents\\ASI\\ASIBasecodeCsharp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj"
+            "D:\\ALLIANCE TESTING\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj": {
+              "projectPath": "D:\\ALLIANCE TESTING\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj"
             }
           }
         }
@@ -3895,7 +3900,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

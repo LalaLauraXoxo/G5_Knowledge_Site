@@ -1,0 +1,48 @@
+﻿@using ASI.Basecode.Services.ServiceModels
+@model UserViewModel
+
+@section styles {
+    <link rel="stylesheet" href="~/css/viewuser.css" />
+}
+@{
+    ViewData["Title"] = "View Master";
+    ViewBag.IsViewUserPage = true;
+}
+
+<div class="viewuser-div">
+    <div class="inside-viewuser">
+        <div>
+            <div class="dp-div">
+                <img src="~/img/defaultPic.png"
+                     class="dpic-img hover-pointer"
+                     alt="dp">
+            </div>
+        </div>
+       <div>
+            <form method="post" asp-action="ViewUser">
+                <div class="inputs-div">
+                    <div>
+                        <input type="hidden" class="input-design" asp-for="Id">
+                        <label for="fname" class="inputs-label">FIRST NAME</label><br>
+                        <input type="text" class="input-design" asp-for="FirstName" readonly><br>
+                        <label for="lname" class="inputs-label">LAST NAME</label><br>
+                        <input type="text" class="input-design" asp-for="LastName" readonly><br>
+                        <label for="email" class="inputs-label">EMAIL</label><br>
+                        <input type="text" class="input-design" asp-for="Email" readonly><br>
+                    </div>
+                    <div class="rightside-div">
+                        <label for="username" class="inputs-label">USERNAME:</label><br>
+                        <input type="text" class="input-design" asp-for="Username" readonly><br>
+                        <label for="userid" class="inputs-label">USER ID:</label><br>
+                        <input type="text" class="input-design" asp-for="UserId" readonly><br>
+                        <a class="back-button-div" asp-controller="UserMaster" asp-action="UserMaster">
+                            <p class="back-button-p">BACK TO LIST</p>
+                        </a>
+                    </div>
+                </div>
+            </form>
+       </div>
+    </div>
+</div>
+@section scripts{
+}

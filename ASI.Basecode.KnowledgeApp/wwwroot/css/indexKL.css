@@ -1,0 +1,83 @@
+﻿body {
+    overflow: auto;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+.container-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inside-container {
+    margin-top: 50px;
+    width: 95%;
+    height: 100%;
+}
+.highrated-p {
+    color: #086788;
+    font-size: 30px;
+    font-weight: bold;
+}
+.alltraining-p {
+    color: #086788;
+    font-size: 30px;
+    font-weight: bold;
+}
+.training-container-div {
+    margin-top: 50px;
+    border-radius: 50px;
+    border-width: 2px;
+    background-color: #086788;
+    width: 23%;
+    padding: 30px;
+    background-image: url('/img/trainingBG1.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.title-p {
+    color: #F0C808;
+    font-size: 20px;
+    font-weight: 600;
+}
+.desc-p {
+    margin-top: 30px;
+    color: white;
+    font-size: 13px;
+    font-weight: 300;
+}
+.author-rating-div{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.author-p{
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+}
+.rating-p {
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    margin-left: 5px;
+}
+.star-design {
+    font-size: 18px;
+    color: #F0C808;
+}
+.training-container-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.training-container-div {
+    width: calc(25% - 10px); /* 4 containers per row with 10px spacing between them */
+   
+}
+a{
+    text-decoration: none !important;
+}

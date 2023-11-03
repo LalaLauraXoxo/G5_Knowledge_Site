@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ASI.Basecode.KnowledgeApp.props" />
+</Project>

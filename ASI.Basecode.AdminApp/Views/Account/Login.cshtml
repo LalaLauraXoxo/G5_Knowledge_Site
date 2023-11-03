@@ -1,0 +1,87 @@
+﻿@model LoginViewModel
+@using static ASI.Basecode.Resources.Views.Screen
+@section styles {
+    <link rel="stylesheet" href="~/css/login.css" />
+}
+
+@{
+    ViewBag.LoginView = true;
+    ViewData["Title"] = "Login";
+}
+<div>
+    @Html.AntiForgeryToken()
+</div>
+
+<div class="screen-container">
+    <div class="inside-container">
+        <div class="pngContainers">
+            <div class="imageContainer">
+                <img src="/img/knowbody.png"
+                     style="width: 90%;" alt="logo">
+            </div>
+            <div class="imageContainer2">
+                <img src="/img/book.png"
+                     style="width: 70%;" alt="logo">
+            </div>
+        </div>
+
+        <div class="boxContainer">
+            <div class="inputContainer">
+
+                <p class="text1">WELCOME, ADMIN!</p>
+                <p class="text2">Let’s get you logged in, shall we?</p>
+                <form method="post" action="/Account/Login" id="loginForm">
+                    <div class="form-outline mb-4">
+                        <i class="fas fa-user login-icon"></i>
+                        <input type="text" id="userid" class="userid-input"
+                               asp-for="UserId" placeholder="Enter User Id" />
+                        <span asp-validation-for="UserId" class="text-danger"></span>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <i class="fas fa-eye-slash login-icon2" id="togglePassword"></i>
+                        <input type="password" id="password" class="password-input"
+                               asp-for="Password" placeholder="Enter Password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <a asp-controller="Account" asp-action="ForgotPassword" class="forgot-button">@ForgotPass</a>
+                    </div>
+
+                    <div style="display: flex; justify-content: center;">
+                        <button class="login-button" type="submit">
+                            @Login
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+@section scripts {
+    <script>
+        // Check for error message and display Toastr notification
+        var errorMessage = '@TempData["ErrorMessage"]';
+        if (errorMessage) {
+            toastr.error(errorMessage);
+        }
+    </script>
+
+    <script>
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+
+        togglePassword.addEventListener("click", function () {
+            // toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+
+            // toggle the eye / eye slash icon
+            this.classList.toggle("fa-eye-slash");
+            this.classList.toggle("fa-eye");
+        });
+
+    </script>
+}

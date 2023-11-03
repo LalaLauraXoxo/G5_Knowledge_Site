@@ -1,0 +1,59 @@
+﻿@model List<ASI.Basecode.Data.Models.User>
+@using static ASI.Basecode.Resources.Views.Screen
+@section styles {
+    <link rel="stylesheet" href="~/css/usermaster.css" />
+}
+
+@{
+    ViewData["Title"] = "User Master";
+    ViewBag.IsUserMasterPage = true;
+}
+
+<div class="userlist-div">
+    <div class="inside-userlist">
+        <div class="addIcon-div">
+            <a asp-controller="UserMaster" asp-action="CreateUser">
+                <i class="fas fa-user-plus add-icon"></i>
+            </a>
+        </div>
+        <div class="table-container">
+            <table class="table table-borderless">
+                <thead class="custom-thead">
+                    <tr>
+                        <th scope="col">USER ID</th>
+                        <th scope="col">USERNAME</th>
+                        <th scope="col">EMAIL</th>
+                        <th scope="col">ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var users in Model)
+                    {
+                        <tr style="color:white">
+                            <th>@users.UserId</th>
+                            <td>@users.Username</td>
+                            <td>@users.Email</td>
+                            <td>
+                                <div class="btn-group">
+                                    <form asp-controller="UserMaster" asp-action="ViewUser" method="get">
+                                        <input type="hidden" name="id" value="@users.Id" />
+                                        <button type="submit" class="btn btn-primary btn-spacing"><i class="far fa-eye"></i></button>
+                                    </form>
+                                    <form asp-controller="UserMaster" asp-action="EditUser" method="get">
+                                        <input type="hidden" name="id" value="@users.Id" />
+                                        <button type="submit" class="btn btn-success btn-spacing"><i class="fa fa-pen"></i> </button>
+                                    </form>
+                                    <form asp-controller="UserMaster" asp-action="Delete" method="post">
+                                        <input type="hidden" name="id" value="@users.Id" />
+                                        <button type="submit" class="btn btn-danger btn-spacing"><i class="fa fa-trash-can"></i></button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

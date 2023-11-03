@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@section styles {
+    <link rel="stylesheet" href="~/css/index.css" />
+}
+
+<div class="usermaster-div">
+    <div class="inside-usermaster">
+        <div class="list-div">
+            <a asp-controller="UserMaster" asp-action="UserMaster" class="list-p">USER MASTER LIST</a>
+            <p class="list2-p">View, add, edit, and delete users.</p>
+            <img class="img-design" src="~/img/usermaster.png" />
+        </div>
+        <div class="training-div">
+            <div class="category-div">
+                <a class="training-p" asp-controller="Category" asp-action="TrainingCategories">TRAINING CATEGORIES</a>
+                <div class="inside-div">
+                    <p class="training2-p">Training programs grouped via similarities, topics, and relevance.</p>
+                    <img class="img-design2" src="~/img/category.png" />
+                </div>
+            </div>
+            <div class="trainings-div2">
+                <div class="inside-trainings-div">
+                   <div>
+                        <p class="trainings-p">TRAININGS</p>
+                        <p class="trainings2-p">Displays the various kinds of training currently available.</p>
+                   </div>
+                    <img class="img-design3" src="~/img/training.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,313 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\css\\indexKL.css",
+      "PackagePath": "staticwebassets\\css\\indexKL.css"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\css\\rating.css",
+      "PackagePath": "staticwebassets\\css\\rating.css"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\css\\siteKL.css",
+      "PackagePath": "staticwebassets\\css\\siteKL.css"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\css\\styleKL.css",
+      "PackagePath": "staticwebassets\\css\\styleKL.css"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\css\\trainingsKL.css",
+      "PackagePath": "staticwebassets\\css\\trainingsKL.css"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\fonts\\roboto.css",
+      "PackagePath": "staticwebassets\\fonts\\roboto.css"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\html\\assets\\js\\plugins\\jquery-slimscroll\\jquery.slimscroll.js",
+      "PackagePath": "staticwebassets\\html\\assets\\js\\plugins\\jquery-slimscroll\\jquery.slimscroll.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\html\\assets\\js\\plugins\\jquery-slimscroll\\jquery.slimscroll.min.js",
+      "PackagePath": "staticwebassets\\html\\assets\\js\\plugins\\jquery-slimscroll\\jquery.slimscroll.min.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\LiveIT.png",
+      "PackagePath": "staticwebassets\\img\\LiveIT.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\adminpicBlue.png",
+      "PackagePath": "staticwebassets\\img\\adminpicBlue.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\asi-logo-invert.svg",
+      "PackagePath": "staticwebassets\\img\\asi-logo-invert.svg"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\blueBG.png",
+      "PackagePath": "staticwebassets\\img\\blueBG.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\book.png",
+      "PackagePath": "staticwebassets\\img\\book.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\category.png",
+      "PackagePath": "staticwebassets\\img\\category.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\defaultPic.png",
+      "PackagePath": "staticwebassets\\img\\defaultPic.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\forgotpasswordPic.png",
+      "PackagePath": "staticwebassets\\img\\forgotpasswordPic.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\knowbody.png",
+      "PackagePath": "staticwebassets\\img\\knowbody.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\lightyellow.png",
+      "PackagePath": "staticwebassets\\img\\lightyellow.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\profile-logo.png",
+      "PackagePath": "staticwebassets\\img\\profile-logo.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\training.png",
+      "PackagePath": "staticwebassets\\img\\training.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\trainingBG1.png",
+      "PackagePath": "staticwebassets\\img\\trainingBG1.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\usermaster.png",
+      "PackagePath": "staticwebassets\\img\\usermaster.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\yellowBG.png",
+      "PackagePath": "staticwebassets\\img\\yellowBG.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-server.browser.development.js",
+      "PackagePath": "staticwebassets\\lib\\react-dom\\dist\\react-dom-server.browser.development.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-server.browser.production.min.js",
+      "PackagePath": "staticwebassets\\lib\\react-dom\\dist\\react-dom-server.browser.production.min.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-test-utils.development.js",
+      "PackagePath": "staticwebassets\\lib\\react-dom\\dist\\react-dom-test-utils.development.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-test-utils.production.min.js",
+      "PackagePath": "staticwebassets\\lib\\react-dom\\dist\\react-dom-test-utils.production.min.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-unstable-fizz.browser.development.js",
+      "PackagePath": "staticwebassets\\lib\\react-dom\\dist\\react-dom-unstable-fizz.browser.development.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-unstable-fizz.browser.production.min.js",
+      "PackagePath": "staticwebassets\\lib\\react-dom\\dist\\react-dom-unstable-fizz.browser.production.min.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-unstable-native-dependencies.development.js",
+      "PackagePath": "staticwebassets\\lib\\react-dom\\dist\\react-dom-unstable-native-dependencies.development.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-unstable-native-dependencies.production.min.js",
+      "PackagePath": "staticwebassets\\lib\\react-dom\\dist\\react-dom-unstable-native-dependencies.production.min.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\react-dom\\dist\\react-dom.development.js",
+      "PackagePath": "staticwebassets\\lib\\react-dom\\dist\\react-dom.development.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\react-dom\\dist\\react-dom.production.min.js",
+      "PackagePath": "staticwebassets\\lib\\react-dom\\dist\\react-dom.production.min.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\react-dom\\dist\\react-dom.profiling.min.js",
+      "PackagePath": "staticwebassets\\lib\\react-dom\\dist\\react-dom.profiling.min.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\react\\dist\\react.development.js",
+      "PackagePath": "staticwebassets\\lib\\react\\dist\\react.development.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\react\\dist\\react.production.min.js",
+      "PackagePath": "staticwebassets\\lib\\react\\dist\\react.production.min.js"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\lib\\react\\dist\\react.profiling.min.js",
+      "PackagePath": "staticwebassets\\lib\\react\\dist\\react.profiling.min.js"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.ASI.Basecode.KnowledgeApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.ASI.Basecode.KnowledgeApp.props",
+      "PackagePath": "build\\ASI.Basecode.KnowledgeApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.ASI.Basecode.KnowledgeApp.props",
+      "PackagePath": "buildMultiTargeting\\ASI.Basecode.KnowledgeApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.ASI.Basecode.KnowledgeApp.props",
+      "PackagePath": "buildTransitive\\ASI.Basecode.KnowledgeApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

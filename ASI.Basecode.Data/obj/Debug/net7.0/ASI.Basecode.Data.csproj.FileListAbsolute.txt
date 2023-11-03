@@ -26,3 +26,45 @@ C:\Users\Kira\Documents\ASI\ASIBasecodeCsharp_test\ASI.Basecode.Data\obj\Debug\n
 C:\Users\Kira\Documents\ASI\ASIBasecodeCsharp_test\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.pdb
 C:\Users\Kira\Documents\ASI\ASIBasecodeCsharp_test\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.genruntimeconfig.cache
 C:\Users\Kira\Documents\ASI\ASIBasecodeCsharp_test\ASI.Basecode.Data\obj\Debug\net7.0\ref\ASI.Basecode.Data.dll
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.deps.json
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.runtimeconfig.json
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.dll
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.pdb
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.csproj.AssemblyReference.cache
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.AssemblyInfoInputs.cache
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.AssemblyInfo.cs
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.csproj.CoreCompileInputs.cache
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.dll
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Data\obj\Debug\net7.0\refint\ASI.Basecode.Data.dll
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.pdb
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.genruntimeconfig.cache
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Data\obj\Debug\net7.0\ref\ASI.Basecode.Data.dll
+D:\ALLIANCE PROJECT\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.deps.json
+D:\ALLIANCE PROJECT\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.runtimeconfig.json
+D:\ALLIANCE PROJECT\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.dll
+D:\ALLIANCE PROJECT\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.pdb
+D:\ALLIANCE PROJECT\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.csproj.AssemblyReference.cache
+D:\ALLIANCE PROJECT\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\ALLIANCE PROJECT\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.AssemblyInfoInputs.cache
+D:\ALLIANCE PROJECT\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.AssemblyInfo.cs
+D:\ALLIANCE PROJECT\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.csproj.CoreCompileInputs.cache
+D:\ALLIANCE PROJECT\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.dll
+D:\ALLIANCE PROJECT\ASI.Basecode.Data\obj\Debug\net7.0\refint\ASI.Basecode.Data.dll
+D:\ALLIANCE PROJECT\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.pdb
+D:\ALLIANCE PROJECT\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.genruntimeconfig.cache
+D:\ALLIANCE PROJECT\ASI.Basecode.Data\obj\Debug\net7.0\ref\ASI.Basecode.Data.dll
+D:\ALLIANCE TESTING\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.deps.json
+D:\ALLIANCE TESTING\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.runtimeconfig.json
+D:\ALLIANCE TESTING\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.dll
+D:\ALLIANCE TESTING\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.pdb
+D:\ALLIANCE TESTING\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.csproj.AssemblyReference.cache
+D:\ALLIANCE TESTING\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\ALLIANCE TESTING\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.AssemblyInfoInputs.cache
+D:\ALLIANCE TESTING\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.AssemblyInfo.cs
+D:\ALLIANCE TESTING\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.csproj.CoreCompileInputs.cache
+D:\ALLIANCE TESTING\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.dll
+D:\ALLIANCE TESTING\ASI.Basecode.Data\obj\Debug\net7.0\refint\ASI.Basecode.Data.dll
+D:\ALLIANCE TESTING\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.pdb
+D:\ALLIANCE TESTING\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.genruntimeconfig.cache
+D:\ALLIANCE TESTING\ASI.Basecode.Data\obj\Debug\net7.0\ref\ASI.Basecode.Data.dll

@@ -12,5 +12,13 @@ namespace ASI.Basecode.Data.Interfaces
         IQueryable<User> GetUsers();
         bool UserExists(string userId);
         void AddUser(User user);
+
+        public List<User> GetUsersDisplay();
+
+        public User GetUser(int id);
+
+        public void DeleteUser(User user);
+
+        public void UpdateUser(User user);
     }
 }

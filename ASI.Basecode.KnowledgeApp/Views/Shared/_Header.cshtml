@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+<header class="@((ViewBag.LoginView == true) ? "hide-navbar" : "")">
+    <div class="logosec">
+        <div class="hover-pointer">
+            <img src="~/img/knowbody.png"
+                 style="width: 43%; margin-bottom: 13px;" alt="logo"
+                 onclick="window.location.href = '@Url.Action("Index", "Home")';">
+
+        </div>
+    </div>
+    @if (ViewBag.IsRatingPage != true)
+    {
+        <div class="logosec">
+            <div class="search-div mr-20 hover-pointer">
+                <input type="text" id="search" class="input-design" placeholder="Search" />
+            </div>
+        </div>
+    }
+    @if (ViewBag.IsRatingPage == true)
+    {
+        <div class="logosec">
+            <div class="mr-20 hover-pointer">
+                <a class="backtotraining-button" asp-controller="Training" asp-action="Index">Back to Training</a>
+            </div>
+        </div>
+    }
+</header>

@@ -38,3 +38,60 @@ C:\Users\Kira\Documents\ASI\ASIBasecodeCsharp\ASI.Basecode.Resources\obj\Debug\n
 C:\Users\Kira\Documents\ASI\ASIBasecodeCsharp\ASI.Basecode.Resources\obj\Debug\net7.0\refint\ASI.Basecode.Resources.dll
 C:\Users\Kira\Documents\ASI\ASIBasecodeCsharp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.pdb
 C:\Users\Kira\Documents\ASI\ASIBasecodeCsharp\ASI.Basecode.Resources\obj\Debug\net7.0\ref\ASI.Basecode.Resources.dll
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Resources\bin\Debug\net7.0\ASI.Basecode.Resources.deps.json
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Resources\bin\Debug\net7.0\ASI.Basecode.Resources.dll
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Resources\bin\Debug\net7.0\ASI.Basecode.Resources.pdb
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Messages.Common.resources
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Messages.Errors.resources
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Account.resources
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Button.resources
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Screen.resources
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Table.resources
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.TitleText.resources
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.csproj.GenerateResource.cache
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.GeneratedMSBuildEditorConfig.editorconfig
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.AssemblyInfoInputs.cache
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.AssemblyInfo.cs
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.csproj.CoreCompileInputs.cache
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.dll
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\refint\ASI.Basecode.Resources.dll
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.pdb
+D:\.Android Capstone\ELASI PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ref\ASI.Basecode.Resources.dll
+D:\ALLIANCE PROJECT\ASI.Basecode.Resources\bin\Debug\net7.0\ASI.Basecode.Resources.deps.json
+D:\ALLIANCE PROJECT\ASI.Basecode.Resources\bin\Debug\net7.0\ASI.Basecode.Resources.dll
+D:\ALLIANCE PROJECT\ASI.Basecode.Resources\bin\Debug\net7.0\ASI.Basecode.Resources.pdb
+D:\ALLIANCE PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Messages.Common.resources
+D:\ALLIANCE PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Messages.Errors.resources
+D:\ALLIANCE PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Account.resources
+D:\ALLIANCE PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Button.resources
+D:\ALLIANCE PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Screen.resources
+D:\ALLIANCE PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Table.resources
+D:\ALLIANCE PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.TitleText.resources
+D:\ALLIANCE PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.csproj.GenerateResource.cache
+D:\ALLIANCE PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.GeneratedMSBuildEditorConfig.editorconfig
+D:\ALLIANCE PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.AssemblyInfoInputs.cache
+D:\ALLIANCE PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.AssemblyInfo.cs
+D:\ALLIANCE PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.csproj.CoreCompileInputs.cache
+D:\ALLIANCE PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.dll
+D:\ALLIANCE PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\refint\ASI.Basecode.Resources.dll
+D:\ALLIANCE PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.pdb
+D:\ALLIANCE PROJECT\ASI.Basecode.Resources\obj\Debug\net7.0\ref\ASI.Basecode.Resources.dll
+D:\ALLIANCE TESTING\ASI.Basecode.Resources\bin\Debug\net7.0\ASI.Basecode.Resources.deps.json
+D:\ALLIANCE TESTING\ASI.Basecode.Resources\bin\Debug\net7.0\ASI.Basecode.Resources.dll
+D:\ALLIANCE TESTING\ASI.Basecode.Resources\bin\Debug\net7.0\ASI.Basecode.Resources.pdb
+D:\ALLIANCE TESTING\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Messages.Common.resources
+D:\ALLIANCE TESTING\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Messages.Errors.resources
+D:\ALLIANCE TESTING\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Account.resources
+D:\ALLIANCE TESTING\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Button.resources
+D:\ALLIANCE TESTING\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Screen.resources
+D:\ALLIANCE TESTING\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Table.resources
+D:\ALLIANCE TESTING\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.TitleText.resources
+D:\ALLIANCE TESTING\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.csproj.GenerateResource.cache
+D:\ALLIANCE TESTING\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.GeneratedMSBuildEditorConfig.editorconfig
+D:\ALLIANCE TESTING\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.AssemblyInfoInputs.cache
+D:\ALLIANCE TESTING\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.AssemblyInfo.cs
+D:\ALLIANCE TESTING\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.csproj.CoreCompileInputs.cache
+D:\ALLIANCE TESTING\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.dll
+D:\ALLIANCE TESTING\ASI.Basecode.Resources\obj\Debug\net7.0\refint\ASI.Basecode.Resources.dll
+D:\ALLIANCE TESTING\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.pdb
+D:\ALLIANCE TESTING\ASI.Basecode.Resources\obj\Debug\net7.0\ref\ASI.Basecode.Resources.dll

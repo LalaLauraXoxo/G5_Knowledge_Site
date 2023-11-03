@@ -1,0 +1,80 @@
+﻿@using ASI.Basecode.Services.ServiceModels
+@model UserViewModel
+@{
+    ViewData["Title"] = "Create User";
+    ViewBag.IsAddUserPage = true;
+}
+@section styles {
+    <link rel="stylesheet" href="~/css/createuser.css" />
+}
+
+<div class="viewuser-div">
+    <div class="inside-viewuser">
+        <div class="img-div-left">
+            <div class="dp-div">
+                <img src="~/img/defaultPic.png"
+                     class="dpic-img hover-pointer"
+                     alt="dp">
+            </div>
+        </div>
+        <div class="form-div-right">
+            <form method="post" action="CreateUser">
+               <div class="inputs-div">
+
+                    <div class="left-side-div">
+                        <label class="inputs-label" for="userId">USER ID</label>
+                        <input type="text" id="userId" class="input-design"
+                               asp-for="UserId" />
+                        <span asp-validation-for="UserId" class="text-danger"></span><br>
+
+                        <label class="mt-3 inputs-label" for="firstName">FIRST NAME</label>
+                        <input type="text" id="firstName" class="input-design"
+                               asp-for="FirstName" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span><br>
+
+                        <label class="mt-3 inputs-label" for="lastName">LAST NAME</label>
+                        <input type="text" id="lastName" class="input-design"
+                               asp-for="LastName" />
+                        <span asp-validation-for="LastName" class="text-danger"></span><br>
+
+                        <label class="mt-3 inputs-label" for="username">USERNAME</label>
+                        <input type="text" id="username" class="input-design"
+                               asp-for="Username" />
+                        <span asp-validation-for="Username" class="text-danger"></span><br>
+                    </div>
+                   
+                    <div class ="right-side-div">
+                        <label class="mt-3 inputs-label" for="name">EMAIL</label>
+                        <input type="text" id="email" class="input-design"
+                               asp-for="Email" />
+                        <span asp-validation-for="Email" class="text-danger"></span><br>
+
+                        <label class="mt-3 inputs-label" for="password">PASSWORD</label>
+                        <input type="password" id="password" class="input-design"
+                               asp-for="Password" />
+                        <span asp-validation-for="Password" class="text-danger"></span><br>
+
+                        <label class="mt-3 inputs-label" for="confirmpassword">CONFIRM PASSWORD</label>
+                        <input type="password" id="confirmpassword" class="input-design"
+                               asp-for="ConfirmPassword" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span><br>
+
+                        <div class="bottom-buttons">
+                            <button class="create-button" type="submit">
+                                Create User
+                            </button>
+                            <a style="text-decoration: none;" class="back-button-div" asp-controller="UserMaster" asp-action="UserMaster">
+                                Back
+                            </a>
+                        </div>
+                        
+                       
+                    </div>
+               </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section scripts{
+}
+

@@ -1,0 +1,60 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+<header class="@((ViewBag.LoginView == true) ? "hide-navbar" : "")">
+    <div class="logosec">
+        <div class="hover-pointer">
+            <img src="~/img/logo.png"
+                 style="width: 100%;" alt="logo"
+                 onclick="window.location.href = '@Url.Action("Index", "Home")';">
+
+        </div>
+        <span class="logoText">
+            @if (ViewBag.IsUserMasterPage == true)
+            {
+                <span>USER MASTERLIST</span>
+            }
+            else if (ViewBag.IsViewUserPage == true)
+            {
+                <span>USER DETAILS</span>
+            }
+            else if (ViewBag.IsAddUserPage == true)
+            {
+                <span>ADD USER</span>
+            }
+            else if (ViewBag.IsEditUserPage == true)
+            {
+                <span>EDIT USER</span>
+            }
+            else if (ViewBag.IsTrainingCategoryPage == true)
+            {
+                <span>TRAINING CATEGORIES</span>
+            }
+            else
+            {
+                <span>ADMIN DASHBOARD</span>
+            }
+        </span>
+    </div>
+    <div class="logosec">
+        <div class="nameText">@HttpContextAccessor.HttpContext.Session.GetString("UserName")</div>
+        <div class="mr-20 hover-pointer" style="position: relative">
+            <div class="dp">
+                <img src="~/img/adminpicBlue.png"
+                     class="dpicn hover-pointer"
+                     alt="dp">
+            </div>
+            <div class="dropdown">
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-gear"></i>
+                        <a href="#">Settings</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <a asp-action="SignOutUser" asp-controller="Account">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>

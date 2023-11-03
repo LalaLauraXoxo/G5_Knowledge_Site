@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@section styles {
+    <link rel="stylesheet" href="~/css/indexKL.css" />
+}
+
+<div class="container-div">
+  <div class="inside-container">
+        <p class="highrated-p">HIGHLY RATED TRAINING PROGRAMS</p>
+        <div class="training-container-row">
+            @for (int i = 0; i < 4; i++) 
+            {
+                <a class="training-container-div" asp-controller="Training" asp-action="Index">
+                    <p class="title-p">TRAINING TITLE</p>
+                    <p class="desc-p">Master the fundamentals of C# programming and object-oriented principles, gaining the skills to build robust and maintainable applications.</p>
+                    <div class="author-rating-div">
+                        <p class="author-p">Author: Author Neri</p>
+                        <div style="display: flex;">
+                            <div class="star-rating" id="rating">
+                                <span data-value="1" class="star"><i class="fas fa-star star-design"></i></span>
+                                <span data-value="2" class="star"><i class="fas fa-star star-design"></i></span>
+                                <span data-value="3" class="star"><i class="fas fa-star star-design"></i></span>
+                                <span data-value="4" class="star"><i class="fas fa-star star-design"></i></span>
+                                <span data-value="5" class="star"><i class="fas fa-star star-design"></i></span>
+                            </div>
+                            <input type="hidden" id="rating-input" value="0" />
+                            <p class="rating-p">5.0</p>
+                        </div>
+                    </div>
+                </a>
+            }
+        </div>
+
+        <p class="alltraining-p">ALL TRAINING PROGRAMS</p>
+        <div class="training-container-row">
+            @for (int i = 0; i < 4; i++)
+            {
+                <div class="training-container-div">
+                    <p class="title-p">TRAINING TITLE</p>
+                    <p class="desc-p">Master the fundamentals of C# programming and object-oriented principles, gaining the skills to build robust and maintainable applications.</p>
+                    <div class="author-rating-div">
+                        <p class="author-p">Author: Author Neri</p>
+                        <div style="display: flex;">
+                            <div class="star-rating" id="rating">
+                                <span data-value="1" class="star"><i class="fas fa-star star-design"></i></span>
+                                <span data-value="2" class="star"><i class="fas fa-star star-design"></i></span>
+                                <span data-value="3" class="star"><i class="fas fa-star star-design"></i></span>
+                                <span data-value="4" class="star"><i class="fas fa-star star-design"></i></span>
+                                <span data-value="5" class="star"><i class="fas fa-star star-design"></i></span>
+                            </div>
+                            <input type="hidden" id="rating-input" value="0" />
+                            <p class="rating-p">5.0</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+  </div>
+</div>
+

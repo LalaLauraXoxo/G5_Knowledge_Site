@@ -1,0 +1,124 @@
+﻿body {
+    overflow: auto;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.container-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inside-container {
+    margin-top: 50px;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.title-div {
+    background-color: #086788;
+    margin-top: 10px;
+    border-radius: 50px;
+    border-width: 2px;
+    background-color: #086788;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+.title-p {
+    font-size: 30px;
+    font-weight: 600;
+    color: #F0C808;
+    margin-top: 50px;
+}
+.author-p {
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: -5px;
+}
+.desc-div {
+    background-color: #086788;
+    margin-top: 20px;
+    border-radius: 50px;
+    border-width: 2px;
+    background-color: #086788;
+    padding: 50px;
+}
+.desc-title-p {
+    font-size: 23px;
+    font-weight: 600;
+    color: #F0C808;
+}
+.desc-p{
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+}
+.category-div{
+    margin-top: 30px;
+}
+.category-title-p {
+    font-size: 23px;
+    font-weight: 600;
+    color: #F0C808;
+}
+.category-p {
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: -15px;
+}
+.rating-div {
+    margin-top: 15px;
+}
+.rating-title-p {
+    font-size: 23px;
+    font-weight: 600;
+    color: #F0C808;
+}
+.rating-p {
+    font-size: 23px;
+    font-weight: 600;
+    color: #F0C808;
+    margin-left: 10px;
+    margin-top: -3px;
+}
+.rate-button {
+    background-color: #F0C808;
+    border-radius: 20px;
+}
+.rateme-p {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding-top: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.topic-div {
+    background-color: #F0C808;
+    padding: 30px;
+    height: 100%;
+    border-radius: 50px;
+}
+.topics-p {
+    color: #086788;
+    font-size: 25px;
+    font-weight: bold;
+}
+a{
+    text-decoration: none !important;
+}
+.star-design {
+    font-size: 18px;
+    color: #F0C808;
+}
+
+/*MODAL*/
+
