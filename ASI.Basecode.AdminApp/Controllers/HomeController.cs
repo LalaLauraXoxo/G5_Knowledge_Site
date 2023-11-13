@@ -1,5 +1,6 @@
 ﻿using ASI.Basecode.AdminApp.Mvc;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -32,6 +33,9 @@ namespace ASI.Basecode.AdminApp.Controllers
         /// Returns Home View.
         /// </summary>
         /// <returns> Home View </returns>
+        /// 
+        [HttpGet]
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View();

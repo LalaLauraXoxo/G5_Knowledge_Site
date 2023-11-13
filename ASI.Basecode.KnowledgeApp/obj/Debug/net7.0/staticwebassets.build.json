@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Kcs9hN5vRcq+EfM6U+BaGke9wfexXZwqmUAWkzCBi4E=",
+  "Hash": "KVQzbIyVKO8DO5WWajy+iexHgsRzYEiwdcePb59ZceQ=",
   "Source": "ASI.Basecode.KnowledgeApp",
   "BasePath": "_content/ASI.Basecode.KnowledgeApp",
   "Mode": "Default",
@@ -372,6 +372,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\profile-logo.png"
+    },
+    {
+      "Identity": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\sample author.png",
+      "SourceId": "ASI.Basecode.KnowledgeApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecode.KnowledgeApp",
+      "RelativePath": "img/sample author.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\sample author.png"
     },
     {
       "Identity": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\training.png",

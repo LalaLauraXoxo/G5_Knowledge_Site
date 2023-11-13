@@ -85,6 +85,10 @@
       "PackagePath": "staticwebassets\\img\\profile-logo.png"
     },
     {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\sample author.png",
+      "PackagePath": "staticwebassets\\img\\sample author.png"
+    },
+    {
       "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\training.png",
       "PackagePath": "staticwebassets\\img\\training.png"
     },

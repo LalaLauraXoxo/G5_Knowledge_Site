@@ -8,14 +8,10 @@ namespace ASI.Basecode.Services.Interfaces
     public interface IUserService
     {
         LoginResult AuthenticateUser(string userid, string password, ref User user);
-        void AddUser(UserViewModel model);
-
+        void AddUser(UserViewModel model, string username);
         public List<User> GetUsersDisplay();
-
         public User GetUser(int id);
-
         public bool DeleteUser(UserViewModel model);
-
-        public bool UpdateUser(UserViewModel model);
+        public bool UpdateUser(UserViewModel model, string username);
     }
 }

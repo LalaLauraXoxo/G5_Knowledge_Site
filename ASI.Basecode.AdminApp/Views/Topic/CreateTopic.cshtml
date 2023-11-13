@@ -1,0 +1,34 @@
+﻿@using ASI.Basecode.Services.ServiceModels
+@model TopicViewModel
+@section styles {
+    <link rel="stylesheet" href="~/css/" />
+}
+
+@{
+    ViewData["Title"] = "Add Topic";
+    ViewBag.IsAddTopicsPage = true;
+}
+
+
+<div class="screen-container">
+    <div class="inside-container">
+        <form method="post" enctype="multipart/form-data" asp-action="CreateTopic">
+            <div class="form-group">
+                <label>TOPIC NAME</label>
+                <input type="text" class="form-control" asp-for="TopicName">
+            </div>
+            <div class="form-group">
+                <label>TOPIC DESC</label>
+                <input type="text" class="form-control" asp-for="TopicDesc">
+            </div>
+
+            <div class="form-group">
+                <label>CHOOSE FILE</label>
+                <input asp-for="ImageFile" type="file" accept=".pdf, .ppt, .pptx, .mp4, .avi, .mov" class="form-control-file">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+</div>

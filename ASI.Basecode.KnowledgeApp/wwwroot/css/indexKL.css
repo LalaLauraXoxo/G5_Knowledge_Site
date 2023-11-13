@@ -32,9 +32,6 @@
     background-color: #086788;
     width: 23%;
     padding: 30px;
-    background-image: url('/img/trainingBG1.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
 }
 .title-p {
     color: #F0C808;
@@ -71,7 +68,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 50px;
 }
 
 .training-container-div {

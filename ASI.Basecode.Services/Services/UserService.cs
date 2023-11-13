@@ -33,7 +33,7 @@ namespace ASI.Basecode.Services.Services
             return user != null ? LoginResult.Success : LoginResult.Failed;
         }
 
-        public void AddUser(UserViewModel model)
+        public void AddUser(UserViewModel model, string username)
         {
             var user = new User();
             if (!_repository.UserExists(model.UserId))
@@ -42,8 +42,8 @@ namespace ASI.Basecode.Services.Services
                 user.Password = PasswordManager.EncryptPassword(model.Password);
                 user.CreatedTime = DateTime.Now;
                 user.UpdatedTime = DateTime.Now;
-                user.CreatedBy = System.Environment.UserName;
-                user.UpdatedBy = System.Environment.UserName;
+                user.CreatedBy = username;
+                user.UpdatedBy = username;
 
                 _repository.AddUser(user);
             }
@@ -76,7 +76,7 @@ namespace ASI.Basecode.Services.Services
             return false;
         }
 
-        public bool UpdateUser(UserViewModel model)
+        public bool UpdateUser(UserViewModel model, string username)
         {
             User user = _repository.GetUser(model.Id);
             if (user != null)
@@ -89,7 +89,7 @@ namespace ASI.Basecode.Services.Services
                 //user.Password = model.Password;
                 user.Password = PasswordManager.EncryptPassword(model.Password);
 
-                user.UpdatedBy = "Username";
+                user.UpdatedBy = username;
                 user.CreatedTime = DateTime.Now;
 
                 _repository.UpdateUser(user);

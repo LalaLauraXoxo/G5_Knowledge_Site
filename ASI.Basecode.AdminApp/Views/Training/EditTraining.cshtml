@@ -1,0 +1,72 @@
+﻿@using ASI.Basecode.Services.ServiceModels
+@model TrainingViewModel
+@section styles {
+    <link rel="stylesheet" href="~/css/" />
+}
+@{
+    ViewData["Title"] = "Edit Training";
+    ViewBag.IsEditTrainingPage = true;
+}
+
+<div class="pt-5">
+
+    <h1>Edit Training</h1>
+
+    <form method="post" asp-action="EditTraining">
+        <input type="hidden" class="form-control" asp-for="Id">
+        <div class="form-group">
+            <label>TRAINING NAME</label>
+            <input type="text" class="form-control" asp-for="TrainingName">
+        </div>
+        <div class="form-group">
+            <label>TRAINING AUTHOR</label>
+            <input type="text" class="form-control" asp-for="TrainingAuthor">
+        </div>
+        <div class="form-group">
+            <label>DESCRIPTION</label>
+            <textarea class="form-control" rows="3" asp-for="TrainingDesc"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>CATEGORY</label>
+            <select class="form-control" asp-for="CategoryId">
+                @foreach (var category in Model.Categories)
+                {
+                    <option value="@category.Id" selected="@(category.Id == Model.CategoryId)">@category.CategoryName</option>
+                }
+            </select>
+        </div>
+        <div style="width: 20%">
+            <img id="previewImage" src="@Model.ImageUrl" style="width: 100%;" alt="Training Image">
+        </div><br />
+
+        <div class="form-group">
+            <label>CHOOSE IMAGE</label>
+            <input asp-for="ImageFile" type="file" accept=".png" class="form-control-file" onchange="previewFile()">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+@section scripts{
+    <script>
+        function previewFile() {
+            var preview = document.getElementById('previewImage');
+            var fileInput = document.querySelector('input[type=file]');
+            var file = fileInput.files[0];
+            var reader = new FileReader();
+
+            reader.onloadend = function () {
+                preview.src = reader.result;
+            };
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "@Model.ImageUrl";
+            }
+        }
+    </script>
+}

@@ -6,17 +6,30 @@ using Microsoft.AspNetCore.Mvc;
 using System.IO;
 using System;
 using ASI.Basecode.Services.Manager;
+using ASI.Basecode.AdminApp.Mvc;
+using AutoMapper;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 namespace ASI.Basecode.AdminApp.Controllers
 {
-    public class UserMasterController : Controller
+    public class UserMasterController : ControllerBase<UserMasterController>
     {
         private readonly IUserService _UserService;
 
-        public UserMasterController(IUserService userService)
+        public UserMasterController(IUserService userService,
+                                    IHttpContextAccessor httpContextAccessor,
+                                    ILoggerFactory loggerFactory,
+                                    IConfiguration configuration,
+                                    IMapper mapper = null) : base(httpContextAccessor, loggerFactory, configuration, mapper
+                                   )
         {
             _UserService = userService;
         }
+
+        [HttpGet]
+        [AllowAnonymous]
         public IActionResult UserMaster()
         {
             var users = _UserService.GetUsersDisplay();
@@ -24,17 +37,19 @@ namespace ASI.Basecode.AdminApp.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult CreateUser()
         {
             return View();
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public IActionResult CreateUser(UserViewModel model)
         {
             try
             {
-                _UserService.AddUser(model);
+                _UserService.AddUser(model, this.UserName);
                 return RedirectToAction("UserMaster", "UserMaster");
             }
             catch (InvalidDataException ex)
@@ -94,7 +109,7 @@ namespace ASI.Basecode.AdminApp.Controllers
                     FirstName = user.FirstName,
                     LastName = user.LastName,
                     Email = user.Email,
-                    Username = user.Username,
+                    Username = this.UserName,
                     Password = PasswordManager.DecryptPassword(user.Password),
 
                 };
@@ -105,7 +120,7 @@ namespace ASI.Basecode.AdminApp.Controllers
         [HttpPost]
         public IActionResult EditUser(UserViewModel model)
         {
-            bool isUpdated = _UserService.UpdateUser(model);
+            bool isUpdated = _UserService.UpdateUser(model, this.UserName);
             if (isUpdated)
             {
                 return RedirectToAction("UserMaster", "UserMaster");

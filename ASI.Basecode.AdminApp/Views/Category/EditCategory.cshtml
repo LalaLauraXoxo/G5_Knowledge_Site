@@ -1,0 +1,26 @@
+﻿@using ASI.Basecode.Services.ServiceModels
+@model CategoryViewModel
+
+@{
+    ViewData["Title"] = "Edit Category";
+    ViewBag.IsEditCategoryPage = true;
+}
+
+<div class="pt-5">
+
+    <h1>Edit Category</h1>
+
+    <form method="post" asp-action="EditCategory">
+        <input type="hidden" class="form-control" asp-for="Id">
+        <div class="form-group">
+            <label>CATEGORY NAME</label>
+            <input type="text" class="form-control" asp-for="CategoryName">
+        </div>
+        <div class="form-group">
+            <label>DESCRIPTION</label>
+            <textarea class="form-control" rows="3" asp-for="CategoryDesc"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>

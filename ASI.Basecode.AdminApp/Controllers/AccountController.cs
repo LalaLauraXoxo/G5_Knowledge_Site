@@ -114,7 +114,7 @@ namespace ASI.Basecode.AdminApp.Controllers
         {
             return View();
         }
-
+        /*
         [HttpPost]
         [AllowAnonymous]
         public IActionResult Register(UserViewModel model)
@@ -134,6 +134,7 @@ namespace ASI.Basecode.AdminApp.Controllers
            // }
             return View();
         }
+        */
 
         /// <summary>
         /// Sign Out current account and return login view.

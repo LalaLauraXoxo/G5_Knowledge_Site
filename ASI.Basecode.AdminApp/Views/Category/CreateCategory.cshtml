@@ -1,0 +1,29 @@
+﻿@using ASI.Basecode.Services.ServiceModels
+@model CategoryViewModel
+@section styles {
+    <link rel="stylesheet" href="~/css/createcategory.css" />
+}
+
+@{
+    ViewData["Title"] = "Add Category";
+    ViewBag.IsAddCategoryPage = true;
+}
+
+
+<div class="screen-container">
+    <div class="inside-container">
+        <form method="post" asp-action="CreateCategory">
+            <div class="form-group">
+                <label>CATEGORY NAME</label>
+                <input type="text" class="form-control" asp-for="CategoryName">
+            </div>
+            <div class="form-group">
+                <label>CATAGORY DESC</label>
+                <input type="text" class="form-control" asp-for="CategoryDesc">
+            </div>
+           
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+</div>

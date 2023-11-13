@@ -1,14 +1,60 @@
-﻿
+﻿@model List<ASI.Basecode.Data.Models.Category>
 @section styles {
-    <link rel="stylesheet" href="~/css/" />
+    <link rel="stylesheet" href="~/css/trainingcategory.css" />
 }
 
 @{
-    ViewData["Title"] = "User Master";
+    ViewData["Title"] = "Training Categories";
     ViewBag.IsTrainingCategoryPage = true;
 }
-<div style="text-align: center;">
-    <p>TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</p>
-    <p>TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</p>
-    <p>TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</p>
+<div class="userlist-div">
+    <div class="inside-userlist">
+        <div class="addIcon-div">
+            <a class="add-icon-div" asp-controller="Category" asp-action="CreateCategory">
+                <i class="fa fa-plus add-icon"></i>
+            </a>
+        </div>
+        <div class="table-container">
+            <table class="table table-borderless">
+                <thead class="custom-thead">
+                    <tr>
+                        <th scope="col">CATEGORY ID</th>
+                        <th scope="col">CATEGORY NAME</th>
+                        <th scope="col">ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     @if (Model != null && Model.Count > 0)
+                    {
+                        @foreach (var category in Model)
+                        {
+                            <tr style="color:white">
+                                <td>@category.Id</td>
+                                <td>@category.CategoryName</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <form asp-controller="Category" asp-action="ViewCategory" method="get">
+                                            <input type="hidden" name="id" value="@category.Id" />
+                                            <button type="submit" class="btn btn-primary btn-spacing"><i class="far fa-eye"></i></button>
+                                        </form>
+                                        <form asp-controller="Category" asp-action="EditCategory" method="get">
+                                            <input type="hidden" name="id" value="@category.Id" />
+                                            <button type="submit" class="btn btn-success btn-spacing"><i class="fa fa-pen"></i> </button>
+                                        </form>
+                                        <form asp-controller="Category" asp-action="DeleteCategory" method="post">
+                                            <input type="hidden" name="id" value="@category.Id" />
+                                            <button type="submit" class="btn btn-danger btn-spacing"><i class="fa fa-trash-can"></i></button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }else{
+                        <p>No categories yet</p>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<ASI.Basecode.Services.ServiceModels.TrainingViewModel>
+@{
     ViewData["Title"] = "Home Page";
 }
 @section styles {
@@ -9,13 +10,14 @@
   <div class="inside-container">
         <p class="highrated-p">HIGHLY RATED TRAINING PROGRAMS</p>
         <div class="training-container-row">
-            @for (int i = 0; i < 4; i++) 
+            @foreach (var training in Model) 
             {
                 <a class="training-container-div" asp-controller="Training" asp-action="Index">
-                    <p class="title-p">TRAINING TITLE</p>
-                    <p class="desc-p">Master the fundamentals of C# programming and object-oriented principles, gaining the skills to build robust and maintainable applications.</p>
+                    <p class="title-p">@training.TrainingName</p>
+                    <img src="@training.ImageUrl"
+                         style="width: 100%;" alt="Image">
                     <div class="author-rating-div">
-                        <p class="author-p">Author: Author Neri</p>
+                        <p class="author-p">Author: @training.TrainingAuthor</p>
                         <div style="display: flex;">
                             <div class="star-rating" id="rating">
                                 <span data-value="1" class="star"><i class="fas fa-star star-design"></i></span>
@@ -34,13 +36,14 @@
 
         <p class="alltraining-p">ALL TRAINING PROGRAMS</p>
         <div class="training-container-row">
-            @for (int i = 0; i < 4; i++)
+            @foreach (var training in Model)
             {
                 <div class="training-container-div">
-                    <p class="title-p">TRAINING TITLE</p>
-                    <p class="desc-p">Master the fundamentals of C# programming and object-oriented principles, gaining the skills to build robust and maintainable applications.</p>
+                    <p class="title-p">@training.TrainingName</p>
+                    <img src="@training.ImageUrl"
+                         style="width: 100%;" alt="Image">
                     <div class="author-rating-div">
-                        <p class="author-p">Author: Author Neri</p>
+                        <p class="author-p">Author: @training.TrainingAuthor</p>
                         <div style="display: flex;">
                             <div class="star-rating" id="rating">
                                 <span data-value="1" class="star"><i class="fas fa-star star-design"></i></span>

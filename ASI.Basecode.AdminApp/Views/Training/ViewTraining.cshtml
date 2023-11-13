@@ -1,0 +1,47 @@
+﻿@using ASI.Basecode.Services.ServiceModels
+@model TrainingViewModel
+
+@section styles {
+    <link rel="stylesheet" href="~/css/" />
+}
+@{
+    ViewData["Title"] = "View Training";
+    ViewBag.IsViewTrainingPage = true;
+}
+
+<div class="viewuser-div">
+    <div class="inside-viewuser">
+        <div>
+            <form method="post" asp-action="ViewTraining">
+                <div class="inputs-div">
+                    <div>
+                        <input type="hidden" class="input-design" asp-for="Id">
+                        <label for="trainingName" class="inputs-label">TRAINING NAME</label>
+                        <input type="text" class="input-design" asp-for="TrainingName" readonly><br><br>
+                        <div style="width: 20%">
+                            <img src="@Model.ImageUrl" style="width: 100%;" alt="Training Image">
+                        </div><br />
+                        <label for="trainingDesc" class="inputs-label">DESCRIPTION</label>
+                        <input type="text" class="input-design" asp-for="TrainingDesc" readonly><br><br>
+                        <label for="trainingDesc" class="inputs-label">AUTHOR</label>
+                        <input type="text" class="input-design" asp-for="TrainingAuthor" readonly><br><br>
+                        <label for="trainingDesc" class="inputs-label">CATEGORY</label>
+                        <input type="text" class="input-design" asp-for="CategoryName" readonly><br><br>
+                    </div>
+                    <div>
+                        <a asp-controller="Topic" asp-action="Topics">
+                            <p>View Topic</p>
+                        </a>
+                    </div>
+                    <div class="rightside-div">
+                        <a class="back-button-div" asp-controller="Training" asp-action="Trainings">
+                            <p class="back-button-p">BACK TO LIST</p>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section scripts{
+}

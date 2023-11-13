@@ -32,6 +32,7 @@ configurer.ConfigureApp(app, app.Environment);
 
 app.MapControllerRoute(
     name: "default",
+    //pattern: "{controller=UserMaster}/{action=UserMaster}");
     pattern: "{controller=Account}/{action=Login}");
 app.MapControllers();
 app.MapRazorPages();

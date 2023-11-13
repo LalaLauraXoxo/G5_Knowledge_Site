@@ -1,0 +1,62 @@
+﻿@model List<ASI.Basecode.Data.Models.Topic>
+@section styles {
+    <link rel="stylesheet" href="~/css/topics.css" />
+}
+
+@{
+    ViewData["Title"] = "Topics";
+    ViewBag.IsTopicsPage = true;
+}
+<div class="userlist-div">
+    <div class="inside-userlist">
+        <div class="addIcon-div">
+            <a class="add-icon-div" asp-controller="Topic" asp-action="CreateTopic">
+                <i class="fa fa-plus add-icon"></i>
+            </a>
+        </div>
+        <div class="table-container">
+            <table class="table table-borderless">
+                <thead class="custom-thead">
+                    <tr>
+                        <th scope="col">TOPIC ID</th>
+                        <th scope="col">TOPIC NAME </th>
+                        <th scope="col">ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        @foreach (var topic in Model)
+                        {
+                            <tr style="color:white">
+                                <td>@topic.Id</td>
+                                <td>@topic.TopicName</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <form asp-controller="Topic" asp-action="ViewTopic" method="get">
+                                            <input type="hidden" name="id" value="@topic.Id" />
+                                            <button type="submit" class="btn btn-primary btn-spacing"><i class="far fa-eye"></i></button>
+                                        </form>
+                                        <form asp-controller="Topic" asp-action="EditTopic" method="get">
+                                            <input type="hidden" name="id" value="@topic.Id" />
+                                            <button type="submit" class="btn btn-success btn-spacing"><i class="fa fa-pen"></i> </button>
+                                        </form>
+                                        <form asp-controller="Topic" asp-action="DeleteTopic" method="post">
+                                            <input type="hidden" name="id" value="@topic.Id" />
+                                            <button type="submit" class="btn btn-danger btn-spacing"><i class="fa fa-trash-can"></i></button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <p>No topics under this training.</p>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\createcategory.css",
+      "PackagePath": "staticwebassets\\css\\createcategory.css"
+    },
+    {
       "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\createuser.css",
       "PackagePath": "staticwebassets\\css\\createuser.css"
     },
@@ -29,8 +33,20 @@
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\topics.css",
+      "PackagePath": "staticwebassets\\css\\topics.css"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\trainingcategory.css",
+      "PackagePath": "staticwebassets\\css\\trainingcategory.css"
+    },
+    {
       "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\usermaster.css",
       "PackagePath": "staticwebassets\\css\\usermaster.css"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\viewcategory.css",
+      "PackagePath": "staticwebassets\\css\\viewcategory.css"
     },
     {
       "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\viewuser.css",
