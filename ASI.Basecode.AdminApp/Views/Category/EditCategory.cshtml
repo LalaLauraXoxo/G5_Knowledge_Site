@@ -1,26 +1,32 @@
 ﻿@using ASI.Basecode.Services.ServiceModels
 @model CategoryViewModel
 
+@section styles {
+    <link rel="stylesheet" href="~/css/editcategory.css" />
+}
 @{
     ViewData["Title"] = "Edit Category";
     ViewBag.IsEditCategoryPage = true;
 }
 
-<div class="pt-5">
+<div class="container-fluid editcat-div">
+    <div class="inside-editcat">
 
-    <h1>Edit Category</h1>
-
-    <form method="post" asp-action="EditCategory">
-        <input type="hidden" class="form-control" asp-for="Id">
-        <div class="form-group">
-            <label>CATEGORY NAME</label>
-            <input type="text" class="form-control" asp-for="CategoryName">
-        </div>
-        <div class="form-group">
-            <label>DESCRIPTION</label>
-            <textarea class="form-control" rows="3" asp-for="CategoryDesc"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+                <form method="post" asp-action="EditCategory">
+                    <input type="hidden" class="form-control" asp-for="Id">
+                    <div class="form-group">
+                        <label class="label-cat-name">CATEGORY NAME</label>
+                        <input type="text" class="form-control-cat-name" asp-for="CategoryName">
+                        <label class="label-cat-description">DESCRIPTION</label>
+                        <input type="text" class="form-control-cat-description" asp-for="CategoryDesc">                
+                        <label class="label-cat-training-prog">SELECT TRAINING PROGRAMS</label>
+                        <input type="text" class="form-control-cat-training-prog"> 
+                    </div>
+                    <button class ="create-button" type="submit">Save Changes</button>
+                    <a class="back-button" asp-controller="Category" asp-action="TrainingCategories">Back</a>
+                </form>
+               
+    </div>
 
 </div>
+<
