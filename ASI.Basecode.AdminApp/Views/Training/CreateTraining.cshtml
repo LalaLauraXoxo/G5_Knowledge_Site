@@ -1,47 +1,52 @@
 ﻿@using ASI.Basecode.Services.ServiceModels
 @model TrainingViewModel
 @section styles {
-    <link rel="stylesheet" href="~/css/" />
+    <link rel="stylesheet" href="~/css/trainingcategory.css" />
 }
-
 @{
     ViewData["Title"] = "Add Training";
     ViewBag.IsAddTrainingPage = true;
 }
 
-
 <div class="screen-container">
-    <div class="inside-container">
-        <form method="post" enctype="multipart/form-data" asp-action="CreateTraining" >
-            <div class="form-group">
-                <label>TRAINING NAME</label>
-                <input type="text" class="form-control" asp-for="TrainingName">
-            </div>
-            <div class="form-group">
-                <label>TRANING DESC</label>
-                <input type="text" class="form-control" asp-for="TrainingDesc">
-            </div>
-            <div class="form-group">
-                <label>AUTHOR</label>
-                <input type="text" class="form-control" asp-for="TrainingAuthor">
-            </div>
+    <div class="inside-container container px-0">
+        <form class="p-5" method="post" enctype="multipart/form-data" asp-action="CreateTraining" >
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>TRAINING TITLE</label>
+                        <input type="text" class="form-control" asp-for="TrainingName">
+                    </div>
+                    <div class="form-group">
+                        <label>DESCRIPTION</label>
+                        <textarea type="text" class="form-control" asp-for="TrainingDesc"></textarea>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>AUTHOR</label>
+                        <input type="text" class="form-control" asp-for="TrainingAuthor">
+                    </div>
 
-            <div class="form-group">
-                <label>CATEGORY</label>
-                <select class="form-control" asp-for="CategoryId">
-                    @foreach (var category in ViewBag.Categories)
-                    {
-                        <option value="@category.Id">@category.CategoryName</option>
-                    }
-                </select>
+                    <div class="form-group">
+                        <label>CATEGORY</label>
+                        <select class="form-control" asp-for="CategoryId">
+                            @foreach (var category in ViewBag.Categories)
+                            {
+                                <option value="@category.Id">@category.CategoryName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>CHOOSE IMAGE</label>
+                        <input asp-for="ImageFile" type="file" accept=".png, .jpg" class="form-control-file">
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label>CHOOSE IMAGE</label>
-                <input asp-for="ImageFile" type="file" accept=".png, .jpg" class="form-control-file" >
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary">ADD TRAINING</button>
+                <button class="btn btn-primary" asp-controller="Training" asp-action="Trainings">BACK TO LIST</button>
             </div>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-
 </div>
