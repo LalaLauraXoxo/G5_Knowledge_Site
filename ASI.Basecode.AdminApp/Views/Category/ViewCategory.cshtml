@@ -16,32 +16,37 @@
                 <div class="form-group">
                     <input type="hidden" class="form-control" asp-for="Id">
                 </div>
-                <div class="form-group">
-                    <label for="categoryName">CATEGORY NAME</label>
-                    <input type="text" class="form-control" asp-for="CategoryName" readonly>
+                <div class="row">
+                    <div class="column" style="">
+                    
+                            <label for="categoryName" class="categoryhead">CATEGORY NAME</label>
+                            <input type="text" class="form-control-plaintext" asp-for="CategoryName" readonly>
+                    
+                    
+                            <label for="categoryDesc" class="categoryhead">DESCRIPTION</label>
+                            <textarea class="form-control-plaintext" asp-for="CategoryDesc" readonly></textarea>
+                    
+                    </div>
+                    <div class="column">
+                        <label for="trainings" class="categoryhead">TRAINING PROGRAMS</label><br>
+                        <label for="training" class="subhead">under this category: </label><br><br>
+                        @if (Model.Trainings != null && Model.Trainings.Any())
+                        {
+                            <ul>
+                                @foreach (var training in Model.Trainings)
+                                {
+                                    <li>@training.TrainingName</li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <p class="msg">Oh no! There appears to be no trainings in here yet!</p>
+                        }
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="categoryDesc">DESCRIPTION</label>
-                    <input type="text" class="form-control" asp-for="CategoryDesc" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="trainings">TRAINING PROGRAMS UNDER THIS CATEGORY</label>
-                    @if (Model.Trainings != null && Model.Trainings.Any())
-                    {
-                        <ul>
-                            @foreach (var training in Model.Trainings)
-                            {
-                                <li>@training.TrainingName</li>
-                            }
-                        </ul>
-                    }
-                    else
-                    {
-                        <p>No Trainings Added</p>
-                    }
-                </div>
-                <div class="form-group">
-                    <a class="btn btn-secondary" asp-controller="Category" asp-action="TrainingCategories">
+                    <a  class="btn btn-danger" asp-controller="Category" asp-action="TrainingCategories">
                         BACK TO LIST
                     </a>
                 </div>
