@@ -11,16 +11,16 @@
     <div class="inside-userlist">
         <div class="addIcon-div">
             <a class="add-icon-div" asp-controller="Category" asp-action="CreateCategory">
-                <i class="fa fa-plus add-icon"></i>
+                <i class="fa fa-plus-circle add-icon"></i>
             </a>
         </div>
         <div class="table-container">
             <table class="table table-borderless">
                 <thead class="custom-thead">
                     <tr>
-                        <th scope="col">CATEGORY ID</th>
-                        <th scope="col">CATEGORY NAME</th>
-                        <th scope="col">ACTIONS</th>
+                        <th scope="col" class="b1">CATEGORY ID</th>
+                        <th scope="col" class="b">CATEGORY NAME</th>
+                        <th scope="col" class="b2">ACTIONS</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,22 +28,22 @@
                     {
                         @foreach (var category in Model)
                         {
-                            <tr style="color:white">
+                            <tr style="color:white; text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);">
                                 <td>@category.Id</td>
                                 <td>@category.CategoryName</td>
                                 <td>
                                     <div class="btn-group">
                                         <form asp-controller="Category" asp-action="ViewCategory" method="get">
                                             <input type="hidden" name="id" value="@category.Id" />
-                                            <button type="submit" class="btn btn-primary btn-spacing"><i class="far fa-eye"></i></button>
+                                            <button type="submit" class="btn btn-primary btn-spacing rounded-circle"><i class="fa fa-eye fa-sm"></i></button>
                                         </form>
                                         <form asp-controller="Category" asp-action="EditCategory" method="get">
                                             <input type="hidden" name="id" value="@category.Id" />
-                                            <button type="submit" class="btn btn-success btn-spacing"><i class="fa fa-pen"></i> </button>
+                                            <button type="submit" class="btn btn-primary btn-spacing rounded-circle"><i class="fa fa-pencil-square fa-sm"></i> </button>
                                         </form>
                                         <form asp-controller="Category" asp-action="DeleteCategory" method="post">
                                             <input type="hidden" name="id" value="@category.Id" />
-                                            <button type="submit" class="btn btn-danger btn-spacing"><i class="fa fa-trash-can"></i></button>
+                                            <button type="submit" class="btn btn-primary btn-spacing rounded-circle"><i class="fa fa-trash-can fa-sm"></i></button>
                                         </form>
                                     </div>
                                 </td>
