@@ -13,7 +13,7 @@
 }
 
 .inside-userlist {
-    background-color: #07A0C3;
+    background-color: #F0C808;
     width: 90%;
     height: 80%;
     margin-bottom: 100px;
@@ -26,7 +26,7 @@ table {
 }
 
 th {
-    color: #F0C808;
+    color: #FFF1D0;
     border: none;
 }
 
@@ -45,10 +45,10 @@ th {
 }
 
 .add-icon {
-    color: #F0C808;
+    color: #07A0C3;
     font-size: 3rem;
     background-color: white;
-    border-radius: 60%;
+    border-radius: 50%;
 }
 
 .addIcon-div {
@@ -78,8 +78,8 @@ th {
 }
 
     .btn-primary:hover, .btn-success:hover, .btn-danger:hover {
-        background-color: #F0C808;
-        border-color: #F0C808;
+        background-color: #07A0C3;
+        border-color: #07A0C3;
     }
 
 .b, .b1, .b2 {
