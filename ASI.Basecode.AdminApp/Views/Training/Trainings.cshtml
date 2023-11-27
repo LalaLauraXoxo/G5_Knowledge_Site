@@ -1,6 +1,6 @@
 ﻿@model List<ASI.Basecode.Data.Models.Training>
 @section styles {
-    <link rel="stylesheet" href="~/css/trainingcategory.css" />
+    <link rel="stylesheet" href="~/css/trainings.css" />
 }
 
 @{
@@ -11,17 +11,17 @@
     <div class="inside-userlist">
         <div class="addIcon-div">
             <a class="add-icon-div" asp-controller="Training" asp-action="CreateTraining">
-                <i class="fa fa-plus add-icon"></i>
+                <i class="fa fa-plus-circle add-icon"></i>
             </a>
         </div>
         <div class="table-container">
             <table class="table table-borderless">
                 <thead class="custom-thead">
                     <tr>
-                        <th scope="col">TRAINING ID</th>
-                        <th scope="col">TRAINING </th>
-                        <th scope="col">AUTHOR </th>
-                        <th scope="col">ACTIONS</th>
+                        <th scope="col" class="b1">TRAINING ID</th>
+                        <th scope="col" class="b">TRAINING </th>
+                        <th scope="col" class="b">AUTHOR </th>
+                        <th scope="col" class="b2">ACTIONS</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,7 +29,7 @@
                     {
                         @foreach (var training in Model)
                         {
-                            <tr style="color:white">
+                            <tr style="color:white; text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);">
                                 <td>@training.Id</td>
                                 <td>@training.TrainingName</td>
                                 <td>@training.TrainingAuthor</td>
@@ -37,15 +37,15 @@
                                     <div class="btn-group">
                                         <form asp-controller="Training" asp-action="ViewTraining" method="get">
                                             <input type="hidden" name="id" value="@training.Id" />
-                                            <button type="submit" class="btn btn-primary btn-spacing"><i class="far fa-eye"></i></button>
+                                            <button type="submit" class="btn btn-primary btn-spacing rounded-circle"><i class="fa fa-eye fa-sm"></i></button>
                                         </form>
                                         <form asp-controller="Training" asp-action="EditTraining" method="get">
                                             <input type="hidden" name="id" value="@training.Id" />
-                                            <button type="submit" class="btn btn-success btn-spacing"><i class="fa fa-pen"></i> </button>
+                                            <button type="submit" class="btn btn-success btn-spacing rounded-circle"><i class="fa fa-pencil-square fa-sm"></i> </button>
                                         </form>
                                         <form asp-controller="Training" asp-action="DeleteTraining" method="post">
                                             <input type="hidden" name="id" value="@training.Id" />
-                                            <button type="submit" class="btn btn-danger btn-spacing"><i class="fa fa-trash-can"></i></button>
+                                            <button type="submit" class="btn btn-danger btn-spacing rounded-circle"><i class="fa fa-trash-can fa-sm"></i></button>
                                         </form>
                                     </div>
                                 </td>

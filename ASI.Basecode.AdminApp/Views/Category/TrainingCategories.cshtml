@@ -39,11 +39,11 @@
                                         </form>
                                         <form asp-controller="Category" asp-action="EditCategory" method="get">
                                             <input type="hidden" name="id" value="@category.Id" />
-                                            <button type="submit" class="btn btn-primary btn-spacing rounded-circle"><i class="fa fa-pencil-square fa-sm"></i> </button>
+                                            <button type="submit" class="btn btn-success btn-spacing rounded-circle"><i class="fa fa-pencil-square fa-sm"></i> </button>
                                         </form>
                                         <form asp-controller="Category" asp-action="DeleteCategory" method="post">
                                             <input type="hidden" name="id" value="@category.Id" />
-                                            <button type="submit" class="btn btn-primary btn-spacing rounded-circle"><i class="fa fa-trash-can fa-sm"></i></button>
+                                            <button type="submit" class="btn btn-danger btn-spacing rounded-circle"><i class="fa fa-trash-can fa-sm"></i></button>
                                         </form>
                                     </div>
                                 </td>
