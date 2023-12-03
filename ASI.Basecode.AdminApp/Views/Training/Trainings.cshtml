@@ -1,6 +1,6 @@
 ﻿@model List<ASI.Basecode.Data.Models.Training>
 @section styles {
-    <link rel="stylesheet" href="~/css/trainingcategory.css" />
+    <link rel="stylesheet" href="~/css/trainings.css" />
 }
 
 @{
@@ -18,21 +18,22 @@
             <table class="table table-borderless">
                 <thead class="custom-thead">
                     <tr>
+                        <th scope="col">ROW #</th>
                         <th scope="col">TRAINING ID</th>
                         <th scope="col">TRAINING </th>
-                        <th scope="col">AUTHOR </th>
                         <th scope="col">ACTIONS</th>
                     </tr>
                 </thead>
                 <tbody>
                      @if (Model.Count > 0)
                     {
+                        var count = 1;
                         @foreach (var training in Model)
                         {
                             <tr style="color:white">
+                                <td>@count</td>
                                 <td>@training.Id</td>
                                 <td>@training.TrainingName</td>
-                                <td>@training.TrainingAuthor</td>
                                 <td>
                                     <div class="btn-group">
                                         <form asp-controller="Training" asp-action="ViewTraining" method="get">
@@ -43,23 +44,94 @@
                                             <input type="hidden" name="id" value="@training.Id" />
                                             <button type="submit" class="btn btn-success btn-spacing"><i class="fa fa-pen"></i> </button>
                                         </form>
-                                        <form asp-controller="Training" asp-action="DeleteTraining" method="post">
+                                        <form id="deleteForm-@training.Id" asp-controller="Training" asp-action="DeleteTraining" method="post">
                                             <input type="hidden" name="id" value="@training.Id" />
-                                            <button type="submit" class="btn btn-danger btn-spacing"><i class="fa fa-trash-can"></i></button>
+                                            <button type="button" class="btn btn-danger btn-spacing" onclick="confirmDelete('@training.Id')">
+                                                <i class="fa fa-trash-can"></i></button>
                                         </form>
                                     </div>
                                 </td>
                             </tr>
+                            count++;
                         }
                     }
                     else
                     {
-                        <p>No trainings yet.</p>
+                        <tr>
+                            <td colspan="4">
+                                <p class="emptyTable">No trainings yet.</p>
+                            </td>
+                        </tr>
                     }
 
                 </tbody>
             </table>
         </div>
+        <div class="pagination-container">
+            <ul class="pagination justify-content-center">
+            </ul>
+        </div>
     </div>
 </div>
+@section scripts{
+    <script>
+        function confirmDelete(trainingId) {
+            Swal.fire({
+                title: 'Confirm Deletion',
+                text: 'Are you sure you want to delete this?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete it!',
+                customClass: {
+                    title: 'my-title-class', 
+                    content: 'my-content-class' 
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById("deleteForm-" + trainingId).submit();
+                }
+            });
+        }
+    </script>
+    <script>
+        function displayData(page) {
+            var pageSize = 9;
+            var start = (page - 1) * pageSize;
+            var end = start + pageSize;
+            var $rows = $('.table tbody tr');
+
+            $rows.hide().slice(start, end).show();
+        }
+
+        function generatePagination() {
+            var pageSize = 9;
+            var pageCount = Math.ceil($('.table tbody tr').length / pageSize);
+
+            var $paginationContainer = $('.pagination');
+            $paginationContainer.empty();
+
+            for (var i = 1; i <= pageCount; i++) {
+                var $li = $('<li class="page-item"><a class="page-link" href="#">' + i + '</a></li>');
+                $li.data('page', i).appendTo($paginationContainer);
+            }
+
+            $paginationContainer.on('click', 'li', function (e) {
+                e.preventDefault();
+                var page = $(this).data('page');
+                displayData(page);
+                $(this).addClass('active').siblings().removeClass('active');
+            });
+
+            displayData(1);
+            $paginationContainer.find('li:first').addClass('active');
+        }
+
+        $(document).ready(function () {
+            generatePagination();
+        });
+    </script>
+
+}
 

@@ -1,0 +1,140 @@
+﻿@model List<ASI.Basecode.Data.Models.Rating>
+@section styles {
+    <link rel="stylesheet" href="~/css/ratings.css" />
+}
+@{
+    var trainingId = ViewData["TrainingId"]; 
+    ViewBag.IsRatingsPage = true;
+    double averageRating = Model != null && Model.Any() ? Model.Average(r => r.StarRating) : 0;
+}
+<div class="userlist-div">
+    <div class="inside-userlist">
+            <div class="topTitle">
+            <div class="pageTitle">RATINGS &amp; FEEDBACK</div>
+                <div style="display: flex;">
+                    <div class="rateDiv">
+                        <div class="star-rating" id="rating">
+                            @for (int i = 1; i <= 5; i++)
+                            {
+                                <span data-value="@i" class="star"><i class="fas fa-star star-solid"></i></span>
+                            }
+                        </div>
+                        <input type="hidden" id="rating-input" value="@averageRating" />
+                        <div class="averageRating">@String.Format("{0:F1}", averageRating) </div>
+                    </div>
+                    <a class="back-button-div" asp-controller="Training" asp-action="ViewTraining" asp-route-id="@trainingId">
+                        <p class="back-button-p">BACK TO TRAINING</p>
+                    </a>
+                </div>
+            </div>
+        <div>
+            @if (Model == null || !Model.Any())
+            {
+                <p class="notRated">Not rated yet</p>
+            }
+            else
+            {
+                <div class="ratings-container">
+                    @foreach (var rating in Model)
+                    {
+                        <div class="rateContent">
+                            <div class="topContent">
+                                <div class="nameEmailDiv">
+                                    <span class="name">@rating.Name</span><br>
+                                    <span class="email">@rating.Email</span>
+                                </div>
+                                <div>
+                                    @for (int i = 1; i <= 5; i++)
+                                    {
+                                        @if (i <= rating.StarRating)
+                                        {
+                                            <i class="fas fa-star" style="color: yellow"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="fas fa-star" style="color: black"></i>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                            <div class="commentDiv">
+                                <p class="comment">
+                                    <span class="quote">&#8220;</span> @rating.Comment <span class="quote">&#8221;</span>
+                                </p>
+                            </div>
+                        </div>
+
+                    }
+                </div>
+                
+                
+            }
+        </div>
+        <div class="pagination-container">
+            <ul class="pagination justify-content-center">
+            </ul>
+        </div>
+    </div>
+</div>
+@section scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const ratingValue = parseFloat(document.getElementById("rating-input").value);
+            const stars = document.querySelectorAll(".star");
+
+            const filledStars = Math.floor(ratingValue);
+            const decimal = ratingValue - filledStars;
+
+            for (let i = 0; i < stars.length; i++) {
+                if (i < filledStars) {
+                    stars[i].style.color = "#F0C808"; 
+                } else if (i === filledStars && decimal !== 0) {
+                    const percentage = decimal * 100;
+                    stars[i].style.background = `linear-gradient(90deg,  #F0C808 ${percentage}%, black ${percentage}%)`;
+                    stars[i].style.webkitBackgroundClip = "text";
+                    stars[i].style.webkitTextFillColor = "transparent";
+                } else {
+                    stars[i].style.color = "black";
+                }
+            }
+        });
+    </script>
+    <script>
+        function displayRatings(page) {
+            var pageSize = 3;
+            var start = (page - 1) * pageSize;
+            var end = start + pageSize;
+            var $ratings = $('.rateContent');
+
+            $ratings.hide().slice(start, end).show();
+        }
+
+        function generatePagination() {
+            var pageSize = 3;
+            var pageCount = Math.ceil($('.rateContent').length / pageSize);
+
+            var $paginationContainer = $('.pagination');
+            $paginationContainer.empty();
+
+            for (var i = 1; i <= pageCount; i++) {
+                var $li = $('<li class="page-item"><a class="page-link" href="#">' + i + '</a></li>');
+                $li.data('page', i).appendTo($paginationContainer);
+            }
+
+            $paginationContainer.on('click', 'li', function (e) {
+                e.preventDefault();
+                var page = $(this).data('page');
+                displayRatings(page);
+                $(this).addClass('active').siblings().removeClass('active');
+            });
+
+            displayRatings(1);
+            $paginationContainer.find('li:first').addClass('active');
+        }
+
+        $(document).ready(function () {
+            generatePagination();
+        });
+    </script>
+}
+

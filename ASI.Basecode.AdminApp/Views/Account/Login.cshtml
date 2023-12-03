@@ -30,6 +30,7 @@
 
                 <p class="text1">WELCOME, ADMIN!</p>
                 <p class="text2">Let’s get you logged in, shall we?</p>
+
                 <form method="post" action="/Account/Login" id="loginForm">
                     <div class="form-outline mb-4">
                         <i class="fas fa-user login-icon"></i>
@@ -67,6 +68,11 @@
         if (errorMessage) {
             toastr.error(errorMessage);
         }
+
+        var successMessage = '@TempData["SuccessMessage"]';
+        if (successMessage) {
+            toastr.success(successMessage);
+        }
     </script>
 
     <script>
@@ -74,11 +80,9 @@
         const password = document.querySelector("#password");
 
         togglePassword.addEventListener("click", function () {
-            // toggle the type attribute
             const type = password.getAttribute("type") === "password" ? "text" : "password";
             password.setAttribute("type", type);
 
-            // toggle the eye / eye slash icon
             this.classList.toggle("fa-eye-slash");
             this.classList.toggle("fa-eye");
         });

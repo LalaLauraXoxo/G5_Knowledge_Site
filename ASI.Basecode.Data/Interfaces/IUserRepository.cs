@@ -13,12 +13,13 @@ namespace ASI.Basecode.Data.Interfaces
         bool UserExists(string userId);
         void AddUser(User user);
 
-        public List<User> GetUsersDisplay();
+        List<User> GetUsersDisplay();
 
-        public User GetUser(int id);
+        User GetUser(int id);
 
-        public void DeleteUser(User user);
+        void DeleteUser(User user);
 
-        public void UpdateUser(User user);
+        void UpdateUser(User user);
+        Task<User> GetUserByEmail(string email);
     }
 }

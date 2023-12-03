@@ -16,6 +16,10 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IO;
 using System.Text;
+using ASI.Basecode.Data.Interfaces;
+using ASI.Basecode.Data.Repositories;
+using ASI.Basecode.Services.Interfaces;
+using ASI.Basecode.Services.Services;
 
 namespace ASI.Basecode.KnowledgeApp
 {

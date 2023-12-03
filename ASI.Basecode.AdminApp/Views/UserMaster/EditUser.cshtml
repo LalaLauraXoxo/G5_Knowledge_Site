@@ -39,7 +39,7 @@
                                asp-for="LastName" />
                         <span asp-validation-for="LastName" class="text-danger"></span><br>
 
-                        <label class="mt-3 inputs-label" for="username">USERNAME</label>
+                        <label class="mt-3 inputs-label" for="username">DISPLAY NAME</label>
                         <input type="text" id="username" class="input-design"
                                asp-for="Username" />
                         <span asp-validation-for="Username" class="text-danger"></span><br>
@@ -53,18 +53,20 @@
                         <span asp-validation-for="Email" class="text-danger"></span><br>
 
                         <label class="mt-3 inputs-label" for="password">PASSWORD</label>
-                        <input type="text" id="password" class="input-design"
-                               asp-for="Password" />
+                        <div class="password-input-container">
+                            <input type="text" id="password" class="input-design-pass" asp-for="Password" />
+                            <i class="fas fa-eye-slash password-icon" id="togglePassword"></i>
+                        </div>
                         <span asp-validation-for="Password" class="text-danger"></span><br>
 
 
                         <div class="bottom-buttons">
-                            <button class="create-button" type="submit">
-                                Save Changes
-                            </button>
                             <a style="text-decoration: none;" class="back-button-div" asp-controller="UserMaster" asp-action="UserMaster">
-                                Back
+                                BACK TO LIST
                             </a>
+                            <button class="save-button" type="submit">
+                                SAVE
+                            </button>
                         </div>
 
 
@@ -75,4 +77,29 @@
     </div>
 </div>
 @section scripts{
+    <script>
+        // Check for error message and display Toastr notification
+        var errorMessage = '@TempData["ErrorMessage"]';
+        if (errorMessage) {
+            toastr.error(errorMessage);
+        }
+    </script>
+    <script>
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+
+        // Initially set the password field to be visible
+        password.setAttribute("type", "text");
+        togglePassword.classList.remove("fa-eye-slash");
+        togglePassword.classList.add("fa-eye");
+
+        togglePassword.addEventListener("click", function () {
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+
+            this.classList.toggle("fa-eye-slash");
+            this.classList.toggle("fa-eye");
+        });
+    </script>
+
 }

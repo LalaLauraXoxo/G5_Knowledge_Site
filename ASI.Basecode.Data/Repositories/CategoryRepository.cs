@@ -17,8 +17,10 @@ namespace ASI.Basecode.Data.Repositories
         {
 
         }
-  
-        //add category
+        public bool CategoryExists(string CategoryName)
+        {
+            return this.GetDbSet<Category>().Any(x => x.CategoryName == CategoryName);
+        }
         public void AddCategory(Category category)
         {
             this.GetDbSet<Category>().Add(category);
@@ -26,7 +28,7 @@ namespace ASI.Basecode.Data.Repositories
         }
 
         //get all categories
-        public List<Category> GetCategory()
+        public List<Category> GetCategories()
         {
             var category = GetDbSet<Category>().ToList();
             return category;
@@ -37,6 +39,11 @@ namespace ASI.Basecode.Data.Repositories
         {
             var category = this.GetDbSet<Category>().FirstOrDefault(x => x.Id == id);
             return category;
+        }
+
+        public List<Category> GetCategorySelections()
+        {
+            return GetDbSet<Category>().ToList();
         }
 
         //update book

@@ -1,7 +1,7 @@
 ﻿@using ASI.Basecode.Services.ServiceModels
 @model TrainingViewModel
 @section styles {
-    <link rel="stylesheet" href="~/css/" />
+    <link rel="stylesheet" href="~/css/createtraining.css" />
 }
 
 @{
@@ -13,35 +13,89 @@
 <div class="screen-container">
     <div class="inside-container">
         <form method="post" enctype="multipart/form-data" asp-action="CreateTraining" >
-            <div class="form-group">
-                <label>TRAINING NAME</label>
-                <input type="text" class="form-control" asp-for="TrainingName">
-            </div>
-            <div class="form-group">
-                <label>TRANING DESC</label>
-                <input type="text" class="form-control" asp-for="TrainingDesc">
-            </div>
-            <div class="form-group">
-                <label>AUTHOR</label>
-                <input type="text" class="form-control" asp-for="TrainingAuthor">
-            </div>
+           <div class="twoDiv">
+               <div class="leftDiv">
+                    <div class="form-group">
+                        <label>TRAINING NAME</label>
+                        <input type="text" class="input-design" asp-for="TrainingName" placeholder="Enter training name...">
+                        <span asp-validation-for="TrainingName" class="text-danger"></span><br>
+                    </div>
+                    <div class="form-group">
+                        <label>DESCRIPTION</label>
+                        <textarea type="text" class="text-area-design" asp-for="TrainingDesc" placeholder="Enter training description..."></textarea>
+                        <span asp-validation-for="TrainingDesc" class="text-danger"></span><br>
+                    </div>
+               </div>
+               <div class="rightDiv">
+                    <div class="form-group">
+                        <label>AUTHOR</label>
+                        <input type="text" class="input-design" asp-for="TrainingAuthor" placeholder="Enter training author...">
+                        <span asp-validation-for="TrainingAuthor" class="text-danger"></span><br>
+                    </div>
 
-            <div class="form-group">
-                <label>CATEGORY</label>
-                <select class="form-control" asp-for="CategoryId">
-                    @foreach (var category in ViewBag.Categories)
-                    {
-                        <option value="@category.Id">@category.CategoryName</option>
-                    }
-                </select>
-            </div>
-            <div class="form-group">
-                <label>CHOOSE IMAGE</label>
-                <input asp-for="ImageFile" type="file" accept=".png, .jpg" class="form-control-file" >
-            </div>
+                    <div class="form-group spacediv">
+                        <label>CATEGORY</label>
+                        @if (ViewBag.Categories != null)
+                        {
+                            <select class="input-design" asp-for="CategoryId">
+                                @foreach (var category in ViewBag.Categories)
+                                {
+                                    <option value="@category.Id">@category.CategoryName</option>
+                                }
+                            </select>
+                        }
+                        else
+                        {
+                            <p>No categories found.</p>
+                        }
+                    </div>
+                    <div class="form-group spacediv2">
+                        <label>COVER IMAGE</label><br />
+                        <input asp-for="ImageFile" type="file" accept=".png" class="uploadButton" id="fileInput" onchange="previewFile()">
+                        <span asp-validation-for="ImageFile" class="text-danger"></span><br>
+                        <span asp-validation-for="ImageUrl" class="text-danger"></span><br>
+                    </div>
+                    <div class="imageDiv">
+                        <img id="previewImage" class="imageFile" alt="">
+                    </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="bottom-buttons">
+                        <a class="back-button" asp-controller="Training" asp-action="Trainings">
+                            BACK TO LIST
+                        </a>
+                        <button type="submit" class="createButton">CREATE</button>
+                    </div>
+               </div>
+           </div>
         </form>
     </div>
 
 </div>
+@section scripts{
+    <script>
+        function previewFile() {
+            var preview = document.getElementById('previewImage');
+            var fileInput = document.getElementById('fileInput');
+            var files = fileInput.files;
+
+            if (files.length > 0) {
+                var file = files[0];
+                var reader = new FileReader();
+
+                reader.onloadend = function () {
+                    preview.style.display = 'block';
+                    preview.src = reader.result;
+                };
+
+                if (file) {
+                    reader.readAsDataURL(file); 
+                } else {
+                    preview.style.display = 'none'; 
+                }
+            } else {
+                preview.style.display = 'none'; 
+            }
+        }
+
+    </script>
+}

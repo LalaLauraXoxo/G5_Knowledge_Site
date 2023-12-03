@@ -10,14 +10,23 @@ namespace ASI.Basecode.Services.Interfaces
 {
     public interface ICategoryService
     {
-        public void AddCategory(CategoryViewModel categoryViewModel, string username);
+        void AddCategory(CategoryViewModel categoryViewModel, string username);
 
-        public List<Category> GetCategory();
+        List<Category> GetCategories();
 
-        public Category GetCategory(int id);
+        Category GetCategory(int id);
 
-        public bool UpdateCategory(CategoryViewModel categoryViewModel, string username);
+        bool UpdateCategory(CategoryViewModel categoryViewModel, string username);
 
-        public bool DeleteCategory(CategoryViewModel categoryViewModel);
+        bool DeleteCategory(CategoryViewModel categoryViewModel);
+
+        CategoryViewModel GetCategoryViewModel(Category category);
+
+        List<CategoryViewModel> GetCategoryViewModels();
+
+        CategoryViewModel GetEditCategoryViewModel(Category category, int id);
+
+
+
     }
 }

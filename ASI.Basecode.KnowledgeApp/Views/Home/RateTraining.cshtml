@@ -1,0 +1,95 @@
+﻿@model ASI.Basecode.Services.ServiceModels.RatingViewModel
+@{
+    ViewData["Title"] = "Rating Page";
+    ViewBag.IsRatingPage = true;
+}
+@section styles {
+    <link rel="stylesheet" href="~/css/rating.css" />
+}
+
+<div class="container-div">
+    <div class="inside-container">
+        <div class="rating-box-div">
+            <p class="rate-training-p">RATE TRAINING</p>
+            <form method="post" id="ratingForm" asp-action="RateTraining">
+                <input type="hidden" name="trainingId" value="@ViewData["TrainingId"]"/>
+                <div class="upper-row-div">
+                    <div class="input-div">
+                        <label class="inputs-label" for="name">Name</label><br>
+                        <input type="text" id="name" class="input-style" placeholder="Enter name" asp-for="Name" />
+                        <span asp-validation-for="Name" class="text-danger"></span><br>
+                    </div>
+                    <div class="input-div">
+                        <label class="inputs-label" for="email">Email Address</label><br>
+                        <input type="email" id="email" class="input-style" placeholder="Enter email address" asp-for="Email" />
+                        <span asp-validation-for="Email" class="text-danger"></span><br>
+                    </div>
+                    <div class="input-div">
+                        <label class="inputs-label" for="rating">Star Rating</label><br>
+                        <div class="star-rating" id="rating">
+                            <span data-value="1" class="star"><i class="fa-solid fa-star star-design"></i></span>
+                            <span data-value="2" class="star"><i class="fa-solid fa-star star-design"></i></span>
+                            <span data-value="3" class="star"><i class="fa-solid fa-star star-design"></i></span>
+                            <span data-value="4" class="star"><i class="fa-solid fa-star star-design"></i></span>
+                            <span data-value="5" class="star"><i class="fa-solid fa-star star-design"></i></span>
+                        </div>
+
+                        <input type="hidden" id="rating-input" value="1" asp-for="StarRating" />
+                        <span asp-validation-for="StarRating" class="text-danger"></span><br>
+                        <div id="ratingValidationError" class="text-danger" style="display: none;">Rating is required.</div>
+                    </div>
+                </div>
+                <div class="input-div2">
+                    <textarea id="comment" class="input-style2" placeholder="Have a comment? Type it here!..." rows="10" asp-for="Comment" maxlength="300"></textarea>
+                    <span asp-validation-for="Comment" class="text-danger"></span><br>
+                </div>
+                <div class="button-div">
+                    <button type="submit" class="button-submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section scripts {
+    <script>
+        const stars = document.querySelectorAll('.star');
+        const ratingInput = document.getElementById('rating-input');
+
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                const value = parseInt(star.getAttribute('data-value'));
+                ratingInput.value = value;
+                updateStars(value);
+
+                console.log(`Selected Value: ${value}`);
+            });
+        });
+
+        function updateStars(value) {
+            stars.forEach(star => {
+                const starValue = parseInt(star.getAttribute('data-value'));
+                const starIcon = star.querySelector('i');
+
+                if (starValue <= value) {
+                    starIcon.classList.add('fas', 'selected-star');
+                    starIcon.classList.remove('far');
+                } else {
+                    starIcon.classList.remove('fas', 'selected-star');
+                    starIcon.classList.add('far');
+                }
+            });
+        }
+
+        $('#ratingForm').submit(function (event) {
+            var ratingInputValue = parseInt($('#rating-input').val());
+            if (ratingInputValue === 0) {
+                event.preventDefault();
+                console.log("Cannot rate 0");
+                $('#ratingValidationError').show(); // Display the error message
+                return false;
+            }
+            return true;
+        });
+    </script>
+
+}

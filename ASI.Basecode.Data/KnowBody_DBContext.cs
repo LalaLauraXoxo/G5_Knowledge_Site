@@ -18,6 +18,7 @@ namespace ASI.Basecode.Data
         }
 
         public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Rating> Ratings { get; set; }
         public virtual DbSet<Topic> Topics { get; set; }
         public virtual DbSet<Training> Trainings { get; set; }
         public virtual DbSet<User> Users { get; set; }
@@ -45,16 +46,30 @@ namespace ASI.Basecode.Data
                     .IsRequired()
                     .HasMaxLength(50);
 
+                entity.Property(e => e.CreatedTime).HasColumnType("datetime");
+
                 entity.Property(e => e.UpdatedBy)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.UpdatedTime).HasColumnType("datetime");
+            });
+
+            modelBuilder.Entity<Rating>(entity =>
+            {
+                entity.Property(e => e.Comment).IsRequired();
+
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(50);
             });
 
             modelBuilder.Entity<Topic>(entity =>
             {
-                entity.HasIndex(e => e.TopicName, "UQ__Topics__6C795E8C5D9AB35C")
-                    .IsUnique();
-
                 entity.Property(e => e.CreatedBy)
                     .IsRequired()
                     .HasMaxLength(50);
@@ -78,9 +93,6 @@ namespace ASI.Basecode.Data
 
             modelBuilder.Entity<Training>(entity =>
             {
-                entity.HasIndex(e => e.TrainingName, "UQ__Training__1AE4EF382F284721")
-                    .IsUnique();
-
                 entity.Property(e => e.CreatedBy)
                     .IsRequired()
                     .HasMaxLength(50);
@@ -108,7 +120,7 @@ namespace ASI.Basecode.Data
 
             modelBuilder.Entity<User>(entity =>
             {
-                entity.HasIndex(e => e.UserId, "UQ__Users__1788CC4D7722721C")
+                entity.HasIndex(e => e.UserId, "UQ__Users__1788CC4D5C18ACBB")
                     .IsUnique();
 
                 entity.Property(e => e.CreatedBy)
@@ -121,13 +133,15 @@ namespace ASI.Basecode.Data
                     .IsRequired()
                     .HasMaxLength(50);
 
-                entity.Property(e => e.FirstName).HasMaxLength(50);
-
-                entity.Property(e => e.LastName).HasMaxLength(50);
-
-                entity.Property(e => e.Password)
+                entity.Property(e => e.FirstName)
                     .IsRequired()
                     .HasMaxLength(50);
+
+                entity.Property(e => e.LastName)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Password).HasMaxLength(50);
 
                 entity.Property(e => e.UpdatedBy)
                     .IsRequired()

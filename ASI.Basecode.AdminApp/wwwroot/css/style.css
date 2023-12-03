@@ -181,7 +181,7 @@ header {
     background-color: #1e272e;
     position: absolute;
     top: 0px;
-    left: 00;
+    left: 0px;
     box-shadow: 1px 1px 10px rgba(198, 189, 248, 0.825);
     display: flex;
     justify-content: space-between;

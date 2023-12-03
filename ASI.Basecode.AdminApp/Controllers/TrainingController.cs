@@ -14,6 +14,7 @@ using System.Security.Claims;
 using System.IO;
 using AutoMapper;
 using ASI.Basecode.AdminApp.Mvc;
+using System;
 
 namespace ASI.Basecode.AdminApp.Controllers
 {
@@ -21,11 +22,13 @@ namespace ASI.Basecode.AdminApp.Controllers
     {
         private readonly ITrainingService _trainingService;
         private readonly ICategoryService _categoryService;
+        private readonly ITopicService _topicService;
 
         //constructor to call service
 
         public TrainingController(ITrainingService trainingService,
                                   ICategoryService categoryService,
+                                  ITopicService topicService,
                                   IHttpContextAccessor httpContextAccessor,
                                   ILoggerFactory loggerFactory,
                                   IConfiguration configuration,
@@ -33,17 +36,8 @@ namespace ASI.Basecode.AdminApp.Controllers
         {
             _trainingService = trainingService;
             _categoryService = categoryService;
+            _topicService = topicService;
         }
-        private List<CategoryViewModel> GetCategoryViewModels()
-        {
-            List<Category> categories = _categoryService.GetCategory();
-            return categories.Select(category => new CategoryViewModel
-            {
-                Id = category.Id,
-                CategoryName = category.CategoryName,
-            }).ToList();
-        }
-
         public IActionResult Trainings()
         {
             var training = _trainingService.GetTraining();
@@ -52,28 +46,29 @@ namespace ASI.Basecode.AdminApp.Controllers
 
         public IActionResult CreateTraining()
         {
-            ViewBag.Categories = GetCategoryViewModels();
-
+            ViewBag.Categories = _categoryService.GetCategoryViewModels();
             return View();
         }
         
         [HttpPost]
         public IActionResult CreateTraining(TrainingViewModel trainingViewModel)
         {
-            _trainingService.AddTraining(trainingViewModel, this.UserId);
-            return RedirectToAction("Trainings");
-        }
-
-        public IActionResult DeleteTraining(TrainingViewModel trainingViewModel)
-        {
-            bool isDeleted = _trainingService.DeleteTraining(trainingViewModel);
-            if (isDeleted)
+            try
             {
+                _trainingService.AddTraining(trainingViewModel, this.UserId);
                 return RedirectToAction("Trainings");
             }
-            return NotFound();
+            catch (InvalidDataException ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = Resources.Messages.Errors.ServerError;
+            }
+            return View();
         }
-
+        
         [HttpGet]
         public IActionResult ViewTraining(int id)
         {
@@ -81,18 +76,8 @@ namespace ASI.Basecode.AdminApp.Controllers
             if (training != null)
             {
                 var category = _categoryService.GetCategory(training.CategoryId);
-                var url = "https://127.0.0.1:8080/";
+                var trainingViewModel = _trainingService.GetTrainingViewModel(training, id, category); // Pass category as a parameter
 
-                TrainingViewModel trainingViewModel = new()
-                {
-                    Id = id,
-                    TrainingName = training.TrainingName,
-                    TrainingDesc = training.TrainingDesc,
-                    TrainingAuthor = training.TrainingAuthor,
-                    CategoryId = training.CategoryId,
-                    CategoryName = category.CategoryName,
-                    ImageUrl = Path.Combine(url, training.TrainingImage + ".png"),
-                };
                 return View(trainingViewModel);
             }
             return NotFound();
@@ -104,26 +89,16 @@ namespace ASI.Basecode.AdminApp.Controllers
             var training = _trainingService.GetTraining(id);
             if (training != null)
             {
-                List<CategoryViewModel> categoryViewModels = GetCategoryViewModels();
+                var category = _categoryService.GetCategory(training.CategoryId);
+                var categoryViewModels = _categoryService.GetCategoryViewModels(); 
 
-                int selectedCategoryId = training.CategoryId;
-                var url = "https://127.0.0.1:8080/";
-
-                TrainingViewModel trainingViewModel = new()
-                {
-                    Id = id,
-                    TrainingName = training.TrainingName,
-                    TrainingDesc = training.TrainingDesc,
-                    TrainingAuthor = training.TrainingAuthor,
-                    CategoryId = training.CategoryId,
-                    Categories = categoryViewModels,
-                    ImageUrl = Path.Combine(url, training.TrainingImage + ".png"),
-                };
+                var trainingViewModel = _trainingService.GetEditTrainingViewModel(training, id, category, categoryViewModels); // Pass category view models as a parameter
 
                 return View(trainingViewModel);
             }
             return NotFound();
         }
+
 
         [HttpPost]
         public IActionResult EditTraining(TrainingViewModel trainingViewModel)
@@ -134,8 +109,38 @@ namespace ASI.Basecode.AdminApp.Controllers
                 return RedirectToAction("Trainings");
             }
             return NotFound();
-        }
+        }  
 
+
+        public IActionResult DeleteTraining(TrainingViewModel trainingViewModel)
+        {
+            var training = _trainingService.GetTraining(trainingViewModel.Id);
+
+            if (training == null)
+            {
+                return NotFound();
+            }
+
+            bool isDeleted = _trainingService.DeleteTraining(trainingViewModel);
+            if (isDeleted)
+            {
+                _topicService.DeleteTopicsByTrainingId(training.Id);
+                return RedirectToAction("Trainings");
+            }
+            return NotFound();
+        }
+        
+
+        public IActionResult ViewRatings(int trainingId)
+        {
+            ViewData["TrainingId"] = trainingId;
+            // Call the service method to get ratings for the specified trainingId
+            var ratings = _trainingService.GetRatingsByTrainingId(trainingId);
+            // Return the view with the fetched ratings
+            return View(ratings);
+        }
 
     }
 }
+        
+      

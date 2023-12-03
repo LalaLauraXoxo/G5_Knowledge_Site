@@ -1,0 +1,189 @@
+﻿@using ASI.Basecode.Data.Models
+@model ASI.Basecode.Services.ServiceModels.TrainingViewModel
+@{
+    ViewData["Title"] = "Training Page";
+}
+@section styles {
+    <link rel="stylesheet" href="~/css/trainingsKL.css" />
+}
+<div class="container-div">
+    <div class="inside-container">
+        <div style="width: 60%; margin-bottom: 20px;">
+            <div class="title-div">
+                <div class="topDiv">
+                    <p class="title-p">@Model.TrainingName</p>
+                    <div class="category-div">
+                        <p class="category-title-p">Category:</p>
+                        <p class="category-p">@ViewData["CategoryName"] </p>
+                    </div>
+                </div>
+                <div class="image-containerCar">
+                    <img src="@ViewData["ImageUrl"]" alt="Image" class="responsive-imageCar">
+                </div>
+            </div>
+            
+            <div class="desc-div">
+                <p class="desc-title-p">Description</p>
+                <p class="desc-p">@Model.TrainingDesc</p>
+                <div class="bottomDiv">
+                    <div>
+                        <div class="authorDiv">
+                            <p class="author-p">Author: </p>
+                            <p class="authorName">@Model.TrainingAuthor</p>
+                        </div>
+                        <div style="display: flex;">
+                            <div class="star-rating bigger-star" id="rating">
+                                @for (int i = 1; i <= 5; i++)
+                                {
+                                    <span data-value="@i" class="star"><i class="fas fa-star star-solid star-design"></i></span>
+                                }
+                            </div>
+                            <input type="hidden" id="rating-input" value="@ViewData["AverageRating"]" />
+                            <p class="rating-p">@string.Format("{0:0.0}", ViewData["AverageRating"])</p>
+                        </div>
+                    </div>
+                    <div class="rateButtonDiv">
+                        <a class="rate-button" asp-controller="Home" asp-action="RateTraining" asp-route-trainingId="@Model.Id">
+                            <p class="rateme-p">Rate Me!</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="topic-details" style="display: none;">
+                <div class="nameBackDiv">
+                    <h2 class="topic-details-name"></h2>
+                    <button class="back-button">Back</button>
+                </div>
+                <p class="topic-details-description"></p>
+            </div>
+        </div>
+
+        <div style="width: 30%; margin-left: 50px; margin-bottom: 20px;">
+            <div class="topic-div">
+                <p class="topics-p">TOPICS</p>
+                @if (ViewData["Topics"] != null && ((List<Topic>)ViewData["Topics"]).Count > 0)
+                {
+                    <ul class="topics-list">
+                        @foreach (var topic in (List<Topic>)ViewData["Topics"])
+                        {
+                            <li class="topic-item" data-description="@topic.TopicDesc">
+                                <div class="listDiv">
+                                    <h4 class="topicNameList">@topic.TopicName</h4>
+                                    <a href="/Home/DownloadTopic?trainingId=@Model.Id&topicId=@topic.TopicId" download="@topic.TopicFile" class="download-button">Download</a>
+                                </div>
+                            </li>               
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <div class="noTopicsDiv">
+                        <p class="noTopics">No topics available</p>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+@section scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const ratingValue = parseFloat(document.getElementById("rating-input").value);
+            const stars = document.querySelectorAll(".star");
+
+            const filledStars = Math.floor(ratingValue);
+            const decimal = ratingValue - filledStars;
+
+            for (let i = 0; i < stars.length; i++) {
+                if (i < filledStars) {
+                    stars[i].style.color = "#F0C808"; 
+                } else if (i === filledStars && decimal !== 0) {
+                    const percentage = decimal * 100;
+                    stars[i].style.background = `linear-gradient(90deg, #F0C808 ${percentage}%, #333333 ${percentage}%)`;
+                    stars[i].style.webkitBackgroundClip = "text";
+                    stars[i].style.webkitTextFillColor = "transparent";
+                } else {
+                    stars[i].style.color = "#333333"; 
+                }
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const backButton = document.querySelector(".back-button");
+            const defaultDescription = document.querySelector(".desc-div");
+            const topicDetailsContainer = document.querySelector(".topic-details");
+
+            function displayTopicDetails(topicName, topicDesc) {
+                defaultDescription.style.display = "none";
+                topicDetailsContainer.style.display = "block";
+
+                const topicDetailsName = document.querySelector(".topic-details-name");
+                const topicDetailsDescription = document.querySelector(".topic-details-description");
+
+                topicDetailsName.textContent = topicName;
+                topicDetailsDescription.textContent = topicDesc;
+            }
+
+            function displayDefaultDescription() {
+                defaultDescription.style.display = "block";
+                topicDetailsContainer.style.display = "none";
+            }
+
+            const topicItems = document.querySelectorAll(".topic-item");
+
+            topicItems.forEach(function (item) {
+                const topicName = item.querySelector("h4");
+                topicName.addEventListener("click", function () {
+                    const topicDesc = item.dataset.description;
+                    displayTopicDetails(topicName.textContent, topicDesc);
+
+                    const prevSelected = document.querySelector(".topic-item.selected-topic");
+                    if (prevSelected) {
+                        prevSelected.classList.remove("selected-topic");
+                    }
+
+                    const prevSelectedName = document.querySelector(".topic-item h4.selected-name");
+                    if (prevSelectedName) {
+                        prevSelectedName.classList.remove("selected-name");
+                    }
+
+                    item.classList.add("selected-topic");
+
+                    topicName.classList.add("selected-name");
+                });
+            });
+
+            backButton.addEventListener("click", function () {
+                displayDefaultDescription();
+
+                const prevSelected = document.querySelector(".topic-item.selected-topic");
+                if (prevSelected) {
+                    prevSelected.classList.remove("selected-topic");
+                }
+
+                const prevSelectedName = document.querySelector(".topic-item h4.selected-name");
+                if (prevSelectedName) {
+                    prevSelectedName.classList.remove("selected-name");
+                }
+            });
+        });
+    </script>
+    <script>
+        var errorMessage = '@TempData["ErrorMessage"]';
+        if (errorMessage) {
+            toastr.error(errorMessage);
+        }
+
+        var successMessage = '@TempData["SuccessMessage"]';
+        if (successMessage) {
+            toastr.success(successMessage);
+        }
+    </script>
+
+
+}

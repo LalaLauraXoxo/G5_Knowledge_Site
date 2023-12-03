@@ -31,12 +31,14 @@ namespace ASI.Basecode.KnowledgeApp
             // Services
             this._services.AddScoped<IUserService, UserService>();
             this._services.AddScoped<ITrainingService, TrainingService>();
-
+            this._services.AddScoped<ICategoryService, CategoryService>();
+            this._services.AddScoped<ITopicService, TopicService>();
 
             // Repositories
             this._services.AddScoped<IUserRepository, UserRepository>();
             this._services.AddScoped<ITrainingRepository, TrainingRepository>();
-
+            this._services.AddScoped<ICategoryRepository, CategoryRepository>();
+            this._services.AddScoped<ITopicRepository, TopicRepository>();
 
             this._services.AddHttpClient();
         }

@@ -1,0 +1,150 @@
+﻿body {
+    background-image: url('/img/yellowBG.png');
+    background-size: 100% 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+}
+
+.screen-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inside-container {
+    background-color: #086788;
+    width: 70%;
+    height: 85%;
+    margin-bottom: 115px;
+    border-radius: 50px;
+    padding: 70px;
+}
+
+.twoDiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftDiv {
+    width: 48%;
+}
+
+.rightDiv {
+    width: 48%;
+}
+
+label {
+    color: #F0C808;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.input-design {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.3);
+    background-color: white;
+    color: #086788;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.text-area-design {
+    height: 450px;
+    max-height: 450px;
+    resize: vertical;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.3);
+    background-color: white;
+    color: #086788;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.spacediv {
+    margin-bottom: 30px;
+}
+
+.spacediv2 {
+}
+
+.saveButton {
+    border: none;
+    background-color: #F0C808;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 60px;
+    padding-right: 60px;
+    border-radius: 63px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin-left: 50px;
+}
+
+.back-button {
+    border: none;
+    background-color: #DD1C1A;
+    color: white !important;
+    font-size: 18px;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+    border-radius: 63px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none !important;
+    text-align: center;
+    width: auto;
+}
+
+.back-button-p {
+    margin: 0;
+}
+
+.bottom-buttons {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    text-decoration: none !important;
+    margin: 0 auto;
+}
+
+.uploadButton {
+    color: #F0C808;
+    font-size: 18px;
+}
+
+.imageDiv {
+    width: 70%;
+    height: 200px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageFile {
+    max-width: 100%;
+    max-height: 200px;
+    margin-left: 150px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}

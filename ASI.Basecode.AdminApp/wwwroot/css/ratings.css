@@ -1,0 +1,132 @@
+﻿body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.userlist-div {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inside-userlist {
+    background-color: #086788;
+    width: 80%;
+    height: 85%;
+    margin-bottom: 115px;
+    border-radius: 50px;
+    padding: 50px;
+}
+.pageTitle {
+    color: #F0C808;
+    font-size: 30px;
+    font-weight: bold;
+}
+.topTitle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.rateDiv {
+    display: flex;
+    align-items: center;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 17px;
+    padding-right: 17px;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    margin-left: auto;
+}
+.averageRating {
+    font-size: 20px;
+    color: #F0C808;
+    font-weight: 600;
+}
+.star-rating {
+    margin-right: 10px;
+}
+.rateContent {
+    background-color: white;
+    border-radius: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.topContent{
+    display: flex;
+
+}
+.name {
+    color: #086788;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: -10px;
+}
+.email {
+    color: #086788;
+    font-size: 13px;
+    font-weight: normal;
+}
+.fas {
+    font-size: 15px;
+    margin-right: 3px;
+}
+.fa-star {
+    font-size: 24px; /* Adjust the size as needed */
+}
+.comment {
+    color: #086788;
+    font-size: 17px;
+    font-weight: 500;
+}
+.commentDiv {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.nameEmailDiv{
+    margin-right: 20px;
+}
+.back-button-div {
+    text-decoration: none !important;
+    display: flex;
+    align-self: center;
+    background-color: #DD1C1A;
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-radius: 50px;
+    margin-left: 20px;
+}
+.back-button-p {
+    font-weight: 500;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+.notRated {
+    color: #086788;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 150px;
+    font-weight: 500;
+}
+.pagination li.page-item.active .page-link {
+    background-color: #07A0C3;
+    border-color: #07A0C3;
+    color: white;
+}
+
+.pagination li.page-item:not(.active) .page-link {
+    background-color: white;
+    border-color: white;
+    color: #07A0C3;
+}

@@ -7,58 +7,243 @@
 }
 
 <div class="container-div">
-  <div class="inside-container">
+    <div class="inside-container">
         <p class="highrated-p">HIGHLY RATED TRAINING PROGRAMS</p>
-        <div class="training-container-row">
-            @foreach (var training in Model) 
-            {
-                <a class="training-container-div" asp-controller="Training" asp-action="Index">
-                    <p class="title-p">@training.TrainingName</p>
-                    <img src="@training.ImageUrl"
-                         style="width: 100%;" alt="Image">
-                    <div class="author-rating-div">
-                        <p class="author-p">Author: @training.TrainingAuthor</p>
-                        <div style="display: flex;">
-                            <div class="star-rating" id="rating">
-                                <span data-value="1" class="star"><i class="fas fa-star star-design"></i></span>
-                                <span data-value="2" class="star"><i class="fas fa-star star-design"></i></span>
-                                <span data-value="3" class="star"><i class="fas fa-star star-design"></i></span>
-                                <span data-value="4" class="star"><i class="fas fa-star star-design"></i></span>
-                                <span data-value="5" class="star"><i class="fas fa-star star-design"></i></span>
-                            </div>
-                            <input type="hidden" id="rating-input" value="0" />
-                            <p class="rating-p">5.0</p>
-                        </div>
-                    </div>
-                </a>
-            }
-        </div>
+        <div id="trainingCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                @{
+                    var topRatedTrainings = Model.Where(t => t.AverageRating >= 5.0).ToList();
+                    if (!topRatedTrainings.Any())
+                    {
+                        topRatedTrainings = Model.Where(t => t.AverageRating >= 3.0).ToList();
+                        if (!topRatedTrainings.Any())
+                        {
+                            topRatedTrainings = Model.Where(t => t.AverageRating <= 3.0).ToList();
+                        }
+                    }
 
-        <p class="alltraining-p">ALL TRAINING PROGRAMS</p>
-        <div class="training-container-row">
-            @foreach (var training in Model)
-            {
-                <div class="training-container-div">
-                    <p class="title-p">@training.TrainingName</p>
-                    <img src="@training.ImageUrl"
-                         style="width: 100%;" alt="Image">
-                    <div class="author-rating-div">
-                        <p class="author-p">Author: @training.TrainingAuthor</p>
-                        <div style="display: flex;">
-                            <div class="star-rating" id="rating">
-                                <span data-value="1" class="star"><i class="fas fa-star star-design"></i></span>
-                                <span data-value="2" class="star"><i class="fas fa-star star-design"></i></span>
-                                <span data-value="3" class="star"><i class="fas fa-star star-design"></i></span>
-                                <span data-value="4" class="star"><i class="fas fa-star star-design"></i></span>
-                                <span data-value="5" class="star"><i class="fas fa-star star-design"></i></span>
+                    var isFirst = true;
+                    foreach (var training in topRatedTrainings)
+                    {
+                        <div class="carousel-item @(isFirst ? "active" : "")">
+                            <div class="carContainer">
+                                <a asp-controller="Home" asp-action="ViewTraining" asp-route-id="@training.Id">
+                                    <div class="carContentContainer">
+                                        <div class="image-containerCar">
+                                            <img src="@training.ImageUrl" alt="Image" class="responsive-imageCar">
+                                        </div>
+                                        <div class="infoContainer">
+                                            <p class="titleCar">@training.TrainingName</p>
+                                            <div class="authorDivCar">
+                                                <p class="author-pCar">Author: </p>
+                                                <p class="authorNameCar">@training.TrainingAuthor</p>
+                                            </div>
+                                            <div class="ratingDivCar">
+                                                <div class="star-rating adjust" id="rating-@training.Id">
+                                                    @for (int i = 1; i <= 5; i++)
+                                                    {
+                                                        <span data-value="@i" class="star"><i class="fas fa-star star-solid star-design bigger-star"></i></span>
+                                                    }
+                                                </div>
+                                                <input type="hidden" id="rating-input-@training.Id" value="@training.AverageRating" />
+                                                <p class="ratingCar">@string.Format("{0:0.0}", @training.AverageRating)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                            <input type="hidden" id="rating-input" value="0" />
-                            <p class="rating-p">5.0</p>
+                        </div>
+                        isFirst = false;
+                    }
+                }
+            </div>
+            <a class="carousel-control-prev" href="#trainingCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#trainingCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        
+        <div class="topMainContainer">
+            <div class="alltrainingDiv">
+                <p class="alltraining-p">ALL TRAINING PROGRAMS</p>
+            </div>
+            <div class="filterDiv">
+                @if (ViewBag.IsRatingPage != true)
+                {
+                    <div class="logosec">
+                        <div class="search-div mr-20 hover-pointer">
+                            <input type="text" id="searchInput" placeholder="Search by training name" class="input-design" />
+                            <button onclick="searchTraining()" class="searchButton">Search</button>
                         </div>
                     </div>
+                }
+                <div class="categoryFilterDiv">
+                    <select id="categoryFilter" class="categoryDrop"></select>
+                    <button id="filterButton" class="filterButton">Filter</button>
                 </div>
-            }
+                <div class="seeDiv">
+                    <p id="seeMoreButton" onclick="showMoreItems()" class="seeFunction" style="display: block;">See More</p>
+                    <p id="seeLessButton" onclick="showLessItems()" class="seeFunction2" style="display: none;">See Less</p>
+                </div>
+            </div>
         </div>
-  </div>
+     
+        <div class="mainContainer">
+            @{
+                var limitedTrainings = Model.Take(4);
+                var index = 0;
+                foreach (var training in Model)
+                {
+                    <div class="trainingContainer training-container-div @(index >= 4 ? "hidden" : "") " data-category-name="@training.CategoryName">
+                        <a data-category-name="@training.CategoryName" asp-controller="Home" asp-action="ViewTraining" asp-route-id="@training.Id">
+                            <p class="title-p">@training.TrainingName</p>
+                            <div class="image-container">
+                                <img src="@training.ImageUrl" alt="Image" class="responsive-image">
+                            </div>
+                            <div class="author-rating-div">
+                                <div class="authorDiv">
+                                    <p class="author-p">Author: </p>
+                                    <p class="authorName">@training.TrainingAuthor</p>
+                                </div>
+                                <div style="display: flex;">
+                                    <div class="star-rating" id="rating-@training.Id">
+                                        @for (int i = 1; i <= 5; i++)
+                                        {
+                                            <span data-value="@i" class="star"><i class="fas fa-star star-solid star-design"></i></span>
+                                        }
+                                    </div>
+                                    <input type="hidden" id="rating-input-@training.Id" value="@training.AverageRating" />
+                                    <p class="rating-p">@string.Format("{0:0.0}", @training.AverageRating)</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    index++;
+                }
+            }
+            <div id="noResultsMessage" class="highrated-p" style="margin-left:800px; display: none;">No results found!</div>
+        </div>
+    </div>
 </div>
+@section scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const starContainers = document.querySelectorAll(".star-rating");
 
+            starContainers.forEach(function (container) {
+                const ratingValue = parseFloat(container.nextElementSibling.value);
+                const stars = container.querySelectorAll(".star");
+
+                const filledStars = Math.floor(ratingValue);
+                const decimal = ratingValue - filledStars;
+
+                for (let i = 0; i < stars.length; i++) {
+                    if (i < filledStars) {
+                        stars[i].style.color = "#F0C808"; 
+                    } else if (i === filledStars && decimal !== 0) {
+                        const percentage = decimal * 100;
+                        stars[i].style.background = `linear-gradient(90deg, #F0C808 ${percentage}%, #333333 ${percentage}%)`;
+                        stars[i].style.webkitBackgroundClip = "text";
+                        stars[i].style.webkitTextFillColor = "transparent";
+                    } else {
+                        stars[i].style.color = "#333333"; 
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        function searchTraining() {
+            var input, filter, trainingList, training, i;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            trainingList = document.getElementsByClassName("trainingContainer");
+
+            var visibleCount = 0;
+
+            for (i = 0; i < trainingList.length; i++) {
+                training = trainingList[i];
+                var trainingName = training.getElementsByClassName("title-p")[0];
+                if (trainingName && trainingName.innerText.toUpperCase().indexOf(filter) > -1) {
+                    training.style.display = "block";
+                    visibleCount++;
+                } else {
+                    training.style.display = "none";
+                }
+            }
+
+            var noResultsMessage = document.getElementById("noResultsMessage");
+            if (visibleCount === 0) {
+                noResultsMessage.style.display = "block";
+            } else {
+                noResultsMessage.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        window.onload = function () {
+            var select = document.getElementById('categoryFilter');
+            var trainingContainers = document.getElementsByClassName('trainingContainer');
+            var categories = new Set();
+
+            var allOption = document.createElement('option');
+            allOption.value = 'all';
+            allOption.text = 'All';
+            select.appendChild(allOption);
+
+            for (var i = 0; i < trainingContainers.length; i++) {
+                var container = trainingContainers[i];
+                var categoryName = container.getAttribute('data-category-name');
+
+                if (categoryName !== null) {
+                    categories.add(categoryName);
+                }
+            }
+
+            categories.forEach(function (categoryName) {
+                var option = document.createElement('option');
+                option.value = categoryName;
+                option.text = categoryName;
+                select.appendChild(option);
+            });
+
+            document.getElementById('filterButton').addEventListener('click', filterByCategory);
+
+            function filterByCategory() {
+                var selectedCategory = select.value;
+
+                for (var i = 0; i < trainingContainers.length; i++) {
+                    var container = trainingContainers[i];
+                    var categoryName = container.getAttribute('data-category-name');
+
+                    if (selectedCategory === 'all' || categoryName === selectedCategory) {
+                        container.style.display = '';
+                    } else {
+                        container.style.display = 'none';
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            $('.trainingContainer:gt(3)').hide();
+            $('#seeLessButton').hide();
+        });
+        function showMoreItems() {
+            $('.trainingContainer').show();
+            $('#seeMoreButton').hide();
+            $('#seeLessButton').show();
+        }
+
+        function showLessItems() {
+            $('.trainingContainer:gt(3)').hide();
+            $('#seeMoreButton').show();
+            $('#seeLessButton').hide();
+        }
+    </script>
+}

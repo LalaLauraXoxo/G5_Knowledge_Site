@@ -81,6 +81,14 @@
       "PackagePath": "staticwebassets\\img\\logo.png"
     },
     {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\pdf.png",
+      "PackagePath": "staticwebassets\\img\\pdf.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\ppt.png",
+      "PackagePath": "staticwebassets\\img\\ppt.png"
+    },
+    {
       "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\profile-logo.png",
       "PackagePath": "staticwebassets\\img\\profile-logo.png"
     },

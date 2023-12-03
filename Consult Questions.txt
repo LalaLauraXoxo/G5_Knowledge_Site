@@ -1,0 +1,12 @@
+NOTES FOR ELASI CONSULT:
+
+Handle EDITING: Saving same UserID with other accounts./ same with categoryName edit/ same with trainingName edit
+Sa Training, ig create ug same Training Name kay mu error ang categories instead mudisplay unta sa TrainingName already Exists!
+If deleted tanan admin accounts: MA ERROR 
+Change Username to DisplayName in code and db
+Updating Image wont work
+Location of Toast Display - Layout/Shared
+Balihon ang placement sa create ug back button
+Remove nga AllowAnonymous
+Ratings mudawat 0 di mugana ang error required/ if allowed ba balik2 sad ang email sa pag rate
+

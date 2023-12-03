@@ -19,24 +19,24 @@
     color: #086788;
     font-size: 30px;
     font-weight: bold;
+    margin-bottom: 50px;
+    margin-left: 25px;
 }
 .alltraining-p {
     color: #086788;
     font-size: 30px;
     font-weight: bold;
-}
-.training-container-div {
-    margin-top: 50px;
-    border-radius: 50px;
-    border-width: 2px;
-    background-color: #086788;
-    width: 23%;
-    padding: 30px;
+    margin-bottom: 20px; 
+    margin-left: 25px;
+    margin-top: 20px;
 }
 .title-p {
     color: #F0C808;
     font-size: 20px;
     font-weight: 600;
+    padding-top: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
 }
 .desc-p {
     margin-top: 30px;
@@ -44,15 +44,10 @@
     font-size: 13px;
     font-weight: 300;
 }
-.author-rating-div{
+.author-rating-div {
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
-}
-.author-p{
-    color: white;
-    font-size: 12px;
-    font-weight: 400;
 }
 .rating-p {
     color: white;
@@ -60,20 +55,230 @@
     font-weight: 500;
     margin-left: 5px;
 }
-.star-design {
-    font-size: 18px;
-    color: #F0C808;
+a {
+    text-decoration: none !important;
 }
-.training-container-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.trainingContainer {
+    background-color: #086788;
+    padding: 30px;
+    border-radius: 50px;
+    width: calc(24% - 20px);
+    margin: 19px;
+    text-align: center;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.training-container-div {
-    width: calc(25% - 10px); /* 4 containers per row with 10px spacing between them */
-   
+.mainContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 30px;
 }
-a{
-    text-decoration: none !important;
+.image-container {
+    width: 100%; 
+    height: 200px; 
+    overflow: hidden; 
+    border-radius: 50px; 
+    position: relative;
+}
+
+.responsive-image {
+    width: 100%; 
+    height: 100%; 
+}
+.authorDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.authorName{
+    margin-left: 5px;
+    color: white;
+}
+.author-p {
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    color: #F0C808;
+}
+.topMainContainer {
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: space-between;
+}
+.filterDiv{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 40px;
+}
+.seeFunction{
+    color: #086788;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.seeFunction2 {
+    color: #086788;
+    font-size: 17px;
+    font-weight: 500;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-right: 30px;
+}
+.input-design{
+    font-size: 18px;
+    font-weight: 500;
+    color: #086788;
+}
+.searchButton {
+    background-color: #086788;
+    border: none;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 18px;
+    border-radius: 15px;
+}
+.filterButton {
+    background-color: #086788;
+    border: none;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 18px;
+    border-radius: 15px;
+}
+.logosec {
+    margin-right: 50px;
+    margin-bottom: 15px;
+}
+.categoryFilterDiv{
+    margin-right: 50px;
+    margin-bottom: 15px;
+}
+.categoryDrop {
+    background-color: white;
+    border: solid 2px #086788;
+    color: #086788;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 18px;
+    border-radius: 15px;
+}
+
+/*CAROUSEL*/
+.carContentContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    padding-top: 50px;
+}
+
+.image-containerCar {
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    margin-right: 50px; 
+}
+.responsive-imageCar {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.infoContainer {
+    width: 55%; 
+}
+
+.carContainer {
+    background-color: #086788;
+    width: 80%; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+.carousel-control-prev,
+.carousel-control-next {
+    font-size: 2em;
+    color: #ffffff;
+    background-color: #086788;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    opacity: 0.8;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    color: #ffffff;
+    opacity: 1;
+}
+.carousel-control-prev {
+    left: 25px;
+}
+
+.carousel-control-next {
+    right: 25px;
+}
+
+.titleCar {
+    color: #F0C808;
+    font-size: 40px;
+    font-weight: 600;
+    padding-top: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+}
+.authorDivCar {
+    display: flex;
+    align-items: center;
+}
+.author-pCar {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    color: #F0C808;
+}
+.authorNameCar {
+    margin-left: 10px;
+    color: white;
+    font-size: 25px;
+}
+.ratingCar {
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+.bigger-star {
+    font-size: 24px;
+}
+.ratingDivCar{
+    display: flex;
+}
+.adjust{
+    margin-top: 4px;
+}
+.seeDiv{
+    display: flex;
 }

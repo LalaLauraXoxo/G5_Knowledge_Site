@@ -9,45 +9,53 @@
     ViewBag.IsViewCategoryPage = true;
 }
 
-<div class="viewuser-div">
-    <div class="inside-viewuser">
-        <div>
-            <form method="post" asp-action="ViewUser">
-                <div class="form-group">
-                    <input type="hidden" class="form-control" asp-for="Id">
+<div class="screen-container">
+    <div class="inside-container">
+        <form method="post" asp-action="ViewUser">
+            <input type="hidden" class="form-control" asp-for="Id">
+            <div class="twoDivContainer">
+                <div class="nameDescDiv">
+                    <div class="form-group">
+                        <label for="categoryName">CATEGORY NAME</label>
+                        <input type="text" class="input-design" asp-for="CategoryName" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="categoryDesc">DESCRIPTION</label>
+                        <textarea class="text-area-design" asp-for="CategoryDesc" readonly></textarea>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="categoryName">CATEGORY NAME</label>
-                    <input type="text" class="form-control" asp-for="CategoryName" readonly>
+                <div class="trainingsListDiv">
+                    <label>TRAININGS</label><br />
+                    <label class="underText">under this category:</label>
+                    <div class="trainingsDiv scrollable">
+                        @if (Model.Trainings != null && Model.Trainings.Any())
+                        {
+                            <ul>
+                                @foreach (var training in Model.Trainings)
+                                {
+                                    <li class="trainingItem">
+                                        <span class="bullet"></span>
+                                        <p class="trainingName">@training.TrainingName</p>
+                                    </li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <li class="trainingItem">
+                                <span class="bullet"></span> 
+                                <p class="trainingName">No Trainings Added</p>
+                            </li>
+                        }
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="categoryDesc">DESCRIPTION</label>
-                    <input type="text" class="form-control" asp-for="CategoryDesc" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="trainings">TRAINING PROGRAMS UNDER THIS CATEGORY</label>
-                    @if (Model.Trainings != null && Model.Trainings.Any())
-                    {
-                        <ul>
-                            @foreach (var training in Model.Trainings)
-                            {
-                                <li>@training.TrainingName</li>
-                            }
-                        </ul>
-                    }
-                    else
-                    {
-                        <p>No Trainings Added</p>
-                    }
-                </div>
-                <div class="form-group">
-                    <a class="btn btn-secondary" asp-controller="Category" asp-action="TrainingCategories">
-                        BACK TO LIST
-                    </a>
-                </div>
-            </form>
-
-        </div>
+            </div>
+            <div class="bottom-buttons">
+                <a class="back-button" asp-controller="Category" asp-action="TrainingCategories">
+                    BACK TO LIST
+                </a>
+            </div>
+        </form>
     </div>
 </div>
 @section scripts{

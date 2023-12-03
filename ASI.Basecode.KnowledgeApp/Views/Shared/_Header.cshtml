@@ -9,19 +9,11 @@
 
         </div>
     </div>
-    @if (ViewBag.IsRatingPage != true)
-    {
-        <div class="logosec">
-            <div class="search-div mr-20 hover-pointer">
-                <input type="text" id="search" class="input-design" placeholder="Search" />
-            </div>
-        </div>
-    }
     @if (ViewBag.IsRatingPage == true)
     {
         <div class="logosec">
             <div class="mr-20 hover-pointer">
-                <a class="backtotraining-button" asp-controller="Training" asp-action="Index">Back to Training</a>
+                <a class="backtotraining-button" asp-controller="Home" asp-action="ViewTraining" asp-route-id="@ViewData["TrainingId"]">Back to Training</a>
             </div>
         </div>
     }

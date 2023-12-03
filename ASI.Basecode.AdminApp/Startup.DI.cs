@@ -38,6 +38,7 @@ namespace ASI.Basecode.AdminApp
             this._services.AddScoped<ICategoryService, CategoryService>();
             this._services.AddScoped<ITrainingService, TrainingService>();
             this._services.AddScoped<ITopicService, TopicService>();
+            this._services.AddTransient<IEmailService, EmailService>();
 
 
             // Repositories

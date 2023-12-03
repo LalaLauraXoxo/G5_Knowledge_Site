@@ -17,11 +17,12 @@
             </a>
         </div>
         <div class="table-container">
-            <table class="table table-borderless">
+            <table class="table">
                 <thead class="custom-thead">
                     <tr>
+                        <th scope="col">ROW #</th>
                         <th scope="col">USER ID</th>
-                        <th scope="col">USERNAME</th>
+                        <th scope="col">DSIPLAY NAME</th>
                         <th scope="col">EMAIL</th>
                         <th scope="col">ACTIONS</th>
                     </tr>
@@ -29,9 +30,11 @@
                 <tbody>
                     @if (Model != null && Model.Count > 0)
                     {
+                        var count = 1;
                         @foreach (var users in Model)
                         {
                             <tr style="color:white">
+                                <td>@count</td>
                                 <td>@users.UserId</td>
                                 <td>@users.Username</td>
                                 <td>@users.Email</td>
@@ -45,20 +48,100 @@
                                             <input type="hidden" name="id" value="@users.Id" />
                                             <button type="submit" class="btn btn-success btn-spacing"><i class="fa fa-pen"></i> </button>
                                         </form>
-                                        <form asp-controller="UserMaster" asp-action="Delete" method="post">
+                                        <form id="deleteForm-@users.Id" asp-controller="UserMaster" asp-action="Delete" method="post">
                                             <input type="hidden" name="id" value="@users.Id" />
-                                            <button type="submit" class="btn btn-danger btn-spacing"><i class="fa fa-trash-can"></i></button>
+                                            <button type="button" class="btn btn-danger btn-spacing" onclick="confirmDelete('@users.Id')">
+                                                <i class="fa fa-trash-can"></i>
+                                            </button>
                                         </form>
+
                                     </div>
                                 </td>
                             </tr>
+                            count++;
                         }
                     }else{
-                        <p>No admins created.</p>
+                        <tr>
+                            <td colspan="4">
+                                <p>No admins created.</p>
+                            </td>
+                        </tr>
                     }
 
                 </tbody>
             </table>
         </div>
+        <div class="pagination-container">
+            <ul class="pagination justify-content-center">
+            </ul>
+        </div>
     </div>
 </div>
+@section scripts{
+    <script>
+        // Check for error message and display Toastr notification
+        var errorMessage = '@TempData["ErrorMessage"]';
+        if (errorMessage) {
+            toastr.error(errorMessage);
+        }
+    </script>
+    <script>
+        function confirmDelete(userId) {
+            Swal.fire({
+                title: 'Confirm Deletion',
+                text: 'Are you sure you want to delete this?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Updated to target the specific form based on user ID
+                    document.getElementById("deleteForm-" + userId).submit();
+                }
+            });
+        }
+    </script>
+
+    <script>
+        function displayData(page) {
+            var pageSize = 9;
+            var start = (page - 1) * pageSize;
+            var end = start + pageSize;
+            var $rows = $('.table tbody tr');
+
+            $rows.hide().slice(start, end).show();
+        }
+
+        function generatePagination() {
+            var pageSize = 9;
+            var pageCount = Math.ceil($('.table tbody tr').length / pageSize);
+
+            var $paginationContainer = $('.pagination');
+            $paginationContainer.empty();
+
+            for (var i = 1; i <= pageCount; i++) {
+                var $li = $('<li class="page-item"><a class="page-link" href="#">' + i + '</a></li>');
+                $li.data('page', i).appendTo($paginationContainer);
+            }
+
+            $paginationContainer.on('click', 'li', function (e) {
+                e.preventDefault();
+                var page = $(this).data('page');
+                displayData(page);
+                $(this).addClass('active').siblings().removeClass('active');
+            });
+
+            displayData(1);
+            $paginationContainer.find('li:first').addClass('active');
+        }
+
+        $(document).ready(function () {
+            generatePagination();
+        });
+    </script>
+    
+}
+
+

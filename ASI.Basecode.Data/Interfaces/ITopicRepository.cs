@@ -13,13 +13,15 @@ namespace ASI.Basecode.Data.Interfaces
 
         public List<Topic> GetTopic();
 
-        public Topic GetTopic(int id);
+        public Topic GetTopic(int topicId, int trainingId);
 
         public void UpdateTopic(Topic topic);
 
         public void DeleteTopic(Topic topic);
 
+        public List<Topic> GetTopicsByTrainingId(int trainingId);
 
+        public bool DeleteTopicsByTrainingId(int trainingId);
 
     }
 }

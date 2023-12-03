@@ -1,6 +1,7 @@
 ﻿using ASI.Basecode.Data.Interfaces;
 using ASI.Basecode.Data.Models;
 using Basecode.Data.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,5 +56,10 @@ namespace ASI.Basecode.Data.Repositories
             UnitOfWork.SaveChanges();
         }
 
+        public async Task<User> GetUserByEmail(string email)
+        {
+            var user = await this.GetDbSet<User>().FirstOrDefaultAsync(u => u.Email == email);
+            return user;
+        }
     }
 }

@@ -1,0 +1,92 @@
+Scaffold-DbContext "Addr=XDA-DEV-16JKYJ3; database=KnowBody_DB; Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -ContextDir Data/.. -Force
+
+52:30  image data type
+
+INSERT INTO Users (UserId, FirstName, LastName, Username, Email, Password, CreatedBy, CreatedTime, UpdatedBy, UpdatedTime)
+VALUES ('admin', 'Admin', 'Admin', 'Admin', 'xymer.i.serna@gmail.com', 'Kw7+jFXwfGw/o6Mi2vJEXw==', 'Admin', GETDATE(), 'Admin', GETDATE());
+
+password: admin
+
+CREATE TABLE [Users] (
+    [Id] int IDENTITY(1,1),
+    [UserId] nvarchar(50) not null unique,
+    [FirstName] nvarchar(50) not null,
+    [LastName] nvarchar(50) not null,
+    [Username] nvarchar(50) not null,
+    [Email] nvarchar(50) not null,
+    [Password] nvarchar(50) null,
+    [CreatedBy] nvarchar(50) not null,
+    [CreatedTime] DateTime not null,
+    [UpdatedBy] nvarchar(50) not null,
+    [UpdatedTime] DateTime not null,
+    PRIMARY KEY (Id)
+);
+
+CREATE TABLE [Categories] (
+    [Id] int IDENTITY(1,1),
+    [CategoryName] nvarchar(50) not null,
+    [CategoryDesc] nvarchar(MAX) not null,
+    [CreatedBy] nvarchar(50) not null,
+    [CreatedTime] DateTime not null,
+    [UpdatedBy] nvarchar(50) not null,
+    [UpdatedTime] DateTime not null,
+    PRIMARY KEY (Id)
+);
+
+CREATE TABLE [Trainings] (
+    [Id] int IDENTITY(1,1),
+    [CategoryId] int not null,
+    [TrainingName] nvarchar(50) not null,
+    [TrainingDesc] nvarchar(MAX) not null,
+    [TrainingAuthor] nvarchar(50) not null,
+    [TrainingImage] nvarchar(50) null,
+    [CreatedBy] nvarchar(50) not null,
+    [CreatedTime] DateTime not null,
+    [UpdatedBy] nvarchar(50) not null,
+    [UpdatedTime] DateTime not null,
+    PRIMARY KEY (Id)
+);
+CREATE TABLE [Topics] (
+    [TopicId] int IDENTITY(1,1) PRIMARY KEY,
+    [TrainingId] int not null,
+    [TopicName] nvarchar(50) not null,
+    [TopicDesc] nvarchar(MAX) not null,
+    [TopicFile] nvarchar(50) null,
+    [CreatedBy] nvarchar(50) not null,
+    [CreatedTime] DateTime not null,
+    [UpdatedBy] nvarchar(50) not null,
+    [UpdatedTime] DateTime not null,
+);
+
+
+CREATE TABLE [Ratings] (
+    [Id] int IDENTITY(1,1) PRIMARY KEY,
+    [TrainingId] int not null,
+    [Name] nvarchar(50) not null,
+    [Email] nvarchar(50) not null,
+    [Comment] nvarchar(MAX) not null,
+    [StarRating] double not null,
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

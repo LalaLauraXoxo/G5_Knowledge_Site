@@ -8,6 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
+using System.Threading.Tasks;
 using static ASI.Basecode.Resources.Constants.Enums;
 
 namespace ASI.Basecode.Services.Services
@@ -65,6 +68,60 @@ namespace ASI.Basecode.Services.Services
             return user;
         }
 
+        public UserViewModel GetUserViewModel(User user, int id)
+        {
+            var model = new UserViewModel();
+
+            model = new()
+            {
+                Id = id,
+                UserId = user.UserId,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                Username = user.Username,
+            };
+
+            return model;
+        }
+
+        public UserViewModel GetEditUserViewModel(User user, int id)
+        {
+            var model = new UserViewModel();
+
+            model = new()
+            {
+                Id = id,
+                UserId = user.UserId,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                Username = user.Username,
+                Password = PasswordManager.DecryptPassword(user.Password),
+            };
+
+            return model;
+        }
+
+        public bool UpdateUser(UserViewModel model, string username)
+        {
+            User user = _repository.GetUser(model.Id);
+
+           
+                user.UserId = model.UserId;
+                user.FirstName = model.FirstName;
+                user.LastName = model.LastName;
+                user.Email = model.Email;
+                user.Username = model.Username;
+                user.Password = PasswordManager.EncryptPassword(model.Password);
+
+                user.UpdatedBy = username;
+                user.CreatedTime = DateTime.Now;
+
+                _repository.UpdateUser(user);
+                return true;
+        }
+
         public bool DeleteUser(UserViewModel model)
         {
             User user = _repository.GetUser(model.Id);
@@ -76,26 +133,28 @@ namespace ASI.Basecode.Services.Services
             return false;
         }
 
-        public bool UpdateUser(UserViewModel model, string username)
+        public async Task<User> GetUserByEmail(string email)
         {
-            User user = _repository.GetUser(model.Id);
+            var user = await _repository.GetUserByEmail(email);
+            return user;
+        }
+
+        public async Task<bool> UpdateUserPasswordByEmail(string email, string newPassword)
+        {
+
+            var user = await _repository.GetUserByEmail(email);
             if (user != null)
             {
-                user.UserId = model.UserId;
-                user.FirstName = model.FirstName;
-                user.LastName = model.LastName;
-                user.Email = model.Email;
-                user.Username = model.Username;
-                //user.Password = model.Password;
-                user.Password = PasswordManager.EncryptPassword(model.Password);
-
-                user.UpdatedBy = username;
-                user.CreatedTime = DateTime.Now;
+                user.Password = PasswordManager.EncryptPassword(newPassword);
+                user.UpdatedBy = "admin"; 
+                user.UpdatedTime = DateTime.Now;
 
                 _repository.UpdateUser(user);
                 return true;
             }
             return false;
         }
+
+
     }
 }

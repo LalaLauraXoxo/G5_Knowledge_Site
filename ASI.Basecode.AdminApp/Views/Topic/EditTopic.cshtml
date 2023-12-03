@@ -1,40 +1,60 @@
 ﻿@using ASI.Basecode.Services.ServiceModels
 @model TopicViewModel
 @section styles {
-    <link rel="stylesheet" href="~/css/" />
+    <link rel="stylesheet" href="~/css/edittopic.css" />
 }
 @{
     ViewData["Title"] = "Edit Topic";
     ViewBag.IsEditTopicPage = true;
 }
 
-<div class="pt-5">
-
-    <h1>Edit Training</h1>
-
-    <form method="post" asp-action="EditTopic">
-        <input type="hidden" class="form-control" asp-for="Id">
+<div class="screen-container">
+    <div class="inside-container">
+    <form method="post" asp-action="EditTopic" enctype="multipart/form-data" asp-route-trainingId="@ViewBag.TrainingId">
+        <input type="hidden" class="form-control" asp-for="TopicId">
         <div class="form-group">
             <label>TOPIC NAME</label>
-            <input type="text" class="form-control" asp-for="TopicName">
+            <input type="text" class="input-design" asp-for="TopicName">
+            <span asp-validation-for="TopicName" class="text-danger"></span><br>
         </div>
         <div class="form-group">
-            <label>DESCRIPTION</label>
-            <textarea class="form-control" rows="3" asp-for="TopicDesc"></textarea>
+            <label>DESCRIPTION/ LESSON</label>
+            <textarea class="text-area-design" asp-for="TopicDesc"></textarea>
+            <span asp-validation-for="TopicDesc" class="text-danger"></span><br>
         </div>
-        <div style="width: 20%">
-            <img id="previewImage" src="@Model.ImageUrl" style="width: 100%;" alt="Training Image">
-        </div><br />
 
         <div class="form-group">
-            <label>CHOOSE FILE</label>
-            <input asp-for="ImageFile" type="file" accept=".png" class="form-control-file" onchange="previewFile()">
+            <div style="display: flex;">
+                <label>RESOURCE MATERIAL</label>
+                <div style="width: 8%">
+                    <img src="~/img/materialRB.png" style="width: 100%;" alt="dp">
+                </div>
+            </div>
+            <div>
+                @if (!string.IsNullOrEmpty(Model.TopicFile))
+                {
+                    <div class="topicFileDiv">
+                        <p class="currentFile">Current file: </p>
+                        <p class="fileData">@Model.TopicFile</p>
+                    </div>
+                }
+                else
+                {
+                    <p class="currentFile">No file uploaded</p>
+                }
+            </div>
+            <input asp-for="MaterialFile" type="file" accept=".pdf, .ppt, .pptx, .mp4" class="uploadButton"><br />
+            <span asp-validation-for="MaterialFile" class="text-danger"></span><br>
         </div>
 
-
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="bottom-buttons">
+            <a class="back-button" asp-controller="Topic" asp-action="Topics" asp-route-trainingId="@ViewBag.TrainingId">
+                <p class="back-button-p">BACK TO LIST</p>
+            </a>
+                <button type="submit" class="saveButton">SAVE</button>
+        </div>
     </form>
-
+    </div>
 </div>
 @section scripts{
     <script>
@@ -51,7 +71,7 @@
             if (file) {
                 reader.readAsDataURL(file);
             } else {
-                preview.src = "@Model.ImageUrl";
+                preview.src = "@Model.FileUrl";
             }
         }
     </script>

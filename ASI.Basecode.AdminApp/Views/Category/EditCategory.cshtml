@@ -1,26 +1,33 @@
 ﻿@using ASI.Basecode.Services.ServiceModels
 @model CategoryViewModel
-
+@section styles {
+    <link rel="stylesheet" href="~/css/editcategory.css" />
+}
 @{
     ViewData["Title"] = "Edit Category";
     ViewBag.IsEditCategoryPage = true;
 }
 
-<div class="pt-5">
-
-    <h1>Edit Category</h1>
-
+<div class="screen-container">
+    <div class="inside-container">
     <form method="post" asp-action="EditCategory">
         <input type="hidden" class="form-control" asp-for="Id">
         <div class="form-group">
             <label>CATEGORY NAME</label>
-            <input type="text" class="form-control" asp-for="CategoryName">
+            <input type="text" class="input-design" asp-for="CategoryName">
+            <span asp-validation-for="CategoryName" class="text-danger"></span><br>
         </div>
         <div class="form-group">
             <label>DESCRIPTION</label>
-            <textarea class="form-control" rows="3" asp-for="CategoryDesc"></textarea>
+            <textarea class="text-area-design" rows="3" asp-for="CategoryDesc"></textarea>
+            <span asp-validation-for="CategoryDesc" class="text-danger"></span><br>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="bottom-buttons">
+            <a class="back-button" asp-controller="Category" asp-action="TrainingCategories">
+                BACK TO LIST
+            </a>
+            <button type="submit" class="saveButton">SAVE</button>
+        </div>
     </form>
-
+    </div>
 </div>

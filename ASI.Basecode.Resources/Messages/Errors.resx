@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CategoryExists" xml:space="preserve">
+    <value>Category Name already exists!</value>
+  </data>
+  <data name="RatingEmailExists" xml:space="preserve">
+    <value>Email already used!</value>
+  </data>
   <data name="ServerError" xml:space="preserve">
     <value>Server error occured!</value>
+  </data>
+  <data name="TrainingExists" xml:space="preserve">
+    <value>Training Name already exists!</value>
   </data>
   <data name="UserExists" xml:space="preserve">
     <value>UserId already exists!</value>

@@ -20,6 +20,14 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/ALLIANCE TESTING/ASI.Basecode.KnowledgeApp/Views/Home/RateTraining.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSYXRlVHJhaW5pbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ALLIANCE TESTING/ASI.Basecode.KnowledgeApp/Views/Home/ViewTraining.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWaWV3VHJhaW5pbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ALLIANCE TESTING/ASI.Basecode.KnowledgeApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -34,14 +42,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/ALLIANCE TESTING/ASI.Basecode.KnowledgeApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ALLIANCE TESTING/ASI.Basecode.KnowledgeApp/Views/Training/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5pbmdcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ALLIANCE TESTING/ASI.Basecode.KnowledgeApp/Views/Training/RateTraining.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5pbmdcUmF0ZVRyYWluaW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ALLIANCE TESTING/ASI.Basecode.KnowledgeApp/Views/_ViewImports.cshtml]

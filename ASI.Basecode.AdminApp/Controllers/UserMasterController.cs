@@ -11,6 +11,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using ASI.Basecode.Data.Models;
 
 namespace ASI.Basecode.AdminApp.Controllers
 {
@@ -29,7 +30,6 @@ namespace ASI.Basecode.AdminApp.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
         public IActionResult UserMaster()
         {
             var users = _UserService.GetUsersDisplay();
@@ -37,14 +37,12 @@ namespace ASI.Basecode.AdminApp.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
         public IActionResult CreateUser()
         {
             return View();
         }
 
         [HttpPost]
-        [AllowAnonymous]
         public IActionResult CreateUser(UserViewModel model)
         {
             try
@@ -69,32 +67,10 @@ namespace ASI.Basecode.AdminApp.Controllers
             var user = _UserService.GetUser(id);
             if (user != null)
             {
-                UserViewModel model = new()
-                {
-                    Id = id,
-                    UserId = user.UserId,
-                    FirstName = user.FirstName,
-                    LastName = user.LastName,
-                    Email = user.Email,
-                    Username = user.Username,
-                };
-                return View(model);
+                return View(_UserService.GetUserViewModel(user, id));
             }
             return NotFound();
         }
-
-        //
-        public IActionResult Delete(UserViewModel model)
-        {
-            bool isDeleted = _UserService.DeleteUser(model);
-            if (isDeleted)
-            {
-                return RedirectToAction("UserMaster");
-            }
-            return NotFound();
-        }
-
-        //
 
         [HttpGet]
         public IActionResult EditUser(int id)
@@ -102,28 +78,30 @@ namespace ASI.Basecode.AdminApp.Controllers
             var user = _UserService.GetUser(id);
             if (user != null)
             {
-                UserViewModel model = new()
-                {
-                    Id = id,
-                    UserId = user.UserId,
-                    FirstName = user.FirstName,
-                    LastName = user.LastName,
-                    Email = user.Email,
-                    Username = this.UserName,
-                    Password = PasswordManager.DecryptPassword(user.Password),
-
-                };
-                return View(model);
+                return View(_UserService.GetEditUserViewModel(user, id));
             }
             return NotFound();
         }
+
         [HttpPost]
         public IActionResult EditUser(UserViewModel model)
         {
+           
             bool isUpdated = _UserService.UpdateUser(model, this.UserName);
             if (isUpdated)
             {
                 return RedirectToAction("UserMaster", "UserMaster");
+            }
+            
+           
+            return View(model);
+        }
+        public IActionResult Delete(UserViewModel model)
+        {
+            bool isDeleted = _UserService.DeleteUser(model);
+            if (isDeleted)
+            {
+                return RedirectToAction("UserMaster");
             }
             return NotFound();
         }

@@ -2,45 +2,58 @@
 @model TrainingViewModel
 
 @section styles {
-    <link rel="stylesheet" href="~/css/" />
+    <link rel="stylesheet" href="~/css/viewtraining.css" />
 }
 @{
     ViewData["Title"] = "View Training";
     ViewBag.IsViewTrainingPage = true;
+    var trainingId = Model.Id;
 }
 
-<div class="viewuser-div">
-    <div class="inside-viewuser">
-        <div>
-            <form method="post" asp-action="ViewTraining">
-                <div class="inputs-div">
-                    <div>
-                        <input type="hidden" class="input-design" asp-for="Id">
+<div class="screen-container">
+    <div class="inside-container">
+        <form method="post" asp-action="ViewTraining">
+            <input type="hidden" class="input-design" asp-for="Id">
+            <div class="twoDiv">
+                <div class="rightDiv">
+                    <div class="form-group">
                         <label for="trainingName" class="inputs-label">TRAINING NAME</label>
-                        <input type="text" class="input-design" asp-for="TrainingName" readonly><br><br>
-                        <div style="width: 20%">
-                            <img src="@Model.ImageUrl" style="width: 100%;" alt="Training Image">
-                        </div><br />
+                        <input type="text" class="input-design" asp-for="TrainingName" readonly>
+                    </div>
+                    <div class="form-group">
                         <label for="trainingDesc" class="inputs-label">DESCRIPTION</label>
-                        <input type="text" class="input-design" asp-for="TrainingDesc" readonly><br><br>
-                        <label for="trainingDesc" class="inputs-label">AUTHOR</label>
+                        <textarea type="text" class="text-area-design" asp-for="TrainingDesc" readonly></textarea><br>
+                    </div>
+                </div>
+                <div class="leftDiv">
+                    <div class="form-group">
+                        <label for="TrainingAuthor">AUTHOR</label>
                         <input type="text" class="input-design" asp-for="TrainingAuthor" readonly><br><br>
-                        <label for="trainingDesc" class="inputs-label">CATEGORY</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="CategoryName">CATEGORY</label>
                         <input type="text" class="input-design" asp-for="CategoryName" readonly><br><br>
                     </div>
-                    <div>
-                        <a asp-controller="Topic" asp-action="Topics">
-                            <p>View Topic</p>
-                        </a>
+                    <label for="ImageUrl">COVER IMAGE</label>
+                    <div class="imageDiv">
+                        <img id="previewImage" src="@Model.ImageUrl" class="imageFile" alt="">
                     </div>
-                    <div class="rightside-div">
-                        <a class="back-button-div" asp-controller="Training" asp-action="Trainings">
-                            <p class="back-button-p">BACK TO LIST</p>
+                    <div class="bottom-buttons">
+                        <a class="topicsButton" asp-controller="Topic" asp-action="Topics" asp-route-trainingId="@trainingId">
+                            View Topics
+                        </a>
+                        <a class="ratingsButton"  asp-controller="Training" asp-action="ViewRatings" asp-route-trainingId="@trainingId">
+                            View Ratings
                         </a>
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
+            <div class="bottomBackButton">
+                <a class="back-button" asp-controller="Training" asp-action="Trainings">
+                    BACK TO LIST
+                </a>
+            </div>
+        </form>
     </div>
 </div>
 @section scripts{

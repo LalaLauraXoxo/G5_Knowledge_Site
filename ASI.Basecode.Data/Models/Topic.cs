@@ -5,7 +5,8 @@ namespace ASI.Basecode.Data.Models
 {
     public partial class Topic
     {
-        public int Id { get; set; }
+        public int TopicId { get; set; }
+        public int TrainingId { get; set; }
         public string TopicName { get; set; }
         public string TopicDesc { get; set; }
         public string TopicFile { get; set; }

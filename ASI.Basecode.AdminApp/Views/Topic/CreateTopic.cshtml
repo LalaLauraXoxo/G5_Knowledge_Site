@@ -1,7 +1,7 @@
 ﻿@using ASI.Basecode.Services.ServiceModels
 @model TopicViewModel
 @section styles {
-    <link rel="stylesheet" href="~/css/" />
+    <link rel="stylesheet" href="~/css/createtopic.css" />
 }
 
 @{
@@ -13,21 +13,35 @@
 <div class="screen-container">
     <div class="inside-container">
         <form method="post" enctype="multipart/form-data" asp-action="CreateTopic">
+            <input type="hidden" name="TrainingId" value="@ViewBag.TrainingId">
             <div class="form-group">
                 <label>TOPIC NAME</label>
-                <input type="text" class="form-control" asp-for="TopicName">
+                <input type="text" class="input-design" asp-for="TopicName" placeholder="Enter topic name...">
+                <span asp-validation-for="TopicName" class="text-danger"></span><br>
             </div>
             <div class="form-group">
-                <label>TOPIC DESC</label>
-                <input type="text" class="form-control" asp-for="TopicDesc">
+                <label>DESCRIPTION/ LESSON</label>
+                <textarea type="text" class="text-area-design" asp-for="TopicDesc" placeholder="Enter topic description..."></textarea>
+                <span asp-validation-for="TopicDesc" class="text-danger"></span><br>
             </div>
 
             <div class="form-group">
-                <label>CHOOSE FILE</label>
-                <input asp-for="ImageFile" type="file" accept=".pdf, .ppt, .pptx, .mp4, .avi, .mov" class="form-control-file">
+                <div style="display: flex;">
+                    <label>RESOURCE MATERIAL</label>
+                    <div style="width: 8%">
+                        <img src="~/img/materialRB.png" style="width: 100%;" alt="dp">
+                    </div>
+                </div>
+                <input asp-for="MaterialFile" type="file" accept=".pdf, .ppt, .pptx, .mp4" class="uploadButton"><br />
+                <span asp-validation-for="MaterialFile" class="text-danger"></span><br>
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="bottom-buttons">
+                <a class="back-button" asp-controller="Topic" asp-action="Topics" asp-route-trainingId="@ViewBag.TrainingId">
+                    <p class="back-button-p">BACK TO LIST</p>
+                </a>
+                <button type="submit" class="createButton">CREATE</button>
+            </div>
         </form>
     </div>
 

@@ -28,6 +28,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/ALLIANCE TESTING/ASI.Basecode.AdminApp/Views/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ALLIANCE TESTING/ASI.Basecode.AdminApp/Views/Category/CreateCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlQ2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -90,6 +94,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/ALLIANCE TESTING/ASI.Basecode.AdminApp/Views/Training/Trainings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5pbmdcVHJhaW5pbmdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ALLIANCE TESTING/ASI.Basecode.AdminApp/Views/Training/ViewRatings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5pbmdcVmlld1JhdGluZ3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ALLIANCE TESTING/ASI.Basecode.AdminApp/Views/Training/ViewTraining.cshtml]

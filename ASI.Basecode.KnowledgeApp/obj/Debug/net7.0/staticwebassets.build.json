@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KVQzbIyVKO8DO5WWajy+iexHgsRzYEiwdcePb59ZceQ=",
+  "Hash": "u0dGX8RV4kHHbaXVhWr3SjQx1B8Km7W+V+riZLMd6UI=",
   "Source": "ASI.Basecode.KnowledgeApp",
   "BasePath": "_content/ASI.Basecode.KnowledgeApp",
   "Mode": "Default",
@@ -355,6 +355,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\logo.png"
+    },
+    {
+      "Identity": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\pdf.png",
+      "SourceId": "ASI.Basecode.KnowledgeApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecode.KnowledgeApp",
+      "RelativePath": "img/pdf.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\pdf.png"
+    },
+    {
+      "Identity": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\ppt.png",
+      "SourceId": "ASI.Basecode.KnowledgeApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecode.KnowledgeApp",
+      "RelativePath": "img/ppt.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\ppt.png"
     },
     {
       "Identity": "D:\\ALLIANCE TESTING\\ASI.Basecode.KnowledgeApp\\wwwroot\\img\\profile-logo.png",

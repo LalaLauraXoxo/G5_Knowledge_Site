@@ -8,7 +8,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace ASI.Basecode.AdminApp.Controllers
@@ -34,7 +36,7 @@ namespace ASI.Basecode.AdminApp.Controllers
 
         public IActionResult TrainingCategories()
         {
-            var category = _categoryService.GetCategory();
+            var category = _categoryService.GetCategories();
             return View(category);
         }
 
@@ -45,8 +47,20 @@ namespace ASI.Basecode.AdminApp.Controllers
         [HttpPost]
         public IActionResult CreateCategory(CategoryViewModel categoryViewModel)
         {
-            _categoryService.AddCategory(categoryViewModel, this.UserName);
-            return RedirectToAction("TrainingCategories");
+            try
+            {
+                _categoryService.AddCategory(categoryViewModel, this.UserName);
+                return RedirectToAction("TrainingCategories");
+            }
+            catch (InvalidDataException ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = Resources.Messages.Errors.ServerError;
+            }
+            return View();
         }
 
         [HttpGet]
@@ -55,24 +69,7 @@ namespace ASI.Basecode.AdminApp.Controllers
             var category = _categoryService.GetCategory(id);
             if (category != null)
             {
-                List<Training> trainings = _trainingService.GetTrainingsByCategoryId(id);
-
-                List<TrainingViewModel> trainingViewModels = trainings.Select(training => new TrainingViewModel
-                {
-                    Id = training.Id,
-                    TrainingName = training.TrainingName,
-                    //CategoryId = category.Id,
-                    
-                }).ToList();
-
-                CategoryViewModel categoryViewModel = new()
-                {
-                    Id = id,
-                    CategoryName = category.CategoryName,
-                    CategoryDesc = category.CategoryDesc,
-                    Trainings = trainingViewModels
-                };
-                return View(categoryViewModel);
+                return View(_categoryService.GetCategoryViewModel(category));
             }
             return NotFound();
         }
@@ -83,17 +80,11 @@ namespace ASI.Basecode.AdminApp.Controllers
             var category = _categoryService.GetCategory(id);
             if (category != null)
             {
-                CategoryViewModel categoryViewModel = new()
-                {
-                    Id = id,
-                    CategoryName = category.CategoryName,
-                    CategoryDesc = category.CategoryDesc,
-                };
-
-                return View(categoryViewModel);
+                return View(_categoryService.GetEditCategoryViewModel(category, id));
             }
             return NotFound();
         }
+
         [HttpPost]
         public IActionResult EditCategory(CategoryViewModel categoryViewModel)
         {

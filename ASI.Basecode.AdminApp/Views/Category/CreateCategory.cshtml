@@ -15,15 +15,30 @@
         <form method="post" asp-action="CreateCategory">
             <div class="form-group">
                 <label>CATEGORY NAME</label>
-                <input type="text" class="form-control" asp-for="CategoryName">
+                <input type="text" class="input-design" asp-for="CategoryName" placeholder="Enter category name...">
+                <span asp-validation-for="CategoryName" class="text-danger"></span><br>
             </div>
             <div class="form-group">
-                <label>CATAGORY DESC</label>
-                <input type="text" class="form-control" asp-for="CategoryDesc">
+                <label>DESCRIPTION</label><br />
+                <textarea type="text" class="text-area-design" asp-for="CategoryDesc" placeholder="Enter category decription..."></textarea>
+                <span asp-validation-for="CategoryDesc" class="text-danger"></span><br>
             </div>
-           
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="bottom-buttons">
+                <a class="back-button" asp-controller="Category" asp-action="TrainingCategories">
+                    BACK TO LIST
+                </a>
+                <button type="submit" class="createButton">CREATE</button>
+            </div>
         </form>
     </div>
-
 </div>
+@section scripts{
+    <script>
+        var errorMessage = '@TempData["ErrorMessage"]';
+        if (errorMessage) {
+            toastr.error(errorMessage);
+        }
+    </script>
+
+}
+

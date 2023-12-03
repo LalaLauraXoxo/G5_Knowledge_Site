@@ -2,36 +2,53 @@
 @model TopicViewModel
 
 @section styles {
-    <link rel="stylesheet" href="~/css/" />
+    <link rel="stylesheet" href="~/css/viewtopic.css" />
 }
 @{
     ViewData["Title"] = "View Topic";
     ViewBag.IsViewTopicPage = true;
 }
 
-<div class="viewuser-div">
-    <div class="inside-viewuser">
-        <div>
-            <form method="post" asp-action="ViewTopic">
-                <div class="inputs-div">
-                    <div>
-                        <input type="hidden" class="input-design" asp-for="Id">
-                        <label for="topicName" class="inputs-label">TOPIC NAME</label>
-                        <input type="text" class="input-design" asp-for="TopicName" readonly><br><br>
-                        <div style="width: 20%">
-                            <img src="@Model.ImageUrl" style="width: 100%;" alt="Topic File">
-                        </div><br />
-                        <label for="trainingDesc" class="inputs-label">DESCRIPTION</label>
-                        <input type="text" class="input-design" asp-for="TopicDesc" readonly><br><br>
-                    </div>
-                    <div class="rightside-div">
-                        <a class="back-button-div" asp-controller="Topic" asp-action="Topics">
-                            <p class="back-button-p">BACK TO LIST</p>
-                        </a>
+<div class="screen-container">
+    <div class="inside-container">
+        <form method="post" asp-action="ViewTopic">
+            <input type="hidden" class="input-design" asp-for="TopicId">
+            <div class="form-group">
+                <label for="topicName" class="inputs-label">TOPIC NAME</label>
+                <input type="text" class="input-design" asp-for="TopicName" readonly><br><br>
+            </div>
+            <div class="form-group">
+                <label for="trainingDesc" class="inputs-label">DESCRIPTION/ LESSON</label>
+                <textarea type="text" class="text-area-design" asp-for="TopicDesc" readonly></textarea><br><br>
+            </div>
+                   
+            <div class="form-group">
+                <div style="display: flex;">
+                    <label>RESOURCE MATERIAL</label>
+                    <div style="width: 8%">
+                        <img src="~/img/materialRB.png" style="width: 100%;" alt="dp">
                     </div>
                 </div>
-            </form>
-        </div>
+                <div>
+                    @if (!string.IsNullOrEmpty(Model.TopicFile))
+                    {
+                        <div class="topicFileDiv">
+                            <p class="currentFile">Current file: </p>
+                            <p class="fileData">@Model.TopicFile</p>
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="currentFile">No file uploaded</p>
+                    }
+                </div>
+            </div>
+            <div class="bottom-buttons">
+                <a class="back-button" asp-controller="Topic" asp-action="Topics" asp-route-trainingId="@ViewBag.TrainingId">
+                    <p class="back-button-p">BACK TO LIST</p>
+                </a>
+            </div>
+        </form>
     </div>
 </div>
 @section scripts{

@@ -39,23 +39,23 @@
             }
             else if (ViewBag.IsViewCategoryPage == true)
             {
-                <span>CATEGORY FULL VIEW</span>
+                <span>VIEW CATEGORY</span>
             }
             else if (ViewBag.IsTrainingsPage == true)
             {
-                <span>TRAINING PROGRAMS</span>
+                <span>TRAININGS</span>
             }
             else if (ViewBag.IsAddTrainingPage == true)
             {
-                <span>ADD NEW TRAINING PROGRAM</span>
+                <span>ADD TRAINING</span>
             }
             else if (ViewBag.IsViewTrainingPage == true)
             {
-                <span>VIEW TRAINING PROGRAM</span>
+                <span>VIEW TRAINING</span>
             }
             else if (ViewBag.IsEditTrainingPage == true)
             {
-                <span>EDIT TRAINING PROGRAM</span>
+                <span>EDIT TRAINING</span>
             }
             else if (ViewBag.IsTopicsPage == true)
             {
@@ -73,6 +73,10 @@
             {
                 <span>VIEW TOPIC</span>
             }
+            else if (ViewBag.IsRatingsPage == true)
+            {
+                <span>TRAINING RATINGS AND FEEDBACK</span>
+            }
             else
             {
                 <span>ADMIN DASHBOARD</span>
@@ -89,10 +93,6 @@
             </div>
             <div class="dropdown">
                 <ul>
-                    <li>
-                        <i class="fa-solid fa-gear"></i>
-                        <a href="#">Settings</a>
-                    </li>
                     <li>
                         <i class="fa-solid fa-right-from-bracket"></i>
                         <a asp-action="SignOutUser" asp-controller="Account">Logout</a>

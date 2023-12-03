@@ -5,8 +5,28 @@
       "PackagePath": "staticwebassets\\css\\createcategory.css"
     },
     {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\createtopic.css",
+      "PackagePath": "staticwebassets\\css\\createtopic.css"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\createtraining.css",
+      "PackagePath": "staticwebassets\\css\\createtraining.css"
+    },
+    {
       "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\createuser.css",
       "PackagePath": "staticwebassets\\css\\createuser.css"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\editcategory.css",
+      "PackagePath": "staticwebassets\\css\\editcategory.css"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\edittopic.css",
+      "PackagePath": "staticwebassets\\css\\edittopic.css"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\edittraining.css",
+      "PackagePath": "staticwebassets\\css\\edittraining.css"
     },
     {
       "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\edituser.css",
@@ -25,6 +45,14 @@
       "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\ratings.css",
+      "PackagePath": "staticwebassets\\css\\ratings.css"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\resetpassword.css",
+      "PackagePath": "staticwebassets\\css\\resetpassword.css"
+    },
+    {
       "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -41,12 +69,24 @@
       "PackagePath": "staticwebassets\\css\\trainingcategory.css"
     },
     {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\trainings.css",
+      "PackagePath": "staticwebassets\\css\\trainings.css"
+    },
+    {
       "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\usermaster.css",
       "PackagePath": "staticwebassets\\css\\usermaster.css"
     },
     {
       "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\viewcategory.css",
       "PackagePath": "staticwebassets\\css\\viewcategory.css"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\viewtopic.css",
+      "PackagePath": "staticwebassets\\css\\viewtopic.css"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\viewtraining.css",
+      "PackagePath": "staticwebassets\\css\\viewtraining.css"
     },
     {
       "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\css\\viewuser.css",
@@ -71,6 +111,10 @@
     {
       "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\img\\LiveIT.png",
       "PackagePath": "staticwebassets\\img\\LiveIT.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\img\\Trainings.png",
+      "PackagePath": "staticwebassets\\img\\Trainings.png"
     },
     {
       "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\img\\adminpicBlue.png",
@@ -113,8 +157,36 @@
       "PackagePath": "staticwebassets\\img\\logo.png"
     },
     {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\img\\material.png",
+      "PackagePath": "staticwebassets\\img\\material.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\img\\materialRB.png",
+      "PackagePath": "staticwebassets\\img\\materialRB.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\img\\mp4.png",
+      "PackagePath": "staticwebassets\\img\\mp4.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\img\\multiple.png",
+      "PackagePath": "staticwebassets\\img\\multiple.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\img\\pdf.png",
+      "PackagePath": "staticwebassets\\img\\pdf.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\img\\ppt.png",
+      "PackagePath": "staticwebassets\\img\\ppt.png"
+    },
+    {
       "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\img\\profile-logo.png",
       "PackagePath": "staticwebassets\\img\\profile-logo.png"
+    },
+    {
+      "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\img\\skyBG.png",
+      "PackagePath": "staticwebassets\\img\\skyBG.png"
     },
     {
       "Id": "D:\\ALLIANCE TESTING\\ASI.Basecode.AdminApp\\wwwroot\\img\\training.png",

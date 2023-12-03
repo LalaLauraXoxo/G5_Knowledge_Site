@@ -10,17 +10,25 @@ namespace ASI.Basecode.Services.Interfaces
 {
     public interface ITopicService
     {
-        public void AddTopic(TopicViewModel topicViewModel, string username);
+        public void AddTopic(TopicViewModel topicViewModel, string username, int trainingId);
 
         public List<Topic> GetTopic();
 
-        public Topic GetTopic(int id);
+        public Topic GetTopic(int topicId, int trainingId);
 
-        public bool DeleteTopic(TopicViewModel topicViewModel);
+        public bool UpdateTopic(TopicViewModel topicViewModel, string username, int trainingId);
 
-        public bool UpdateTopic(TopicViewModel topicViewModel, string username);
+        public List<Topic> GetTopicsByTrainingId(int trainingId);
 
-        //public List<Topic> GetTopicsByTrainingId(int trainingId);
+        public TopicViewModel GetTopicViewModel(int id, int trainingId);
+
+        public TopicViewModel GetEditTopicViewModel(int id, int trainingId);
+
+        public bool DeleteTopic(int id, int trainingId);
+
+        public bool DeleteTopicsByTrainingId(int trainingId);
+
+        public Topic GetTopicWithFileExtension(int topicId, int trainingId);
 
     }
 }
