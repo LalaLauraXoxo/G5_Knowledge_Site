@@ -66,34 +66,40 @@ namespace ASI.Basecode.Services.Services
             return training;
         }
 
-
         public bool UpdateTraining(TrainingViewModel trainingViewModel, string username)
         {
             Training training = _trainingRepository.GetTraining(trainingViewModel.Id);
-            //remove old image
-            var coverImagesPath = PathManager.DirectoryPath.CoverImagesDirectory;
-            var oldImagePath = Path.Combine(coverImagesPath, training.TrainingImage) + ".png";
-            if (File.Exists(oldImagePath))
-            {
-                File.Delete(oldImagePath);
-            }
-
-            var imageFileName = Guid.NewGuid().ToString();
-            // Save the new image file
-            var newImagePath = Path.Combine(coverImagesPath, imageFileName + ".png");
-            using (var fileStream = new FileStream(newImagePath, FileMode.Create))
-            {
-                trainingViewModel.ImageFile.CopyTo(fileStream);
-            }
 
             if (training != null)
             {
-                training.Id = trainingViewModel.Id;
+                if (trainingViewModel.ImageFile != null && trainingViewModel.ImageFile.Length > 0)
+                {
+                    var coverImagesPath = PathManager.DirectoryPath.CoverImagesDirectory;
+                    var imageFileName = Guid.NewGuid().ToString();
+
+                    // Remove old image
+                    var oldImagePath = Path.Combine(coverImagesPath, training.TrainingImage) + ".png";
+                    if (File.Exists(oldImagePath))
+                    {
+                        File.Delete(oldImagePath);
+                    }
+
+                    // Save the new image file
+                    var newImagePath = Path.Combine(coverImagesPath, imageFileName + ".png");
+                    using (var fileStream = new FileStream(newImagePath, FileMode.Create))
+                    {
+                        trainingViewModel.ImageFile.CopyTo(fileStream);
+                    }
+
+                    // Update with the new image
+                    training.TrainingImage = imageFileName;
+                }
+
+                // Update other fields
                 training.CategoryId = trainingViewModel.CategoryId;
                 training.TrainingName = trainingViewModel.TrainingName;
                 training.TrainingDesc = trainingViewModel.TrainingDesc;
                 training.TrainingAuthor = trainingViewModel.TrainingAuthor;
-                training.TrainingImage = imageFileName;
                 training.UpdatedBy = username;
                 training.UpdatedTime = System.DateTime.Now;
 
@@ -103,6 +109,9 @@ namespace ASI.Basecode.Services.Services
 
             return false;
         }
+
+
+
 
         public List<Training> GetTrainingsByCategoryId(int categoryId)
         {

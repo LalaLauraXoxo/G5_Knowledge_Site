@@ -27,6 +27,11 @@ namespace ASI.Basecode.Data.Repositories
             return this.GetDbSet<User>().Any(x => x.UserId == userId);
         }
 
+        public bool EmailExists(string email)
+        {
+            return this.GetDbSet<User>().Any(x => x.Email == email);
+        }
+
         public void AddUser(User user)
         {
             this.GetDbSet<User>().Add(user);

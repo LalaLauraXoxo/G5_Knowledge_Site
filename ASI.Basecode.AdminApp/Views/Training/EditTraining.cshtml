@@ -10,9 +10,9 @@
 
 <div class="screen-container">
     <div class="inside-container">
-    <form method="post" enctype="multipart/form-data" asp-action="EditTraining">
-        <input type="hidden" class="form-control" asp-for="Id">
-         <div class="twoDiv">
+        <form method="post" enctype="multipart/form-data" asp-controller="Training" asp-action="EditTraining">
+            <input type="hidden" class="form-control" asp-for="Id">
+            <div class="twoDiv">
                 <div class="leftDiv">
                     <div class="form-group">
                         <label>TRAINING NAME</label>
@@ -42,7 +42,7 @@
                     </div>
                     <div class="form-group spacediv2">
                         <label>COVER IMAGE</label><br />
-                        <input asp-for="ImageFile" type="file" accept=".png" class="uploadButton" id="fileInput" onchange="previewFile()">
+                        <input asp-for="ImageFile" type="file" accept=".png" class="uploadButton" id="fileInput" onchange="previewFile()"><br>
                         <span asp-validation-for="ImageFile" class="text-danger"></span><br>
                     </div>
                     <div class="imageDiv">
@@ -56,8 +56,8 @@
                         <button type="submit" class="saveButton">SAVE</button>
                     </div>
                 </div>
-         </div>
-    </form>
+            </div>
+        </form>
     </div>
 </div>
 @section scripts{

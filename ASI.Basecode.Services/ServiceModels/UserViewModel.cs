@@ -11,20 +11,24 @@ namespace ASI.Basecode.Services.ServiceModels
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Username is required.")]
+        [RegularExpression(@"^[a-zA-Z0-9_]*$", ErrorMessage = "UserId cannot contain special character.")]
+        [Required(ErrorMessage = "UserId is required.")]
         public string UserId { get; set; }
 
         [Required(ErrorMessage = "Email is required.")]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }
 
+        [RegularExpression(@"^[a-zA-Z0-9_ ]*$", ErrorMessage = "First name cannot contain special character.")]
         [Required(ErrorMessage = "First name is required.")]
         public string FirstName { get; set; }
 
+        [RegularExpression(@"^[a-zA-Z0-9_ ]*$", ErrorMessage = "Last name cannot contain special character.")]
         [Required(ErrorMessage = "Last name is required.")]
         public string LastName { get; set; }
 
-        [Required(ErrorMessage = "Username is required.")]
+        [RegularExpression(@"^[a-zA-Z0-9_ ]*$", ErrorMessage = "Display name cannot contain special character.")]
+        [Required(ErrorMessage = "Display name is required.")]
         public string Username { get; set; }
 
         [Required(ErrorMessage = "Password is required.")]

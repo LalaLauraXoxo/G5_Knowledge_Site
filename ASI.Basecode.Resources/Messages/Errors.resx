@@ -120,6 +120,9 @@
   <data name="CategoryExists" xml:space="preserve">
     <value>Category Name already exists!</value>
   </data>
+  <data name="EmailExists" xml:space="preserve">
+    <value>Email already used!</value>
+  </data>
   <data name="RatingEmailExists" xml:space="preserve">
     <value>Email already used!</value>
   </data>

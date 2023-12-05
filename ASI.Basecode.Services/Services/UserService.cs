@@ -39,7 +39,16 @@ namespace ASI.Basecode.Services.Services
         public void AddUser(UserViewModel model, string username)
         {
             var user = new User();
-            if (!_repository.UserExists(model.UserId))
+
+            if (_repository.UserExists(model.UserId))
+            {
+                throw new InvalidOperationException(Resources.Messages.Errors.UserExists);
+            }
+            else if (_repository.EmailExists(model.Email))
+            {
+                throw new InvalidOperationException(Resources.Messages.Errors.EmailExists);
+            }
+            else
             {
                 _mapper.Map(model, user);
                 user.Password = PasswordManager.EncryptPassword(model.Password);
@@ -49,10 +58,6 @@ namespace ASI.Basecode.Services.Services
                 user.UpdatedBy = username;
 
                 _repository.AddUser(user);
-            }
-            else
-            {
-                throw new InvalidDataException(Resources.Messages.Errors.UserExists);
             }
         }
 
@@ -107,19 +112,26 @@ namespace ASI.Basecode.Services.Services
         {
             User user = _repository.GetUser(model.Id);
 
-           
-                user.UserId = model.UserId;
-                user.FirstName = model.FirstName;
-                user.LastName = model.LastName;
-                user.Email = model.Email;
-                user.Username = model.Username;
-                user.Password = PasswordManager.EncryptPassword(model.Password);
+            if (_repository.UserExists(model.UserId) && model.UserId != user.UserId)
+            {
+                throw new InvalidOperationException(Resources.Messages.Errors.UserExists);
+            }
+            if (_repository.EmailExists(model.Email) && model.Email != user.Email)
+            {
+                throw new InvalidOperationException(Resources.Messages.Errors.EmailExists);
+            }
 
-                user.UpdatedBy = username;
-                user.CreatedTime = DateTime.Now;
+            user.UserId = model.UserId;
+            user.FirstName = model.FirstName;
+            user.LastName = model.LastName;
+            user.Email = model.Email;
+            user.Username = model.Username;
+            user.Password = PasswordManager.EncryptPassword(model.Password);
+            user.UpdatedBy = username;
+            user.CreatedTime = DateTime.Now;
 
-                _repository.UpdateUser(user);
-                return true;
+            _repository.UpdateUser(user);
+            return true;
         }
 
         public bool DeleteUser(UserViewModel model)

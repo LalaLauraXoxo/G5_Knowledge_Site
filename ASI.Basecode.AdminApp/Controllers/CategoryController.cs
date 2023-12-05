@@ -88,12 +88,25 @@ namespace ASI.Basecode.AdminApp.Controllers
         [HttpPost]
         public IActionResult EditCategory(CategoryViewModel categoryViewModel)
         {
-            bool isUpdated = _categoryService.UpdateCategory(categoryViewModel, this.UserName);
-            if (isUpdated)
+            try
             {
-                return RedirectToAction("TrainingCategories");
+                bool isUpdated = _categoryService.UpdateCategory(categoryViewModel, this.UserName);
+                if (isUpdated)
+                {
+                    return RedirectToAction("TrainingCategories");
+                }
+                return NotFound();
             }
-            return NotFound();
+            catch (InvalidDataException ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
+                return View(categoryViewModel);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = Resources.Messages.Errors.ServerError;
+                return View(categoryViewModel);
+            }
         }
 
         public IActionResult DeleteCategory(CategoryViewModel categoryViewModel)

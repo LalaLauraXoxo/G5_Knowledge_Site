@@ -34,7 +34,7 @@
                             <span data-value="5" class="star"><i class="fa-solid fa-star star-design"></i></span>
                         </div>
 
-                        <input type="hidden" id="rating-input" value="1" asp-for="StarRating" />
+                        <input type="hidden" id="rating-input" value="0" asp-for="StarRating" />
                         <span asp-validation-for="StarRating" class="text-danger"></span><br>
                         <div id="ratingValidationError" class="text-danger" style="display: none;">Rating is required.</div>
                     </div>
@@ -85,7 +85,7 @@
             if (ratingInputValue === 0) {
                 event.preventDefault();
                 console.log("Cannot rate 0");
-                $('#ratingValidationError').show(); // Display the error message
+                $('#ratingValidationError').show(); ````
                 return false;
             }
             return true;

@@ -50,7 +50,7 @@ namespace ASI.Basecode.AdminApp.Controllers
                 _UserService.AddUser(model, this.UserName);
                 return RedirectToAction("UserMaster", "UserMaster");
             }
-            catch (InvalidDataException ex)
+            catch (InvalidOperationException ex)
             {
                 TempData["ErrorMessage"] = ex.Message;
             }
@@ -60,6 +60,7 @@ namespace ASI.Basecode.AdminApp.Controllers
             }
             return View();
         }
+
 
         [HttpGet]
         public IActionResult ViewUser(int id)
@@ -86,14 +87,25 @@ namespace ASI.Basecode.AdminApp.Controllers
         [HttpPost]
         public IActionResult EditUser(UserViewModel model)
         {
-           
-            bool isUpdated = _UserService.UpdateUser(model, this.UserName);
-            if (isUpdated)
+            try
             {
-                return RedirectToAction("UserMaster", "UserMaster");
+                bool isUpdated = _UserService.UpdateUser(model, this.UserName);
+                if (isUpdated)
+                {
+                    return RedirectToAction("UserMaster", "UserMaster");
+                }
             }
-            
-           
+            catch (InvalidOperationException ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
+                return View(model);
+            }
+
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = Resources.Messages.Errors.ServerError;
+                return View(model);
+            }
             return View(model);
         }
         public IActionResult Delete(UserViewModel model)

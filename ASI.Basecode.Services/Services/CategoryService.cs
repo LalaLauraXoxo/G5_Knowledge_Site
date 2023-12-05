@@ -113,11 +113,16 @@ namespace ASI.Basecode.Services.Services
             Category category = _categoryRepository.GetCategory(categoryViewModel.Id);
             if (category != null)
             {
+                if (_categoryRepository.CategoryExists(categoryViewModel.CategoryName)
+                    && category.CategoryName != categoryViewModel.CategoryName)
+                {
+                    throw new InvalidDataException(Resources.Messages.Errors.CategoryExists);
+                }
                 category.Id = categoryViewModel.Id;
                 category.CategoryName = categoryViewModel.CategoryName;
                 category.CategoryDesc = categoryViewModel.CategoryDesc;
                 category.UpdatedBy = username;
-                category.UpdatedTime = System.DateTime.Now;
+                category.UpdatedTime = DateTime.Now;
 
                 _categoryRepository.UpdateCategory(category);
                 return true;

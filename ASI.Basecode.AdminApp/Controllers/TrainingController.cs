@@ -61,10 +61,14 @@ namespace ASI.Basecode.AdminApp.Controllers
             catch (InvalidDataException ex)
             {
                 TempData["ErrorMessage"] = ex.Message;
+                ViewBag.Categories = _categoryService.GetCategoryViewModels();
+                return View(trainingViewModel);
             }
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = Resources.Messages.Errors.ServerError;
+                ViewBag.Categories = _categoryService.GetCategoryViewModels();
+                return View(trainingViewModel);
             }
             return View();
         }
@@ -76,7 +80,7 @@ namespace ASI.Basecode.AdminApp.Controllers
             if (training != null)
             {
                 var category = _categoryService.GetCategory(training.CategoryId);
-                var trainingViewModel = _trainingService.GetTrainingViewModel(training, id, category); // Pass category as a parameter
+                var trainingViewModel = _trainingService.GetTrainingViewModel(training, id, category);
 
                 return View(trainingViewModel);
             }
@@ -90,7 +94,7 @@ namespace ASI.Basecode.AdminApp.Controllers
             if (training != null)
             {
                 var category = _categoryService.GetCategory(training.CategoryId);
-                var categoryViewModels = _categoryService.GetCategoryViewModels(); 
+                var categoryViewModels = _categoryService.GetCategoryViewModels();
 
                 var trainingViewModel = _trainingService.GetEditTrainingViewModel(training, id, category, categoryViewModels); // Pass category view models as a parameter
 
@@ -103,13 +107,17 @@ namespace ASI.Basecode.AdminApp.Controllers
         [HttpPost]
         public IActionResult EditTraining(TrainingViewModel trainingViewModel)
         {
-            bool isUpdated = _trainingService.UpdateTraining(trainingViewModel, this.UserName);
-            if (isUpdated)
+            if (ModelState.IsValid) // Ensure model state is valid before updating
             {
-                return RedirectToAction("Trainings");
+                bool isUpdated = _trainingService.UpdateTraining(trainingViewModel, this.UserName);
+                if (isUpdated)
+                {
+                    return RedirectToAction("Trainings");
+                }
             }
-            return NotFound();
-        }  
+            // If update fails or model state is invalid, return to the edit view
+            return View(trainingViewModel);
+        }
 
 
         public IActionResult DeleteTraining(TrainingViewModel trainingViewModel)

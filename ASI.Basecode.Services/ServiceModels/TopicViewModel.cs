@@ -12,13 +12,14 @@ namespace ASI.Basecode.Services.ServiceModels
     {
         public int TopicId { get; set; }
 
+        [RegularExpression(@"^[a-zA-Z0-9_# ]*$", ErrorMessage = "Topic name cannot contain special characters.")]
         [Required(ErrorMessage = "Topic Name is required.")]
         public string TopicName { get; set; }
 
         [Required(ErrorMessage = "Topic Description is required.")]
         public string TopicDesc { get; set; }
 
-        [Required(ErrorMessage = "Topic Image is required.")]
+        [Required(ErrorMessage = "Resource material is required.")]
         public IFormFile MaterialFile { get; set; }
         public string FileUrl { get; set; }
 
