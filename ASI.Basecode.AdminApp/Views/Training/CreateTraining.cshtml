@@ -51,7 +51,7 @@
                     </div>
                     <div class="form-group spacediv2">
                         <label>COVER IMAGE</label><br />
-                        <input asp-for="ImageFile" type="file" accept=".png" class="uploadButton" id="fileInput" onchange="previewFile()"><br>
+                        <input asp-for="ImageFile" type="file" accept=".png" class="uploadButton" id="fileInput" onchange="previewFile()" required><br>
                         <span asp-validation-for="ImageFile" class="text-danger"></span><br>
                     </div>
                     <div class="imageDiv">

@@ -121,46 +121,55 @@ namespace ASI.Basecode.Services.Services
             // remove old file
             var coverImagesPath = PathManager.DirectoryPath.CoverImagesDirectory;
             var oldFilePath = Path.Combine(coverImagesPath, topic.TopicFile) + GetFileExtension(topic.TopicFile);
-            if (File.Exists(oldFilePath))
+            /*if (File.Exists(oldFilePath))
             {
                 File.Delete(oldFilePath);
-            }
+            }*/
 
+            var topicFile = "";
             var model = new Topic();
             model.TopicName = topicViewModel.TopicName;
             model.TopicDesc = topicViewModel.TopicDesc;
-            model.TopicFile = Guid.NewGuid().ToString();
+            //model.TopicFile = Guid.NewGuid().ToString();
             model.CreatedBy = username;
             model.CreatedTime = DateTime.Now;
             model.UpdatedBy = username;
             model.UpdatedTime = DateTime.Now;
 
-            // Extract file extension
-            string fileExtension = Path.GetExtension(topicViewModel.MaterialFile.FileName);
-
-            // Define default extension for unsupported types (e.g., ppt)
-            string defaultExtension = ".ppt";
-
-            // Map extensions based on file types
-            if (fileExtension.Equals(".mp4", StringComparison.OrdinalIgnoreCase))
+            if(topicViewModel.MaterialFile != null)
             {
-                defaultExtension = ".mp4";
-            }
-            else if (fileExtension.Equals(".pdf", StringComparison.OrdinalIgnoreCase))
-            {
-                defaultExtension = ".pdf";
-            }
-            else if (fileExtension.Equals(".pptx", StringComparison.OrdinalIgnoreCase))
-            {
-                defaultExtension = ".pptx";
-            }
+                topicFile = Guid.NewGuid().ToString();
 
-            var newFilePath = Path.Combine(coverImagesPath, model.TopicFile) + defaultExtension;
+                // Extract file extension
+                string fileExtension = Path.GetExtension(topicViewModel.MaterialFile.FileName);
 
-            using (var fileStream = new FileStream(newFilePath, FileMode.Create))
-            {
-                topicViewModel.MaterialFile.CopyTo(fileStream);
+                // Define default extension for unsupported types (e.g., ppt)
+                string defaultExtension = ".ppt";
+
+                // Map extensions based on file types
+                if (fileExtension.Equals(".mp4", StringComparison.OrdinalIgnoreCase))
+                {
+                    defaultExtension = ".mp4";
+                }
+                else if (fileExtension.Equals(".pdf", StringComparison.OrdinalIgnoreCase))
+                {
+                    defaultExtension = ".pdf";
+                }
+                else if (fileExtension.Equals(".pptx", StringComparison.OrdinalIgnoreCase))
+                {
+                    defaultExtension = ".pptx";
+                }
+
+/*                var newFilePath = Path.Combine(coverImagesPath, model.TopicFile) + defaultExtension;
+*/
+                var newFilePath = Path.Combine(coverImagesPath, topicFile) + defaultExtension;
+
+                using (var fileStream = new FileStream(newFilePath, FileMode.Create))
+                {
+                    topicViewModel.MaterialFile.CopyTo(fileStream);
+                }
             }
+            
 
             if (topic != null)
             {
@@ -168,7 +177,14 @@ namespace ASI.Basecode.Services.Services
                 topic.TopicDesc = model.TopicDesc;
                 topic.UpdatedBy = model.UpdatedBy;
                 topic.UpdatedTime = model.UpdatedTime;
-                topic.TopicFile = model.TopicFile;
+                if(topicFile != "") {
+                    topic.TopicFile = topicFile;
+                }
+                else
+                {
+                    topic.TopicFile = topic.TopicFile;
+                }
+                
 
                 _topicRepository.UpdateTopic(topic);
                 return true;
