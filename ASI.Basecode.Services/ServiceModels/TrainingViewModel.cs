@@ -29,7 +29,6 @@ namespace ASI.Basecode.Services.ServiceModels
 
         public List<CategoryViewModel> Categories { get; set; }
 
-        [Required(ErrorMessage = "Training Image is required.")]
         public IFormFile ImageFile { get; set; }
 
         public string ImageUrl { get; set; }

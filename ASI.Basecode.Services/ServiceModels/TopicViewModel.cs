@@ -19,7 +19,6 @@ namespace ASI.Basecode.Services.ServiceModels
         [Required(ErrorMessage = "Topic Description is required.")]
         public string TopicDesc { get; set; }
 
-        [Required(ErrorMessage = "Resource material is required.")]
         public IFormFile MaterialFile { get; set; }
         public string FileUrl { get; set; }
 
